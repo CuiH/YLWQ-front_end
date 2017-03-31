@@ -1,0 +1,29 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<h1 class="title">首页</h1>
+	<a *ngIf="!loggedIn" class="button button-link button-nav pull-right" [routerLink]="['/log_in']">
+		登录
+		<span class="icon icon-me"></span>
+	</a>
+</header>
+
+<!-- 工具栏 -->
+<nav *ngIf="loggedIn" class="bar bar-tab">
+	<a class="tab-item external active" [routerLink]="['/page_home']">
+		<span class="icon icon-home"></span>
+		<span class="tab-label">首页</span>
+	</a>
+	<a class="tab-item external">
+		<span class="icon icon-message"></span>
+		<span class="tab-label">消息</span>
+	</a>
+	<a class="tab-item external" [routerLink]="['/page_my']">
+		<span class="icon icon-me"></span>
+		<span class="tab-label">我的</span>
+	</a>
+</nav>
+
+<!-- 页面内容 -->
+<div class="content">
+
+</div>

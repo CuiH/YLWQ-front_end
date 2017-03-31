@@ -1,0 +1,65 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">{{club.name}}</h1>
+	<a *ngIf="!loggedIn" class="button button-link button-nav pull-right" [routerLink]="['/log_in']">
+		登录
+		<span class="icon icon-me"></span>
+	</a>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title"></div>
+	<div class="list-block">
+		<ul>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">群组名称</div>
+					<div class="item-after">{{club.name}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" (click)="showBriefIntro()">
+				<div class="item-inner">
+					<div class="item-title">群组简介</div>
+					<div class="item-after">{{club.brief_intro}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">创建时间</div>
+					<div class="item-after">{{club.create_time | date}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">创建人</div>
+					<div class="item-after">{{club.founder_username}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">成员数</div>
+					<div class="item-after">{{club.member_number}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-block-title">群公告</div>
+	<div *ngIf="clubBulletin && clubBulletin.id" class="card">
+		<div class="card-header">{{clubBulletin.title}}</div>
+		<div class="card-content">
+			<div class="card-content-inner">{{clubBulletin.content}}</div>
+		</div>
+		<div class="card-footer">{{clubBulletin.publisher_username}} 发布于 {{clubBulletin.publish_time | date}}</div>
+	</div>
+
+	<div *ngIf="loggedIn" class="list-block">
+		<ul>
+			<li *ngIf="isMember"><a class="item-link list-button" [routerLink]="['/club_members', club.id]">查看所有成员</a></li>
+			<li *ngIf="isMember"><a class="item-link list-button" [routerLink]="['/club_activities', club.id]">查看所有活动</a></li>
+			<li *ngIf="!isMember"><a class="item-link list-button">申请加入该群组</a></li>
+		</ul>
+	</div>
+</div>

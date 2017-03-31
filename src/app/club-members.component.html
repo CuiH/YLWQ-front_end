@@ -1,0 +1,20 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">所有成员</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<ul>
+			<li *ngFor="let member of members" class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">{{member.username}}</div>
+					<div *ngIf="member.role == 'A'" class="item-after">管理员</div>
+					<div *ngIf="member.role == 'F'" class="item-after">群主</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

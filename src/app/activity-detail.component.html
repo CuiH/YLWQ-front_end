@@ -1,0 +1,76 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">{{activity.name}}</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title"></div>
+	<div class="list-block">
+		<ul>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">活动名称</div>
+					<div class="item-after">{{activity.name}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" (click)="showBriefIntro()">
+				<div class="item-inner">
+					<div class="item-title">活动简介</div>
+					<div class="item-after">{{activity.brief_intro}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" (click)="showLocation()">
+				<div class="item-inner">
+					<div class="item-title">地点</div>
+					<div class="item-after">{{activity.location}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" [routerLink]="['/club', activity.club_id]">
+				<div class="item-inner">
+					<div class="item-title">承办方</div>
+					<div class="item-after">{{activity.club_name}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">开始时间</div>
+					<div class="item-after">{{activity.start_time | date}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">结束时间</div>
+					<div class="item-after">{{activity.end_time | date}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" (click)="showNote()">
+				<div class="item-inner">
+					<div class="item-title">活动备注</div>
+					<div class="item-after">{{activity.note}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">发起人</div>
+					<div class="item-after">{{activity.sponsor_username}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">参与人数</div>
+					<div class="item-after">{{activity.participant_number}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div *ngIf="loggedIn" class="list-block">
+		<ul>
+			<li *ngIf="isMember"><a href="#" class="item-link list-button">查看所有成员</a></li>
+			<li *ngIf="isMember"><a href="#" class="item-link list-button">查看所有活动</a></li>
+			<li *ngIf="!isMember"><a href="#" class="item-link list-button">申请加入该群组</a></li>
+		</ul>
+	</div>
+
+</div>

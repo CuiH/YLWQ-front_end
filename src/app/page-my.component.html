@@ -1,0 +1,74 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<h1 class="title">我的</h1>
+</header>
+
+<!-- 工具栏 -->
+<nav class="bar bar-tab">
+	<a class="tab-item external" [routerLink]="['/page_home']">
+		<span class="icon icon-home"></span>
+		<span class="tab-label">首页</span>
+	</a>
+	<a class="tab-item external" href="#">
+		<span class="icon icon-message"></span>
+		<span class="tab-label">消息</span>
+	</a>
+	<a class="tab-item external active" [routerLink]="['/page_my']">
+		<span class="icon icon-me"></span>
+		<span class="tab-label">我的</span>
+	</a>
+</nav>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link">
+				<div class="item-media"><i class="icon icon-me"></i></div>
+				<div class="item-inner">
+					<div class="item-title">我的资料</div>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link">
+				<div class="item-media"><i class="icon icon-cart"></i></div>
+				<div class="item-inner">
+					<div class="item-title">我的账单</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link" [routerLink]="['/clubs']">
+				<div class="item-media"><i class="icon icon-friends"></i></div>
+				<div class="item-inner">
+					<div class="item-title">我的群组</div>
+				</div>
+			</li>
+			<li class="item-content item-link" [routerLink]="['/activities']">
+				<div class="item-media"><i class="icon icon-emoji"></i></div>
+				<div class="item-inner">
+					<div class="item-title">我的活动</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link" (click)="onLogOff()">
+				<div class="item-media"><i class="icon icon-remove"></i></div>
+				<div class="item-inner">
+					<div class="item-title">退出登录</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

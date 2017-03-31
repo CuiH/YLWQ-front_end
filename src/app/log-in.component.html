@@ -1,0 +1,43 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">登录</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<form [formGroup]="userForm">
+			<ul>
+				<li>
+					<div class="item-content">
+						<div class="item-media"><i class="icon icon-form-name"></i></div>
+						<div class="item-inner">
+							<div class="item-title label">用户名</div>
+							<div class="item-input">
+								<input formControlName="username" maxlength="16" type="text" placeholder="Username">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-media"><i class="icon icon-form-password"></i></div>
+						<div class="item-inner">
+							<div class="item-title label">密码</div>
+							<div class="item-input">
+								<input formControlName="password" maxlength="16" type="password" placeholder="Password">
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="content-block">
+		<div class="row">
+			<div class="col-50"><button disabled="disabled" class="button button-big button-fill button-danger">注册</button></div>
+			<div class="col-50"><button [disabled]="submitted" (click)="onSubmit()" class="button button-big button-fill button-success">{{logInButtonText}}</button></div>
+		</div>
+	</div>
+</div>

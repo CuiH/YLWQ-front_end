@@ -1,0 +1,37 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">所有活动</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div *ngFor="let activity of activities" class="card" [routerLink]="['/activity', activity.id]">
+		<div class="card-header">{{activity.name}}</div>
+		<div class="card-content">
+			<div class="list-block media-list">
+				<ul>
+					<li class="item-content">
+						<!--<div class="item-media">-->
+						<!--<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="44">-->
+						<!--</div>-->
+						<div class="item-inner">
+							<!--<div class="item-title-row">-->
+							<!--<div class="item-title">标题</div>-->
+							<!--</div>-->
+							<div class="item-subtitle">简介：{{activity.brief_intro}}</div>
+							<div class="item-subtitle">开始时间：{{activity.start_time | date}}</div>
+							<div class="item-subtitle">结束时间：{{activity.end_time | date}}</div>
+							<div class="item-subtitle">地点：{{activity.location}}</div>
+							<div class="item-subtitle">发起人：{{activity.sponsor_username}}</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="card-footer">
+			<span>{{activity.create_time| date}} 发起</span>
+			<span>共 {{activity.participant_number}} 人</span>
+		</div>
+	</div>
+</div>
