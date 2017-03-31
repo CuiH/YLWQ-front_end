@@ -23,6 +23,8 @@ var user_activities_component_1 = require("./user-activities.component");
 var activity_detail_component_1 = require("./activity-detail.component");
 var club_activities_component_1 = require("./club-activities.component");
 var club_members_component_1 = require("./club-members.component");
+var activity_participants_component_1 = require("./activity-participants.component");
+var create_club_bulletin_component_1 = require("./create-club-bulletin.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -48,6 +50,8 @@ AppModule = __decorate([
             activity_detail_component_1.ActivityDetailComponent,
             club_activities_component_1.ClubActivitiesComponent,
             club_members_component_1.ClubMembersComponent,
+            activity_participants_component_1.ActivityParticipantsComponent,
+            create_club_bulletin_component_1.CreateClubBulletinComponent
         ],
         providers: [
             user_service_1.UserService,

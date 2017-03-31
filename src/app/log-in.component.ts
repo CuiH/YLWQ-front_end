@@ -25,8 +25,6 @@ export class LogInComponent implements OnInit {
 
 	private userForm: FormGroup;
 
-	private submitted = "";
-
 	private logInButtonText = "登录";
 
 	constructor(
@@ -37,7 +35,7 @@ export class LogInComponent implements OnInit {
 	) {
 	}
 
-	goBack(): void {
+	private goBack(): void {
 		this.location.back();
 	}
 
@@ -83,23 +81,16 @@ export class LogInComponent implements OnInit {
 	}
 
 	private onSubmit(): void {
-		this.submitted = "disabled";
 		this.logInButtonText = "登录中...";
 
-		if (!this.validateForm()) {
-			this.submitted = "";
-		} else {
+		if(this.validateForm()) {
 			this.userService.logIn(this.userForm.value as User)
 				.then((username) => {
-					this.logInButtonText = "登录成功";
 					this.location.back();
 				})
-				.catch((err) => {
-					$.alert(err.json().message);
-					this.logInButtonText = "登录";
-					this.submitted = "";
-				})
 		}
+
+		this.logInButtonText = "登录";
 	}
 
 	formFields = {

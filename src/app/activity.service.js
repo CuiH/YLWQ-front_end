@@ -13,14 +13,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
 require("rxjs/add/operator/toPromise");
 require("zepto");
 require("sm");
 var user_service_1 = require("./user.service");
 var ActivityService = (function () {
-    function ActivityService(http, userService) {
+    function ActivityService(http, userService, location) {
         this.http = http;
         this.userService = userService;
+        this.location = location;
         $.init();
     }
     ;
@@ -40,16 +42,52 @@ var ActivityService = (function () {
         })
             .catch(this.handleError);
     };
+    ActivityService.prototype.getAllActivityParticipantsById = function (id) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+        });
+        return this.http.request('http://localhost:3000/api/activity/get_all_participants?activity_id=' + id, options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            return res.json().data.participants;
+        })
+            .catch(this.handleError);
+    };
+    ActivityService.prototype.attendActivity = function (activityId) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken(),
+            }),
+            body: 'activity_id=' + activityId,
+        });
+        return this.http.request('http://localhost:3000/api/activity/attend', options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            return;
+        })
+            .catch(this.handleError);
+    };
     ActivityService.prototype.handleError = function (err) {
         $.hidePreloader();
         $.alert(err.json().message);
+        return Promise.reject(err);
     };
     return ActivityService;
 }());
 ActivityService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http,
-        user_service_1.UserService])
+        user_service_1.UserService,
+        common_1.Location])
 ], ActivityService);
 exports.ActivityService = ActivityService;
 //# sourceMappingURL=activity.service.js.map

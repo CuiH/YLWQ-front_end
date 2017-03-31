@@ -24,7 +24,6 @@ var LogInComponent = (function () {
         this.formBuilder = formBuilder;
         this.location = location;
         this.router = router;
-        this.submitted = "";
         this.logInButtonText = "登录";
         this.formFields = {
             username: '',
@@ -80,23 +79,14 @@ var LogInComponent = (function () {
     };
     LogInComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.submitted = "disabled";
         this.logInButtonText = "登录中...";
-        if (!this.validateForm()) {
-            this.submitted = "";
-        }
-        else {
+        if (this.validateForm()) {
             this.userService.logIn(this.userForm.value)
                 .then(function (username) {
-                _this.logInButtonText = "登录成功";
                 _this.location.back();
-            })
-                .catch(function (err) {
-                $.alert(err.json().message);
-                _this.logInButtonText = "登录";
-                _this.submitted = "";
             });
         }
+        this.logInButtonText = "登录";
     };
     return LogInComponent;
 }());

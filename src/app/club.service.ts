@@ -8,13 +8,14 @@ import {Injectable} from "@angular/core";
 import 'rxjs/add/operator/toPromise';
 
 import {Club} from "./club";
-
-import "zepto";
-import "sm";
 import {Activity} from "./activity";
 import {UserService} from "./user.service";
 import {User} from "./user";
 import {ClubBulletin} from "./club-bulletin";
+import {ClubMessage} from "./club-message";
+
+import "zepto";
+import "sm";
 
 declare let $: any;
 
@@ -98,9 +99,27 @@ export class ClubService {
 			.catch(this.handleError);
 	}
 
+	getLatestThreeClubMessagesById(id: number): Promise<ClubMessage[]> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.userService.getCurrentUserToken()
+			}),
+		});
+
+		return this.http.request('http://localhost:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.clubMessages as ClubMessage[];
+			})
+			.catch(this.handleError);
+	}
+
 	private handleError(err: any): any {
 		$.hidePreloader();
 
 		$.alert(err.json().message);
+
+		return Promise.reject(err);
 	}
 }

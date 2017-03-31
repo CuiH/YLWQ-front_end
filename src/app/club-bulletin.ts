@@ -9,4 +9,5 @@ export class ClubBulletin {
 	title: string;
 	content: string;
 	publish_time: string;
+	club_id: number;
 }

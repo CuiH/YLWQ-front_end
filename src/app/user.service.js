@@ -37,10 +37,15 @@ var UserService = (function () {
         }
     };
     UserService.prototype.saveToCookie = function (user) {
+        var expiresTime = new Date();
+        expiresTime.setTime(expiresTime.getTime() + 333333333);
+        var cookieOptions = {
+            expires: expiresTime
+        };
         this.cookieService.removeAll();
-        this.cookieService.put("current_user_id", user.id);
-        this.cookieService.put("current_username", user.username);
-        this.cookieService.put("current_user_token", user.token);
+        this.cookieService.put("current_user_id", user.id, cookieOptions);
+        this.cookieService.put("current_username", user.username, cookieOptions);
+        this.cookieService.put("current_user_token", user.token, cookieOptions);
     };
     UserService.prototype.getCurrentUsername = function () {
         return this.currentUsername;
@@ -56,6 +61,7 @@ var UserService = (function () {
     };
     UserService.prototype.logIn = function (user) {
         var _this = this;
+        $.showPreloader();
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Post,
             headers: new http_1.Headers({
@@ -72,8 +78,10 @@ var UserService = (function () {
             _this.currentUserToken = user.token;
             _this.loggedIn = true;
             _this.saveToCookie(user);
+            $.hidePreloader();
             return _this.getCurrentUsername();
-        });
+        })
+            .catch(this.handleError);
     };
     UserService.prototype.logOff = function () {
         this.cookieService.removeAll();
@@ -130,6 +138,7 @@ var UserService = (function () {
     UserService.prototype.handleError = function (err) {
         $.hidePreloader();
         $.alert(err.json().message);
+        return Promise.reject(err);
     };
     return UserService;
 }());

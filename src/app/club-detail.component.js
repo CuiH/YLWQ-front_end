@@ -33,7 +33,9 @@ var ClubDetailComponent = (function () {
         this.club = new club_1.Club();
         this.isMember = false;
         this.loggedIn = false;
+        this.isAdmin = false;
         this.clubBulletin = new club_bulletin_1.ClubBulletin();
+        this.clubMessages = [];
     }
     ClubDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -46,13 +48,14 @@ var ClubDetailComponent = (function () {
             if (_this.userService.isLoggedIn()) {
                 _this.loggedIn = true;
                 _this.checkingService.checkUserClubMap(_this.userService.getCurrentUserId(), _this.club.id)
-                    .then(function (result) { return _this.isMember = result; })
-                    .then(function () {
+                    .then(function (result) {
+                    _this.isMember = result;
                     if (_this.isMember) {
-                        return _this.clubService.getLatestClubBulletinById(_this.club.id);
+                        _this.clubService.getLatestClubBulletinById(_this.club.id).then(function (clubBulletin) { return _this.clubBulletin = clubBulletin; });
+                        _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) { return _this.isAdmin = result; });
+                        _this.clubService.getLatestThreeClubMessagesById(_this.club.id).then(function (clubMessages) { return _this.clubMessages = clubMessages; });
                     }
-                })
-                    .then(function (clubBulletin) { return _this.clubBulletin = clubBulletin; });
+                });
             }
         });
     };

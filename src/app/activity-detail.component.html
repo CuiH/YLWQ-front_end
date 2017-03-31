@@ -65,11 +65,11 @@
 			</li>
 		</ul>
 	</div>
-	<div *ngIf="loggedIn" class="list-block">
+
+	<div class="list-block">
 		<ul>
-			<li *ngIf="isMember"><a href="#" class="item-link list-button">查看所有成员</a></li>
-			<li *ngIf="isMember"><a href="#" class="item-link list-button">查看所有活动</a></li>
-			<li *ngIf="!isMember"><a href="#" class="item-link list-button">申请加入该群组</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/activity_participants', activity.id]">查看所有参与者</a></li>
+			<li *ngIf="!isParticipant"><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonTest}}</a></li>
 		</ul>
 	</div>
 

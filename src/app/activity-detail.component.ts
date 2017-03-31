@@ -16,6 +16,7 @@ import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
+import {CheckingService} from "./checking.service";
 
 declare let $: any;
 
@@ -30,12 +31,17 @@ export class ActivityDetailComponent implements OnInit {
 
 	private activity: Activity = new Activity();
 
+	private attendActivityButtonTest = "参与该活动";
+
+	private isParticipant = false;
+
 	constructor(
 		private location: Location,
 		private router: Router,
 		private activatedRoute: ActivatedRoute,
 		private activityService: ActivityService,
 		private userService: UserService,
+		private checkingService: CheckingService
 	) {
 
 	}
@@ -53,6 +59,11 @@ export class ActivityDetailComponent implements OnInit {
 			.switchMap((params: Params) => this.activityService.getActivityById(+params['id']))
 			.subscribe((activity) => {
 				this.activity = activity;
+
+				this.checkingService.checkUserActivityMap(this.userService.getCurrentUserId(), this.activity.id)
+					.then((result) => {
+						this.isParticipant = result;
+					})
 			});
 
 	}
@@ -77,5 +88,17 @@ export class ActivityDetailComponent implements OnInit {
 		if (!this.activity) return;
 
 		$.alert(this.activity.location, "地点");
+	}
+
+	attendActivity(): void {
+		this.attendActivityButtonTest = "处理中...";
+		this.activatedRoute.params
+			.switchMap((params: Params) => this.activityService.attendActivity(+params['id']))
+			.subscribe((activity) => {
+				$.alert("参与成功！");
+
+				this.isParticipant = true;
+				this.activity.participant_number += 1;
+			}, () => this.attendActivityButtonTest = "参与该活动");
 	}
 }

@@ -14,9 +14,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/toPromise");
+require("zepto");
+require("sm");
 var CheckingService = (function () {
     function CheckingService(http) {
         this.http = http;
+        $.init();
     }
     ;
     CheckingService.prototype.checkUserClubMap = function (userId, clubId) {
@@ -27,7 +30,35 @@ var CheckingService = (function () {
             .toPromise()
             .then(function (res) {
             return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
+    CheckingService.prototype.checkUserActivityMap = function (userId, activityId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
         });
+        return this.http.request('http://localhost:3000/api/checking/user_activity_map?user_id=' + userId + "&activity_id=" + activityId, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
+    CheckingService.prototype.checkUserClubMapAdmin = function (userId, clubId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://localhost:3000/api/checking/user_club_map_admin?user_id=' + userId + "&club_id=" + clubId, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
+    CheckingService.prototype.handleError = function (err) {
+        $.hidePreloader();
+        $.alert(err.json().message);
+        return Promise.reject(err);
     };
     return CheckingService;
 }());

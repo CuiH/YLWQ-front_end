@@ -11,6 +11,7 @@ import {User} from "./user";
 import {Club} from "./club";
 
 import {CookieService} from 'angular2-cookie/core';
+import { CookieOptionsArgs } from 'angular2-cookie/services/cookie-options-args.model';
 import {Activity} from "./activity";
 
 import "zepto";
@@ -50,10 +51,16 @@ export class UserService {
 	}
 
 	private saveToCookie(user: any): void {
+		const expiresTime = new Date();
+		expiresTime.setTime(expiresTime.getTime() + 333333333);
+		const cookieOptions: CookieOptionsArgs = {
+			expires: expiresTime
+		};
+
 		this.cookieService.removeAll();
-		this.cookieService.put("current_user_id", user.id);
-		this.cookieService.put("current_username", user.username);
-		this.cookieService.put("current_user_token", user.token);
+		this.cookieService.put("current_user_id", user.id, cookieOptions);
+		this.cookieService.put("current_username", user.username, cookieOptions);
+		this.cookieService.put("current_user_token", user.token, cookieOptions);
 	}
 
 	getCurrentUsername(): string {
@@ -73,6 +80,8 @@ export class UserService {
 	}
 
 	logIn(user: User): Promise<string> {
+		$.showPreloader();
+
 		let options = new RequestOptions({
 			method: RequestMethod.Post,
 			headers: new Headers({
@@ -92,8 +101,11 @@ export class UserService {
 
 				this.saveToCookie(user);
 
+				$.hidePreloader();
+
 				return this.getCurrentUsername();
 			})
+			.catch(this.handleError);
 	}
 
 	logOff(): void {
@@ -166,5 +178,7 @@ export class UserService {
 		$.hidePreloader();
 
 		$.alert(err.json().message);
+
+		return Promise.reject(err);
 	}
 }

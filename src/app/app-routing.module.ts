@@ -14,6 +14,8 @@ import {UserActivitiesComponent} from "./user-activities.component";
 import {ActivityDetailComponent} from "./activity-detail.component";
 import {ClubActivitiesComponent} from "./club-activities.component";
 import {ClubMembersComponent} from "./club-members.component";
+import {ActivityParticipantsComponent} from "./activity-participants.component";
+import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
 	{path: 'activity/:id', component: ActivityDetailComponent},
 	{path: 'club_activities/:club_id', component: ClubActivitiesComponent},
 	{path: 'club_members/:club_id', component: ClubMembersComponent},
+	{path: 'activity_participants/:activity_id', component: ActivityParticipantsComponent},
+	{path: 'create_club_bulletin/:club_id', component: CreateClubBulletinComponent},
 ];
 
 @NgModule({

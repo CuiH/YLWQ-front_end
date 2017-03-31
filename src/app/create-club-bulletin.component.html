@@ -1,0 +1,40 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">发布公告</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<form [formGroup]="clubBulletinForm">
+			<ul>
+				<li>
+					<div class="item-content">
+						<div class="item-media"><i class="icon icon-form-name"></i></div>
+						<div class="item-inner">
+							<div class="item-title label">标题</div>
+							<div class="item-input">
+								<input formControlName="title" maxlength="30" type="text" placeholder="Title">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-media"><i class="icon icon-form-comment"></i></div>
+						<div class="item-inner">
+							<div class="item-title label">内容</div>
+							<div class="item-input">
+								<textarea maxlength="200" formControlName="content" placeholder="Content"></textarea>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div *ngIf="!published" class="content-block">
+		<a (click)="onSubmit()" class="button button-big button-fill button-success">{{createClubBulletinButtonText}}</a>
+	</div>
+</div>

@@ -21,14 +21,18 @@ require("rxjs/add/operator/switchMap");
 require("rxjs/add/operator/toPromise");
 require("zepto");
 require("sm");
+var checking_service_1 = require("./checking.service");
 var ActivityDetailComponent = (function () {
-    function ActivityDetailComponent(location, router, activatedRoute, activityService, userService) {
+    function ActivityDetailComponent(location, router, activatedRoute, activityService, userService, checkingService) {
         this.location = location;
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.activityService = activityService;
         this.userService = userService;
+        this.checkingService = checkingService;
         this.activity = new activity_1.Activity();
+        this.attendActivityButtonTest = "参与该活动";
+        this.isParticipant = false;
     }
     ActivityDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -41,6 +45,10 @@ var ActivityDetailComponent = (function () {
             .switchMap(function (params) { return _this.activityService.getActivityById(+params['id']); })
             .subscribe(function (activity) {
             _this.activity = activity;
+            _this.checkingService.checkUserActivityMap(_this.userService.getCurrentUserId(), _this.activity.id)
+                .then(function (result) {
+                _this.isParticipant = result;
+            });
         });
     };
     ActivityDetailComponent.prototype.goBack = function () {
@@ -61,6 +69,17 @@ var ActivityDetailComponent = (function () {
             return;
         $.alert(this.activity.location, "地点");
     };
+    ActivityDetailComponent.prototype.attendActivity = function () {
+        var _this = this;
+        this.attendActivityButtonTest = "处理中...";
+        this.activatedRoute.params
+            .switchMap(function (params) { return _this.activityService.attendActivity(+params['id']); })
+            .subscribe(function (activity) {
+            $.alert("参与成功！");
+            _this.isParticipant = true;
+            _this.activity.participant_number += 1;
+        }, function () { return _this.attendActivityButtonTest = "参与该活动"; });
+    };
     return ActivityDetailComponent;
 }());
 ActivityDetailComponent = __decorate([
@@ -74,7 +93,8 @@ ActivityDetailComponent = __decorate([
         router_1.Router,
         router_1.ActivatedRoute,
         activity_service_1.ActivityService,
-        user_service_1.UserService])
+        user_service_1.UserService,
+        checking_service_1.CheckingService])
 ], ActivityDetailComponent);
 exports.ActivityDetailComponent = ActivityDetailComponent;
 //# sourceMappingURL=activity-detail.component.js.map

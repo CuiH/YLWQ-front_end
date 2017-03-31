@@ -14,9 +14,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/toPromise");
+var user_service_1 = require("./user.service");
 require("zepto");
 require("sm");
-var user_service_1 = require("./user.service");
 var ClubService = (function () {
     function ClubService(http, userService) {
         this.http = http;
@@ -81,9 +81,24 @@ var ClubService = (function () {
         })
             .catch(this.handleError);
     };
+    ClubService.prototype.getLatestThreeClubMessagesById = function (id) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+        });
+        return this.http.request('http://localhost:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.clubMessages;
+        })
+            .catch(this.handleError);
+    };
     ClubService.prototype.handleError = function (err) {
         $.hidePreloader();
         $.alert(err.json().message);
+        return Promise.reject(err);
     };
     return ClubService;
 }());

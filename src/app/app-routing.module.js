@@ -19,6 +19,8 @@ var user_activities_component_1 = require("./user-activities.component");
 var activity_detail_component_1 = require("./activity-detail.component");
 var club_activities_component_1 = require("./club-activities.component");
 var club_members_component_1 = require("./club-members.component");
+var activity_participants_component_1 = require("./activity-participants.component");
+var create_club_bulletin_component_1 = require("./create-club-bulletin.component");
 var routes = [
     { path: '', redirectTo: '/page_home', pathMatch: 'full' },
     { path: 'log_in', component: log_in_component_1.LogInComponent },
@@ -30,6 +32,8 @@ var routes = [
     { path: 'activity/:id', component: activity_detail_component_1.ActivityDetailComponent },
     { path: 'club_activities/:club_id', component: club_activities_component_1.ClubActivitiesComponent },
     { path: 'club_members/:club_id', component: club_members_component_1.ClubMembersComponent },
+    { path: 'activity_participants/:activity_id', component: activity_participants_component_1.ActivityParticipantsComponent },
+    { path: 'create_club_bulletin/:club_id', component: create_club_bulletin_component_1.CreateClubBulletinComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

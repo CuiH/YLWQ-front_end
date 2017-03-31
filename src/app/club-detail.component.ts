@@ -19,6 +19,7 @@ import "zepto";
 import "sm";
 import {User} from "./user";
 import {ClubBulletin} from "./club-bulletin";
+import {ClubMessage} from "./club-message";
 
 declare let $: any;
 
@@ -35,8 +36,10 @@ export class ClubDetailComponent implements OnInit {
 
 	private isMember = false;
 	private loggedIn = false;
+	private isAdmin = false;
 
 	private clubBulletin: ClubBulletin = new ClubBulletin();
+	private clubMessages: ClubMessage[] = [];
 
 	constructor(
 		private location: Location,
@@ -61,13 +64,15 @@ export class ClubDetailComponent implements OnInit {
 				if (this.userService.isLoggedIn()) {
 					this.loggedIn = true;
 					this.checkingService.checkUserClubMap(this.userService.getCurrentUserId(), this.club.id)
-						.then(result => this.isMember = result)
-						.then(() => {
+						.then((result) => {
+							this.isMember = result;
+
 							if (this.isMember) {
-								return this.clubService.getLatestClubBulletinById(this.club.id);
+								this.clubService.getLatestClubBulletinById(this.club.id).then(clubBulletin => this.clubBulletin = clubBulletin);
+								this.checkingService.checkUserClubMapAdmin(this.userService.getCurrentUserId(), this.club.id).then(result => this.isAdmin = result);
+								this.clubService.getLatestThreeClubMessagesById(this.club.id).then(clubMessages => this.clubMessages = clubMessages);
 							}
 						})
-						.then(clubBulletin => this.clubBulletin = clubBulletin);
 				}
 			});
 	}

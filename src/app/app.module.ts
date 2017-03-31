@@ -18,6 +18,8 @@ import {UserActivitiesComponent} from "./user-activities.component";
 import {ActivityDetailComponent} from "./activity-detail.component";
 import {ClubActivitiesComponent} from "./club-activities.component";
 import {ClubMembersComponent} from "./club-members.component";
+import {ActivityParticipantsComponent} from "./activity-participants.component";
+import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import {ClubMembersComponent} from "./club-members.component";
 		ActivityDetailComponent,
 		ClubActivitiesComponent,
 		ClubMembersComponent,
-
+		ActivityParticipantsComponent,
+		CreateClubBulletinComponent
 	],
 
 	providers: [

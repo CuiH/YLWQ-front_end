@@ -3,3 +3,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.item-subtitle {
+    font-size: .65rem;
+    color: #5f646e;
+}
+
+.change-color {
+    color: #3d4145;
+}

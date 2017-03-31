@@ -1,0 +1,19 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">所有成员</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<ul>
+			<li *ngFor="let participant of participants" class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">{{participant.username}}</div>
+					<div class="item-after">{{participant.attend_time | date}} 参加</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
