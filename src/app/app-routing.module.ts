@@ -16,6 +16,9 @@ import {ClubActivitiesComponent} from "./club-activities.component";
 import {ClubMembersComponent} from "./club-members.component";
 import {ActivityParticipantsComponent} from "./activity-participants.component";
 import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
+import {PageMessagesComponent} from "./page-messages.component";
+import {ApplicationDetailComponent} from "./application-detail.component";
+import {CreateActivityComponent} from "./create-activity.component";
 
 
 const routes: Routes = [
@@ -23,6 +26,7 @@ const routes: Routes = [
 	{path: 'log_in', component: LogInComponent},
 	{path: 'page_my', component: PageMyComponent},
 	{path: 'page_home', component: PageHomeComponent},
+	{path: 'page_messages', component: PageMessagesComponent},
 	{path: 'clubs', component: UserClubsComponent},
 	{path: 'club/:id', component: ClubDetailComponent},
 	{path: 'activities', component: UserActivitiesComponent},
@@ -31,6 +35,8 @@ const routes: Routes = [
 	{path: 'club_members/:club_id', component: ClubMembersComponent},
 	{path: 'activity_participants/:activity_id', component: ActivityParticipantsComponent},
 	{path: 'create_club_bulletin/:club_id', component: CreateClubBulletinComponent},
+	{path: 'application/:id', component: ApplicationDetailComponent},
+	{path: 'create_activity/:club_id', component: CreateActivityComponent},
 ];
 
 @NgModule({

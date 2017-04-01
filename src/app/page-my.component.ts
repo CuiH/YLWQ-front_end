@@ -35,4 +35,3 @@ export class PageMyComponent implements OnInit {
 		this.router.navigate(['/page_home']);
 	}
 }
-

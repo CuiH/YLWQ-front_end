@@ -24,8 +24,8 @@
 								<!--<div class="item-title">标题</div>-->
 							<!--</div>-->
 							<div class="item-subtitle">简介：{{activity.brief_intro}}</div>
-							<div class="item-subtitle">开始时间：{{activity.start_time | date}}</div>
-							<div class="item-subtitle">结束时间：{{activity.end_time | date}}</div>
+							<div class="item-subtitle">开始时间：{{activity.start_time | date: 'short'}}</div>
+							<div class="item-subtitle">结束时间：{{activity.end_time | date: 'short'}}</div>
 							<div class="item-subtitle">地点：{{activity.location}}</div>
 						</div>
 					</li>
@@ -33,8 +33,8 @@
 			</div>
 		</div>
 		<div class="card-footer">
-			<span *ngIf="isFirst == 'active'">{{activity.attend_time| date}} 参加</span>
-			<span *ngIf="isSecond == 'active'">{{activity.create_time| date}} 发起</span>
+			<span *ngIf="isFirst == 'active'">{{activity.attend_time| date: 'short'}} 参加</span>
+			<span *ngIf="isSecond == 'active'">{{activity.create_time| date: 'short'}} 发起</span>
 			<span>共 {{activity.participant_number}} 人</span>
 		</div>
 	</div>

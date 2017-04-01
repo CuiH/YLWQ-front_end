@@ -7,7 +7,6 @@ import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 
 import {UserService} from "./user.service";
-import {Club} from "./club";
 import {ClubBulletin} from "./club-bulletin";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {ClubBulletinService} from "./club-bulletin-service";
@@ -28,11 +27,8 @@ export class CreateClubBulletinComponent implements OnInit {
 
 	private clubBulletinForm: FormGroup;
 
-	private clubBulletin: ClubBulletin;
-
 	private createClubBulletinButtonText = "发布";
-
-	private published = false;
+	private isPublished = "";
 
 	constructor(
 		private userService: UserService,
@@ -86,7 +82,8 @@ export class CreateClubBulletinComponent implements OnInit {
 				})
 				.subscribe(() => {
 					$.alert("发布成功！");
-					this.published = true;
+					this.isPublished = "disabled";
+					this.createClubBulletinButtonText = "已发布";
 				});
 		}
 

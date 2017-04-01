@@ -34,7 +34,7 @@ var ClubBulletinService = (function () {
             }),
             body: 'title=' + clubBulletin.title + '&content=' + clubBulletin.content + '&club_id=' + clubBulletin.club_id,
         });
-        return this.http.request('http://localhost:3000/api/club_bulletin/create', options)
+        return this.http.request('http://172.18.43.152:3000/api/club_bulletin/create', options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();

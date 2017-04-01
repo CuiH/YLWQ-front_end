@@ -26,6 +26,30 @@ var ActivityService = (function () {
         $.init();
     }
     ;
+    ActivityService.prototype.createActivity = function (activity) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+            body: 'club_id=' + activity.club_id +
+                '&name=' + activity.name +
+                '&start_time=' + activity.start_time +
+                '&end_time=' + activity.end_time +
+                '&location=' + activity.location +
+                '&brief_intro=' + activity.brief_intro +
+                '&note=' + activity.note,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity/create', options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            return true;
+        })
+            .catch(this.handleError);
+    };
     ActivityService.prototype.getActivityById = function (id) {
         $.showPreloader();
         var options = new http_1.RequestOptions({
@@ -34,7 +58,7 @@ var ActivityService = (function () {
                 'x-access-token': this.userService.getCurrentUserToken()
             }),
         });
-        return this.http.request('http://localhost:3000/api/activity/' + id, options)
+        return this.http.request('http://172.18.43.152:3000/api/activity/' + id, options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
@@ -50,7 +74,7 @@ var ActivityService = (function () {
                 'x-access-token': this.userService.getCurrentUserToken()
             }),
         });
-        return this.http.request('http://localhost:3000/api/activity/get_all_participants?activity_id=' + id, options)
+        return this.http.request('http://172.18.43.152:3000/api/activity/get_all_participants?activity_id=' + id, options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
@@ -68,7 +92,7 @@ var ActivityService = (function () {
             }),
             body: 'activity_id=' + activityId,
         });
-        return this.http.request('http://localhost:3000/api/activity/attend', options)
+        return this.http.request('http://172.18.43.152:3000/api/activity/attend', options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();

@@ -27,7 +27,7 @@ export class CheckingService {
 			method: RequestMethod.Get,
 		});
 
-		return this.http.request('http://localhost:3000/api/checking/user_club_map?user_id=' + userId + "&club_id=" + clubId, options)
+		return this.http.request('http://172.18.43.152:3000/api/checking/user_club_map?user_id=' + userId + "&club_id=" + clubId, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.result;
@@ -40,7 +40,7 @@ export class CheckingService {
 			method: RequestMethod.Get,
 		});
 
-		return this.http.request('http://localhost:3000/api/checking/user_activity_map?user_id=' + userId + "&activity_id=" + activityId, options)
+		return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_map?user_id=' + userId + "&activity_id=" + activityId, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.result;
@@ -53,7 +53,20 @@ export class CheckingService {
 			method: RequestMethod.Get,
 		});
 
-		return this.http.request('http://localhost:3000/api/checking/user_club_map_admin?user_id=' + userId + "&club_id=" + clubId, options)
+		return this.http.request('http://172.18.43.152:3000/api/checking/user_club_map_admin?user_id=' + userId + "&club_id=" + clubId, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.result;
+			})
+			.catch(this.handleError);
+	}
+
+	checkApplicationUnread(userId: number, clubId: number): Promise<boolean> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/checking/application_unread?user_id=' + userId + "&club_id=" + clubId, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.result;

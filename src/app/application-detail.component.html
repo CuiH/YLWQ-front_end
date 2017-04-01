@@ -1,0 +1,48 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">申请详情</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title"></div>
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">申请人</div>
+					<div class="item-after">{{application.applicant_username}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" [routerLink]="['/club', application.club_id]">
+				<div class="item-inner">
+					<div class="item-title">申请群</div>
+					<div class="item-after">{{application.club_name}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">创建时间</div>
+					<div class="item-after">{{application.create_time | date}}</div>
+				</div>
+			</li>
+			<li (click)="showMessage()" class="item-content item-link">
+				<div class="item-inner">
+					<div class="item-title">附带信息</div>
+					<div class="item-after">{{application.message}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div *ngIf="application.status == 'U'" class="content-block">
+		<div class="row">
+			<div class="col-50"><button (click)="onReject()" class="button button-big button-fill button-danger">拒绝</button></div>
+			<div class="col-50"><button (click)="onAccept()" class="button button-big button-fill button-success">同意</button></div>
+		</div>
+	</div>
+	<div *ngIf="application.status != 'U'" class="content-block">
+		<button disabled="disabled" class="set-width button button-big button-fill button-success disabled">已被处理</button>
+	</div>
+</div>

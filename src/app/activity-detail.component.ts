@@ -31,7 +31,7 @@ export class ActivityDetailComponent implements OnInit {
 
 	private activity: Activity = new Activity();
 
-	private attendActivityButtonTest = "参与该活动";
+	private attendActivityButtonText = "参与该活动";
 
 	private isParticipant = false;
 
@@ -65,7 +65,6 @@ export class ActivityDetailComponent implements OnInit {
 						this.isParticipant = result;
 					})
 			});
-
 	}
 
 	goBack(): void {
@@ -91,7 +90,7 @@ export class ActivityDetailComponent implements OnInit {
 	}
 
 	attendActivity(): void {
-		this.attendActivityButtonTest = "处理中...";
+		this.attendActivityButtonText = "处理中...";
 		this.activatedRoute.params
 			.switchMap((params: Params) => this.activityService.attendActivity(+params['id']))
 			.subscribe((activity) => {
@@ -99,6 +98,6 @@ export class ActivityDetailComponent implements OnInit {
 
 				this.isParticipant = true;
 				this.activity.participant_number += 1;
-			}, () => this.attendActivityButtonTest = "参与该活动");
+			}, () => this.attendActivityButtonText = "参与该活动");
 	}
 }

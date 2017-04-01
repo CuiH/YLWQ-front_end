@@ -12,3 +12,11 @@
 .change-color {
     color: #3d4145;
 }
+
+.set-width {
+    width: 100%;
+}
+
+.set-margin {
+    margin-top: 0.8rem;
+}

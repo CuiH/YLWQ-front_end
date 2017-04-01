@@ -15,7 +15,7 @@
 						<div class="item-inner">
 							<div class="item-title label">标题</div>
 							<div class="item-input">
-								<input formControlName="title" maxlength="30" type="text" placeholder="Title">
+								<input formControlName="title" maxlength="30" type="text" placeholder="最多30字">
 							</div>
 						</div>
 					</div>
@@ -26,7 +26,7 @@
 						<div class="item-inner">
 							<div class="item-title label">内容</div>
 							<div class="item-input">
-								<textarea maxlength="200" formControlName="content" placeholder="Content"></textarea>
+								<textarea maxlength="200" formControlName="content" placeholder="最多200字"></textarea>
 							</div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 			</ul>
 		</form>
 	</div>
-	<div *ngIf="!published" class="content-block">
-		<a (click)="onSubmit()" class="button button-big button-fill button-success">{{createClubBulletinButtonText}}</a>
+	<div class="content-block">
+		<button (click)="onSubmit()" class="set-width button button-big button-fill button-success" [ngClass]="isPublished" disabled="{{isPublished}}">{{createClubBulletinButtonText}}</button>
 	</div>
 </div>

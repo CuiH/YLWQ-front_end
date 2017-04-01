@@ -23,19 +23,25 @@ require("rxjs/add/operator/toPromise");
 require("zepto");
 require("sm");
 var club_bulletin_1 = require("./club-bulletin");
+var application_service_1 = require("./application.service");
 var ClubDetailComponent = (function () {
-    function ClubDetailComponent(location, activatedRoute, clubService, userService, checkingService) {
+    function ClubDetailComponent(location, activatedRoute, clubService, userService, checkingService, applicationService) {
         this.location = location;
         this.activatedRoute = activatedRoute;
         this.clubService = clubService;
         this.userService = userService;
         this.checkingService = checkingService;
+        this.applicationService = applicationService;
         this.club = new club_1.Club();
         this.isMember = false;
         this.loggedIn = false;
         this.isAdmin = false;
+        this.isClicked = false;
+        this.isApplied = "";
         this.clubBulletin = new club_bulletin_1.ClubBulletin();
         this.clubMessages = [];
+        this.applicationMessage = "";
+        this.applyButtonText = "发送申请";
     }
     ClubDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -55,6 +61,14 @@ var ClubDetailComponent = (function () {
                         _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) { return _this.isAdmin = result; });
                         _this.clubService.getLatestThreeClubMessagesById(_this.club.id).then(function (clubMessages) { return _this.clubMessages = clubMessages; });
                     }
+                    else {
+                        _this.checkingService.checkApplicationUnread(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) {
+                            if (result) {
+                                _this.isApplied = "disabled";
+                                _this.applyButtonText = "已发送申请";
+                            }
+                        });
+                    }
                 });
             }
         });
@@ -67,6 +81,19 @@ var ClubDetailComponent = (function () {
             return;
         $.alert(this.club.brief_intro, "简介");
     };
+    ClubDetailComponent.prototype.showForm = function () {
+        this.isClicked = true;
+    };
+    ClubDetailComponent.prototype.onApply = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .switchMap(function (params) { return _this.applicationService.createApplication(+params['id'], _this.applicationMessage); })
+            .subscribe(function () {
+            _this.applyButtonText = "已发送申请";
+            _this.isApplied = "disabled";
+            $.alert("发送成功");
+        });
+    };
     return ClubDetailComponent;
 }());
 ClubDetailComponent = __decorate([
@@ -74,13 +101,17 @@ ClubDetailComponent = __decorate([
         selector: 'club-detail',
         templateUrl: './club-detail.component.html',
         styleUrls: ['./club-detail.component.css'],
-        providers: [club_service_1.ClubService]
+        providers: [
+            club_service_1.ClubService,
+            application_service_1.ApplicationService
+        ]
     }),
     __metadata("design:paramtypes", [common_1.Location,
         router_1.ActivatedRoute,
         club_service_1.ClubService,
         user_service_1.UserService,
-        checking_service_1.CheckingService])
+        checking_service_1.CheckingService,
+        application_service_1.ApplicationService])
 ], ClubDetailComponent);
 exports.ClubDetailComponent = ClubDetailComponent;
 //# sourceMappingURL=club-detail.component.js.map

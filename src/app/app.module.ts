@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import {NgModule, LOCALE_ID}      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
@@ -20,6 +20,9 @@ import {ClubActivitiesComponent} from "./club-activities.component";
 import {ClubMembersComponent} from "./club-members.component";
 import {ActivityParticipantsComponent} from "./activity-participants.component";
 import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
+import {PageMessagesComponent} from "./page-messages.component";
+import {ApplicationDetailComponent} from "./application-detail.component";
+import {CreateActivityComponent} from "./create-activity.component";
 
 
 @NgModule({
@@ -43,10 +46,14 @@ import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 		ClubActivitiesComponent,
 		ClubMembersComponent,
 		ActivityParticipantsComponent,
-		CreateClubBulletinComponent
+		CreateClubBulletinComponent,
+		PageMessagesComponent,
+		ApplicationDetailComponent,
+		CreateActivityComponent
 	],
 
 	providers: [
+		{ provide: LOCALE_ID, useValue: "zh-CN" },
 		UserService,
 		CheckingService,
 		CookieService

@@ -46,48 +46,78 @@
 		</ul>
 	</div>
 
-	<div class="content-block-title">
-		群公告
-		<a *ngIf="isAdmin" [routerLink]="['/create_club_bulletin', club.id]" class="pull-right">发布</a>
-	</div>
-	<div *ngIf="!(clubBulletin && clubBulletin.id)" class="card">
-		<div class="card-header">暂无</div>
-	</div>
-	<div *ngIf="clubBulletin && clubBulletin.id" class="card">
-		<div class="card-header">{{clubBulletin.title}}</div>
-		<div class="card-content">
-			<div class="card-content-inner">{{clubBulletin.content}}</div>
+	<div *ngIf="isMember">
+		<div class="content-block-title">
+			群公告
+			<a *ngIf="isAdmin" [routerLink]="['/create_club_bulletin', club.id]" class="pull-right">发布</a>
 		</div>
-		<div class="card-footer">{{clubBulletin.publisher_username}} 发布于 {{clubBulletin.publish_time | date}}</div>
+		<div *ngIf="!(clubBulletin && clubBulletin.id)" class="card">
+			<div class="card-header">暂无</div>
+		</div>
+		<div *ngIf="clubBulletin && clubBulletin.id" class="card">
+			<div class="card-header">{{clubBulletin.title}}</div>
+			<div class="card-content">
+				<div class="card-content-inner">{{clubBulletin.content}}</div>
+			</div>
+			<div class="card-footer">{{clubBulletin.publisher_username}} 发布于 {{clubBulletin.publish_time | date}}</div>
+		</div>
+
+		<div class="content-block-title">群动态</div>
+		<div *ngIf="clubMessages.length == 0" class="card">
+			<div class="card-header">暂无</div>
+		</div>
+		<div class="card">
+			<div class="list-block media-list">
+				<ul>
+					<li *ngFor="let message of clubMessages">
+						<div class="item item-content change-color">
+							<div class="item-inner">
+								<div *ngIf="message.type == 'A'" class="item-text">{{message.operator_username}} 发布了 <a [routerLink]="['/activity', message.target_id]">新活动</a></div>
+								<div *ngIf="message.type == 'C'" class="item-text">{{message.operator_username}} 创建了群组</div>
+								<div *ngIf="message.type == 'B'" class="item-text">{{message.operator_username}} 发布了 <a>新公告</a></div>
+								<div *ngIf="message.type == 'E'" class="item-text">{{message.target_name}} 加入了群组</div>
+								<div class="item-subtitle">{{message.create_time | date}}</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
-	<div class="content-block-title">群动态</div>
-	<div *ngIf="clubMessages.length == 0" class="card">
-		<div class="card-header">暂无</div>
+	<div *ngIf="loggedIn && isMember" class="list-block">
+		<ul>
+			<li><a class="item-link list-button" [routerLink]="['/club_members', club.id]">查看所有成员</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/club_activities', club.id]">查看所有活动</a></li>
+		</ul>
 	</div>
-	<div class="card">
-		<div class="list-block media-list">
-			<ul>
-				<li *ngFor="let message of clubMessages">
-					<div class="item item-content change-color">
-						<div class="item-inner">
-							<div *ngIf="message.type == 'A'" class="item-text">{{message.operator_username}} 发布了 <a [routerLink]="['/activity', message.target_id]">新活动</a></div>
-							<div *ngIf="message.type == 'C'" class="item-text">{{message.operator_username}} 创建了群组</div>
-							<div *ngIf="message.type == 'B'" class="item-text">{{message.operator_username}} 发布了 <a>新公告</a></div>
-							<div *ngIf="message.type == 'E'" class="item-text">{{message.target_name}} 加入了群组</div>
-							<div class="item-subtitle">{{message.create_time | date}}</div>
+
+	<div *ngIf="loggedIn && isMember" class="list-block">
+		<ul>
+			<li><a class="item-link list-button" [routerLink]="['/create_activity', club.id]">发起新的活动</a></li>
+		</ul>
+	</div>
+
+	<div *ngIf="loggedIn && !isMember && !isClicked" class="content-block">
+		<button *ngIf="!isMember" [ngClass]="isApplied" (click)="showForm()" disabled="{{isApplied}}" class="set-width button button-big button-fill button-success">申请加入该群组</button>
+	</div>
+
+	<div *ngIf="isClicked" class="list-block">
+		<ul>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-comment"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">申请说明</div>
+						<div class="item-input">
+							<textarea [(ngModel)]="applicationMessage" maxlength="50" placeholder="最多50字"></textarea>
 						</div>
 					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<div *ngIf="loggedIn" class="list-block">
-		<ul>
-			<li *ngIf="isMember"><a class="item-link list-button" [routerLink]="['/club_members', club.id]">查看所有成员</a></li>
-			<li *ngIf="isMember"><a class="item-link list-button" [routerLink]="['/club_activities', club.id]">查看所有活动</a></li>
-			<li *ngIf="!isMember"><a class="item-link list-button">申请加入该群组</a></li>
+				</div>
+			</li>
 		</ul>
+		<div class="set-margin content-block">
+			<button [ngClass]="isApplied" (click)="onApply()" disabled="{{isApplied}}" class="set-width button button-big button-fill button-success">{{applyButtonText}}</button>
+		</div>
 	</div>
 </div>

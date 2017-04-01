@@ -69,7 +69,7 @@ var UserService = (function () {
             }),
             body: 'username=' + user.username + '&password=' + user.password,
         });
-        return this.http.request('http://localhost:3000/api/user/log_in', options)
+        return this.http.request('http://172.18.43.152:3000/api/user/log_in', options)
             .toPromise()
             .then(function (res) {
             var user = res.json().data;
@@ -95,7 +95,7 @@ var UserService = (function () {
                 'x-access-token': this.currentUserToken
             }),
         });
-        return this.http.request('http://localhost:3000/api/user/get_all_clubs', options)
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_clubs', options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
@@ -111,7 +111,7 @@ var UserService = (function () {
                 'x-access-token': this.currentUserToken
             }),
         });
-        return this.http.request('http://localhost:3000/api/user/get_all_participated_activities', options)
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_participated_activities', options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
@@ -127,11 +127,27 @@ var UserService = (function () {
                 'x-access-token': this.currentUserToken
             }),
         });
-        return this.http.request('http://localhost:3000/api/user/get_all_sponsored_activities', options)
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_sponsored_activities', options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
             return res.json().data.activities;
+        })
+            .catch(this.handleError);
+    };
+    UserService.prototype.getAllUserNotifications = function () {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.currentUserToken
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications', options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            return res.json().data.notifications;
         })
             .catch(this.handleError);
     };

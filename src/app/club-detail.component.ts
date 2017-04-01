@@ -17,9 +17,9 @@ import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
-import {User} from "./user";
 import {ClubBulletin} from "./club-bulletin";
 import {ClubMessage} from "./club-message";
+import {ApplicationService} from "./application.service";
 
 declare let $: any;
 
@@ -28,7 +28,10 @@ declare let $: any;
 	selector: 'club-detail',
 	templateUrl: './club-detail.component.html',
 	styleUrls: ['./club-detail.component.css'],
-	providers: [ClubService]
+	providers: [
+		ClubService,
+		ApplicationService
+	]
 })
 export class ClubDetailComponent implements OnInit {
 
@@ -37,16 +40,23 @@ export class ClubDetailComponent implements OnInit {
 	private isMember = false;
 	private loggedIn = false;
 	private isAdmin = false;
+	private isClicked = false;
+	private isApplied = "";
 
 	private clubBulletin: ClubBulletin = new ClubBulletin();
 	private clubMessages: ClubMessage[] = [];
+
+	private applicationMessage = "";
+
+	private applyButtonText = "发送申请";
 
 	constructor(
 		private location: Location,
 		private activatedRoute: ActivatedRoute,
 		private clubService: ClubService,
 	    private userService: UserService,
-	    private checkingService: CheckingService
+	    private checkingService: CheckingService,
+	    private applicationService: ApplicationService
 	) {
 
 	}
@@ -71,6 +81,13 @@ export class ClubDetailComponent implements OnInit {
 								this.clubService.getLatestClubBulletinById(this.club.id).then(clubBulletin => this.clubBulletin = clubBulletin);
 								this.checkingService.checkUserClubMapAdmin(this.userService.getCurrentUserId(), this.club.id).then(result => this.isAdmin = result);
 								this.clubService.getLatestThreeClubMessagesById(this.club.id).then(clubMessages => this.clubMessages = clubMessages);
+							} else {
+								this.checkingService.checkApplicationUnread(this.userService.getCurrentUserId(), this.club.id).then((result) => {
+									if (result) {
+										this.isApplied = "disabled";
+										this.applyButtonText = "已发送申请";
+									}
+								});
 							}
 						})
 				}
@@ -85,6 +102,20 @@ export class ClubDetailComponent implements OnInit {
 		if (!this.club) return;
 
 		$.alert(this.club.brief_intro, "简介");
+	}
+
+	private showForm(): void {
+		this.isClicked = true;
+	}
+
+	private onApply(): void {
+		this.activatedRoute.params
+			.switchMap((params: Params) => this.applicationService.createApplication(+params['id'], this.applicationMessage))
+			.subscribe(() => {
+				this.applyButtonText = "已发送申请";
+				this.isApplied = "disabled";
+				$.alert("发送成功");
+			});
 	}
 
 }

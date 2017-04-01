@@ -21,11 +21,15 @@ var club_activities_component_1 = require("./club-activities.component");
 var club_members_component_1 = require("./club-members.component");
 var activity_participants_component_1 = require("./activity-participants.component");
 var create_club_bulletin_component_1 = require("./create-club-bulletin.component");
+var page_messages_component_1 = require("./page-messages.component");
+var application_detail_component_1 = require("./application-detail.component");
+var create_activity_component_1 = require("./create-activity.component");
 var routes = [
     { path: '', redirectTo: '/page_home', pathMatch: 'full' },
     { path: 'log_in', component: log_in_component_1.LogInComponent },
     { path: 'page_my', component: page_my_component_1.PageMyComponent },
     { path: 'page_home', component: page_home_component_1.PageHomeComponent },
+    { path: 'page_messages', component: page_messages_component_1.PageMessagesComponent },
     { path: 'clubs', component: user_clubs_component_1.UserClubsComponent },
     { path: 'club/:id', component: club_detail_component_1.ClubDetailComponent },
     { path: 'activities', component: user_activities_component_1.UserActivitiesComponent },
@@ -34,6 +38,8 @@ var routes = [
     { path: 'club_members/:club_id', component: club_members_component_1.ClubMembersComponent },
     { path: 'activity_participants/:activity_id', component: activity_participants_component_1.ActivityParticipantsComponent },
     { path: 'create_club_bulletin/:club_id', component: create_club_bulletin_component_1.CreateClubBulletinComponent },
+    { path: 'application/:id', component: application_detail_component_1.ApplicationDetailComponent },
+    { path: 'create_activity/:club_id', component: create_activity_component_1.CreateActivityComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

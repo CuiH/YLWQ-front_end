@@ -36,13 +36,13 @@
 			<li class="item-content">
 				<div class="item-inner">
 					<div class="item-title">开始时间</div>
-					<div class="item-after">{{activity.start_time | date}}</div>
+					<div class="item-after">{{activity.start_time | date: 'short'}}</div>
 				</div>
 			</li>
 			<li class="item-content">
 				<div class="item-inner">
 					<div class="item-title">结束时间</div>
-					<div class="item-after">{{activity.end_time | date}}</div>
+					<div class="item-after">{{activity.end_time | date: 'short'}}</div>
 				</div>
 			</li>
 			<li class="item-content item-link" (click)="showNote()">
@@ -69,7 +69,7 @@
 	<div class="list-block">
 		<ul>
 			<li><a class="item-link list-button" [routerLink]="['/activity_participants', activity.id]">查看所有参与者</a></li>
-			<li *ngIf="!isParticipant"><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonTest}}</a></li>
+			<li *ngIf="!isParticipant"><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
 		</ul>
 	</div>
 

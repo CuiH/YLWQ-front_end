@@ -31,7 +31,7 @@ var ActivityDetailComponent = (function () {
         this.userService = userService;
         this.checkingService = checkingService;
         this.activity = new activity_1.Activity();
-        this.attendActivityButtonTest = "参与该活动";
+        this.attendActivityButtonText = "参与该活动";
         this.isParticipant = false;
     }
     ActivityDetailComponent.prototype.ngOnInit = function () {
@@ -71,14 +71,14 @@ var ActivityDetailComponent = (function () {
     };
     ActivityDetailComponent.prototype.attendActivity = function () {
         var _this = this;
-        this.attendActivityButtonTest = "处理中...";
+        this.attendActivityButtonText = "处理中...";
         this.activatedRoute.params
             .switchMap(function (params) { return _this.activityService.attendActivity(+params['id']); })
             .subscribe(function (activity) {
             $.alert("参与成功！");
             _this.isParticipant = true;
             _this.activity.participant_number += 1;
-        }, function () { return _this.attendActivityButtonTest = "参与该活动"; });
+        }, function () { return _this.attendActivityButtonText = "参与该活动"; });
     };
     return ActivityDetailComponent;
 }());

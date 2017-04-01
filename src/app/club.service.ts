@@ -37,7 +37,7 @@ export class ClubService {
 			method: RequestMethod.Get,
 		});
 
-		return this.http.request('http://localhost:3000/api/club/' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club/' + id, options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
@@ -57,7 +57,7 @@ export class ClubService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/club/get_all_activities?club_id=' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club/get_all_activities?club_id=' + id, options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
@@ -75,7 +75,7 @@ export class ClubService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/club/get_all_members?club_id=' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club/get_all_members?club_id=' + id, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.members as User[];
@@ -91,7 +91,7 @@ export class ClubService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/club_bulletin/get_latest_one?club_id=' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club_bulletin/get_latest_one?club_id=' + id, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.clubBulletin as ClubBulletin;
@@ -107,7 +107,7 @@ export class ClubService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.clubMessages as ClubMessage[];

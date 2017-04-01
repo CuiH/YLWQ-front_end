@@ -28,7 +28,7 @@ var CreateClubBulletinComponent = (function () {
         this.location = location;
         this.router = router;
         this.createClubBulletinButtonText = "发布";
-        this.published = false;
+        this.isPublished = "";
         this.formFields = {
             title: '',
             content: ''
@@ -78,7 +78,8 @@ var CreateClubBulletinComponent = (function () {
             })
                 .subscribe(function () {
                 $.alert("发布成功！");
-                _this.published = true;
+                _this.isPublished = "disabled";
+                _this.createClubBulletinButtonText = "已发布";
             });
         }
         this.createClubBulletinButtonText = "发布";

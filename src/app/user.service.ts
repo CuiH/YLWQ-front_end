@@ -16,6 +16,7 @@ import {Activity} from "./activity";
 
 import "zepto";
 import "sm";
+import {Notification} from "./notification";
 
 declare let $: any;
 
@@ -90,7 +91,7 @@ export class UserService {
 			body: 'username=' + user.username + '&password=' + user.password,
 		});
 
-		return this.http.request('http://localhost:3000/api/user/log_in', options)
+		return this.http.request('http://172.18.43.152:3000/api/user/log_in', options)
 			.toPromise()
 			.then((res) => {
 				const user = res.json().data;
@@ -124,7 +125,7 @@ export class UserService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/user/get_all_clubs', options)
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_clubs', options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
@@ -144,7 +145,7 @@ export class UserService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/user/get_all_participated_activities', options)
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_participated_activities', options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
@@ -164,12 +165,32 @@ export class UserService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/user/get_all_sponsored_activities', options)
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_sponsored_activities', options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
 
 				return res.json().data.activities as Activity[];
+			})
+			.catch(this.handleError);
+	}
+
+	getAllUserNotifications(): Promise<Notification[]> {
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.currentUserToken
+			}),
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications', options)
+			.toPromise()
+			.then((res) => {
+				$.hidePreloader();
+
+				return res.json().data.notifications as Notification[];
 			})
 			.catch(this.handleError);
 	}
