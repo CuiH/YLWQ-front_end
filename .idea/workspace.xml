@@ -1,53 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/app/update-user-detail.component.html" line="39" />
+    <bookmark url="file://$PROJECT_DIR$/src/app/update-user-detail.component.html" line="36" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24fe3ae5-1d4a-43d8-856b-8a93d33a9c33" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/club-messages.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/club-messages.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/club-messages.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-club.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-club.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-club.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/user-detail.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/user-detail.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/user-detail.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/user-detail.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/activity-bill-item.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/activity-bill-participant-payment.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/activity-bill.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/activity-bill.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-activity-bill.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-activity-bill.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/create-activity-bill.component.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/user-messages.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/user-messages.component.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test1.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity-detail.component.css" afterPath="$PROJECT_DIR$/src/app/activity-detail.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity-detail.component.html" afterPath="$PROJECT_DIR$/src/app/activity-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity-detail.component.js" afterPath="$PROJECT_DIR$/src/app/activity-detail.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity-detail.component.js.map" afterPath="$PROJECT_DIR$/src/app/activity-detail.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/activity-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity.js.map" afterPath="$PROJECT_DIR$/src/app/activity.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity.service.js" afterPath="$PROJECT_DIR$/src/app/activity.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity.service.js.map" afterPath="$PROJECT_DIR$/src/app/activity.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity.service.ts" afterPath="$PROJECT_DIR$/src/app/activity.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activity.ts" afterPath="$PROJECT_DIR$/src/app/activity.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app-routing.module.js" afterPath="$PROJECT_DIR$/src/app/app-routing.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app-routing.module.js.map" afterPath="$PROJECT_DIR$/src/app/app-routing.module.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js.map" afterPath="$PROJECT_DIR$/src/app/app.module.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/application.service.js" afterPath="$PROJECT_DIR$/src/app/application.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/application.service.js.map" afterPath="$PROJECT_DIR$/src/app/application.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/application.service.ts" afterPath="$PROJECT_DIR$/src/app/application.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/checking.service.js" afterPath="$PROJECT_DIR$/src/app/checking.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/checking.service.js.map" afterPath="$PROJECT_DIR$/src/app/checking.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/checking.service.ts" afterPath="$PROJECT_DIR$/src/app/checking.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club-detail.component.html" afterPath="$PROJECT_DIR$/src/app/club-detail.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club-detail.component.js" afterPath="$PROJECT_DIR$/src/app/club-detail.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club-detail.component.js.map" afterPath="$PROJECT_DIR$/src/app/club-detail.component.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/club-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club.service.js" afterPath="$PROJECT_DIR$/src/app/club.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club.service.js.map" afterPath="$PROJECT_DIR$/src/app/club.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club.service.ts" afterPath="$PROJECT_DIR$/src/app/club.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/club-messages.component.html" afterPath="$PROJECT_DIR$/src/app/club-messages.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-activity.component.js" afterPath="$PROJECT_DIR$/src/app/create-activity.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-activity.component.js.map" afterPath="$PROJECT_DIR$/src/app/create-activity.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-activity.component.ts" afterPath="$PROJECT_DIR$/src/app/create-activity.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club-bulletin.component.html" afterPath="$PROJECT_DIR$/src/app/create-club-bulletin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/log-in.component.html" afterPath="$PROJECT_DIR$/src/app/log-in.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/log-in.component.js" afterPath="$PROJECT_DIR$/src/app/log-in.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/log-in.component.js.map" afterPath="$PROJECT_DIR$/src/app/log-in.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/log-in.component.ts" afterPath="$PROJECT_DIR$/src/app/log-in.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/page-my.component.html" afterPath="$PROJECT_DIR$/src/app/page-my.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club-bulletin.component.js" afterPath="$PROJECT_DIR$/src/app/create-club-bulletin.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club-bulletin.component.js.map" afterPath="$PROJECT_DIR$/src/app/create-club-bulletin.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club-bulletin.component.ts" afterPath="$PROJECT_DIR$/src/app/create-club-bulletin.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club.component.js" afterPath="$PROJECT_DIR$/src/app/create-club.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club.component.js.map" afterPath="$PROJECT_DIR$/src/app/create-club.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/create-club.component.ts" afterPath="$PROJECT_DIR$/src/app/create-club.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/page-messages.component.html" afterPath="$PROJECT_DIR$/src/app/page-messages.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/update-user-detail.component.html" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/update-user-detail.component.js" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/update-user-detail.component.js.map" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/update-user-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/update-user-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-activities.component.html" afterPath="$PROJECT_DIR$/src/app/user-activities.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-activities.component.js" afterPath="$PROJECT_DIR$/src/app/user-activities.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-activities.component.js.map" afterPath="$PROJECT_DIR$/src/app/user-activities.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-activities.component.ts" afterPath="$PROJECT_DIR$/src/app/user-activities.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-clubs.component.css" afterPath="$PROJECT_DIR$/src/app/user-clubs.component.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-clubs.component.html" afterPath="$PROJECT_DIR$/src/app/user-clubs.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.js" afterPath="$PROJECT_DIR$/src/app/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.js.map" afterPath="$PROJECT_DIR$/src/app/user.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.service.js" afterPath="$PROJECT_DIR$/src/app/user.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.service.js.map" afterPath="$PROJECT_DIR$/src/app/user.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.service.ts" afterPath="$PROJECT_DIR$/src/app/user.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.ts" afterPath="$PROJECT_DIR$/src/app/user.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-detail.component.css" afterPath="$PROJECT_DIR$/src/app/user-detail.component.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,60 +79,57 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="update-user-detail.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/update-user-detail.component.ts">
+      <file leaf-file-name="activity-bill.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/activity-bill.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="73" column="121" lean-forward="false" selection-start-line="73" selection-start-column="121" selection-end-line="73" selection-end-column="121" />
+            <state relative-caret-position="595">
+              <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
               <folding>
-                <element signature="e#41#96#0" expanded="true" />
+                <element signature="e#41#123#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/application.service.ts">
+      <file leaf-file-name="create-activity-bill.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/create-activity-bill.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+            <state relative-caret-position="400">
+              <caret line="108" column="49" lean-forward="false" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#41#89#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="club-detail.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.html">
+      <file leaf-file-name="club.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/club.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
+            <state relative-caret-position="297">
+              <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="club-detail.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.ts">
+      <file leaf-file-name="create-activity-bill.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/create-activity-bill.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#42#90#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="39" column="90" lean-forward="false" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-activity.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/create-activity.component.ts">
+      <file leaf-file-name="activity-bill.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activity-bill.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="89" column="79" lean-forward="false" selection-start-line="89" selection-start-column="79" selection-end-line="89" selection-end-column="79" />
+            <state relative-caret-position="102">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <element signature="e#41#89#0" expanded="true" />
+                <element signature="n#!!doc;n#ActivityBill#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -129,9 +140,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -147,32 +158,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/notification.ts" />
-        <option value="$PROJECT_DIR$/src/app/page-messages.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/page-messages.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activity-detail.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/create-club-bulletin.component.css" />
-        <option value="$PROJECT_DIR$/src/app/application-detail.component.css" />
-        <option value="$PROJECT_DIR$/src/app/application.ts" />
-        <option value="$PROJECT_DIR$/src/app/club-detail.component.css" />
-        <option value="$PROJECT_DIR$/src/app/application-detail.component.html" />
-        <option value="$PROJECT_DIR$/src/app/application-detail.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/create-club-bulletin.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/activity.ts" />
-        <option value="$PROJECT_DIR$/src/app/valid-time.directive.ts" />
-        <option value="$PROJECT_DIR$/src/app/activity.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/checking.service.ts" />
         <option value="$PROJECT_DIR$/src/app/notification.service.ts" />
         <option value="$PROJECT_DIR$/src/app/club-bulletin-service.ts" />
         <option value="$PROJECT_DIR$/src/app/user-clubs.component.ts" />
         <option value="$PROJECT_DIR$/src/main.ts" />
-        <option value="$PROJECT_DIR$/src/app/user-activities.component.ts" />
         <option value="$PROJECT_DIR$/src/app/create-activity.component.css" />
         <option value="$PROJECT_DIR$/src/app/create-activity.component.html" />
-        <option value="$PROJECT_DIR$/src/app/user-activities.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activity-detail.component.html" />
-        <option value="$PROJECT_DIR$/src/app/create-club-bulletin.component.html" />
-        <option value="$PROJECT_DIR$/src/app/create-club.component.ts" />
         <option value="$PROJECT_DIR$/src/app/create-club.component.css" />
         <option value="$PROJECT_DIR$/src/app/create-club.component.html" />
         <option value="$PROJECT_DIR$/src/app/page-my.component.html" />
@@ -180,24 +171,44 @@
         <option value="$PROJECT_DIR$/src/app/club-messages.component.css" />
         <option value="$PROJECT_DIR$/src/app/club.service.ts" />
         <option value="$PROJECT_DIR$/src/app/club-messages.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/club-messages.component.html" />
-        <option value="$PROJECT_DIR$/src/app/user-clubs.component.html" />
-        <option value="$PROJECT_DIR$/src/app/club-detail.component.html" />
         <option value="$PROJECT_DIR$/src/app/log-in.component.html" />
         <option value="$PROJECT_DIR$/src/app/log-in.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/user-detail.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/user-detail.component.css" />
         <option value="$PROJECT_DIR$/src/app/user-detail.component.html" />
         <option value="$PROJECT_DIR$/src/app/update-user-detail.component.css" />
-        <option value="$PROJECT_DIR$/src/app/update-user-detail.component.html" />
         <option value="$PROJECT_DIR$/src/app/user-detail.ts" />
         <option value="$PROJECT_DIR$/src/app/user.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/create-activity.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/club-detail.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/update-user-detail.component.ts" />
         <option value="$PROJECT_DIR$/src/app/application.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity.ts" />
+        <option value="$PROJECT_DIR$/src/app/user-activities.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/user-activities.component.html" />
+        <option value="$PROJECT_DIR$/src/app/user-clubs.component.html" />
+        <option value="$PROJECT_DIR$/src/app/user-detail.component.css" />
+        <option value="$PROJECT_DIR$/src/app/user-clubs.component.css" />
+        <option value="$PROJECT_DIR$/src/app/activity-detail.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity-detail.component.css" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity-detail.component.html" />
+        <option value="$PROJECT_DIR$/src/app/checking.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/update-user-detail.component.html" />
+        <option value="$PROJECT_DIR$/src/app/create-club-bulletin.component.html" />
+        <option value="$PROJECT_DIR$/src/app/create-activity-bill.component.css" />
+        <option value="$PROJECT_DIR$/src/app/create-club.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/create-club-bulletin.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/create-activity.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/update-user-detail.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-item.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-participant-payment.ts" />
+        <option value="$PROJECT_DIR$/src/app/club-detail.component.html" />
+        <option value="$PROJECT_DIR$/src/app/club-messages.component.html" />
+        <option value="$PROJECT_DIR$/src/app/page-messages.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activity.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/club-detail.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/create-activity-bill.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.ts" />
+        <option value="$PROJECT_DIR$/src/app/create-activity-bill.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.service.ts" />
       </list>
     </option>
   </component>
@@ -293,7 +304,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -304,6 +315,7 @@
     <property name="typescript-compiler-editor-notification" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://G:/node/YLWQ_FRONT/src/app/activity-detail.component.ts" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -392,12 +404,12 @@
       <workItem from="1491022813842" duration="19366000" />
       <workItem from="1491107905253" duration="15898000" />
       <workItem from="1491151660844" duration="1000" />
-      <workItem from="1491198938616" duration="87000" />
+      <workItem from="1491198938616" duration="21952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158580000" />
+    <option name="totallyTimeSpent" value="180445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -409,18 +421,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17755532" sideWeight="0.5043384" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,6 +509,16 @@
         <option value="$PROJECT_DIR$/src/app/club-messages.component.js" />
         <option value="$PROJECT_DIR$/src/app/update-user-detail.component.js" />
         <option value="$PROJECT_DIR$/src/app/update-user-detail.component.js.map" />
+        <option value="$PROJECT_DIR$/src/app/create-activity-bill.component.js" />
+        <option value="$PROJECT_DIR$/src/app/create-activity-bill.component.js.map" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.service.js" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.service.js.map" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.js" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill.js.map" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-participant-payment.js" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-participant-payment.js.map" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-item.js" />
+        <option value="$PROJECT_DIR$/src/app/activity-bill-item.js.map" />
       </list>
     </option>
   </component>
@@ -510,246 +532,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/valid-time.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#75#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activity-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="92" column="49" lean-forward="true" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-club-bulletin.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="132" selection-end-column="1" />
-          <folding>
-            <element signature="e#42#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-club-bulletin.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="100" lean-forward="false" selection-start-line="28" selection-start-column="100" selection-end-line="28" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-bulletin-service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-club-bulletin.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-club.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/application-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activity-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/checking.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/page-my.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-message.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/application-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="55" column="15" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="55" selection-end-column="15" />
-          <folding>
-            <element signature="e#41#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-messages.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="158" lean-forward="false" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="158" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-messages.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-messages.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding>
-            <element signature="e#41#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-activities.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-activities.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="83" lean-forward="false" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-clubs.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-clubs.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-bulletin.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/log-in.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/page-home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/log-in.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="102" column="73" lean-forward="false" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="59" column="33" lean-forward="false" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/activity-participants.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -760,27 +542,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-club.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="e#41#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/create-club.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="39" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -788,13 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-activity.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="36" column="91" lean-forward="false" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -809,13 +568,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="25" column="74" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-detail.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -823,16 +576,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="85" lean-forward="false" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="48" column="87" lean-forward="false" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
-          <folding>
-            <element signature="e#41#89#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,14 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/update-user-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -862,59 +598,374 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user.service.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/application.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="150" column="80" lean-forward="false" selection-start-line="150" selection-start-column="80" selection-end-line="150" selection-end-column="80" />
+        <state relative-caret-position="731">
+          <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-participants.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-detail.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-clubs.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-activities.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="85" lean-forward="false" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-clubs.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-detail.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="61" column="35" lean-forward="false" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="49" column="2" lean-forward="false" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@angular/forms/src/validators.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/application-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="791">
+          <caret line="68" column="10" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="68" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-activity.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-club-bulletin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-club.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="73" column="52" lean-forward="false" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
+          <folding>
+            <element signature="e#41#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-club-bulletin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="83" column="56" lean-forward="false" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/create-activity.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="89" column="79" lean-forward="false" selection-start-line="89" selection-start-column="79" selection-end-line="89" selection-end-column="79" />
+        <state relative-caret-position="332">
+          <caret line="97" column="56" lean-forward="false" selection-start-line="97" selection-start-column="56" selection-end-line="97" selection-end-column="56" />
+          <folding>
+            <element signature="e#41#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-activities.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="48" column="87" lean-forward="false" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
+          <folding>
+            <element signature="e#41#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/update-user-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1267">
+          <caret line="88" column="47" lean-forward="false" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+          <folding>
+            <element signature="e#41#96#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-bill-participant-payment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc;n#ActivityBillParticipantPayment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-bill-item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc;n#ActivityBillItem#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/update-user-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-activity-bill.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/checking.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-messages.component.js.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="82" column="173" lean-forward="false" selection-start-line="82" selection-start-column="173" selection-end-line="82" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/club-messages.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="161" lean-forward="false" selection-start-line="15" selection-start-column="161" selection-end-line="15" selection-end-column="161" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-messages.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/page-messages.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/page-messages.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="113" lean-forward="false" selection-start-line="40" selection-start-column="113" selection-end-line="40" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="88" column="27" lean-forward="false" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="166" column="55" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activity-bill.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc;n#ActivityBill#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/club.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-activity-bill.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="90" lean-forward="false" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/create-activity-bill.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="108" column="49" lean-forward="false" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
           <folding>
             <element signature="e#41#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/activity-bill.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+        <state relative-caret-position="595">
+          <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#42#90#0" expanded="true" />
+            <element signature="e#41#123#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/update-user-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="73" column="121" lean-forward="false" selection-start-line="73" selection-start-column="121" selection-end-line="73" selection-end-column="121" />
-          <folding>
-            <element signature="e#41#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/application.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/club-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>

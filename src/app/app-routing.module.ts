@@ -23,6 +23,7 @@ import {CreateClubComponent} from "./create-club.component";
 import {UserDetailComponent} from "./user-detail.component";
 import {ClubMessagesComponent} from "./club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
+import {CreateActivityBillComponent} from "./create-activity-bill.component";
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
 	{path: 'user/:id', component: UserDetailComponent},
 	{path: 'club_messages/:club_id', component: ClubMessagesComponent},
 	{path: 'update_user_detail', component: UpdateUserDetailComponent},
+	{path: 'create_activity_bill/:activity_id', component: CreateActivityBillComponent},
 ];
 
 @NgModule({

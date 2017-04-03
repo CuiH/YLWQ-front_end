@@ -6,7 +6,9 @@
 
 <!-- 页面内容 -->
 <div class="content">
-	<div class="content-block-title"></div>
+	<div class="content-block-title">
+		<span class="pull-right">{{activity.status}}</span>
+	</div>
 	<div class="list-block">
 		<ul>
 			<li class="item-content">
@@ -69,8 +71,19 @@
 	<div class="list-block">
 		<ul>
 			<li><a class="item-link list-button" [routerLink]="['/activity_participants', activity.id]">查看所有参与者</a></li>
-			<li *ngIf="!isParticipant"><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
+			<li *ngIf="activity.activity_bill_status == 'P'"><a class="item-link list-button">查看活动账单</a></li>
 		</ul>
 	</div>
 
+	<div *ngIf="(activity.activity_bill_status == 'U' && activity.status == '已结束') && (isClubAdmin || isSponsor)" class="list-block">
+		<ul class="add-margin">
+			<li><a class="item-link list-button" [routerLink]="['/create_activity_bill', activity.id]">发布活动账单</a></li>
+		</ul>
+	</div>
+
+	<div *ngIf="!isParticipant && activity.status != '已结束'" class="list-block">
+		<ul class="add-margin">
+			<li><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
+		</ul>
+	</div>
 </div>

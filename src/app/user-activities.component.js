@@ -20,7 +20,7 @@ var UserActivitiesComponent = (function () {
         this.userService = userService;
         this.location = location;
         this.router = router;
-        this.currentActivities = null;
+        this.currentActivities = [];
         this.isFirst = "active";
         this.isSecond = "";
     }
@@ -41,7 +41,22 @@ var UserActivitiesComponent = (function () {
         this.userService.getAllUserParticipatedActivities()
             .then(function (activities) {
             _this.currentActivities = activities;
+            _this.initiateActivityStatus();
         });
+    };
+    UserActivitiesComponent.prototype.initiateActivityStatus = function () {
+        for (var i = 0; i < this.currentActivities.length; i++) {
+            var now = new Date();
+            if (new Date(Date.parse(this.currentActivities[i].start_time)) > now) {
+                this.currentActivities[i].status = "未开始";
+            }
+            else {
+                this.currentActivities[i].status = "进行中";
+            }
+            if (new Date(Date.parse(this.currentActivities[i].end_time)) < now) {
+                this.currentActivities[i].status = "已结束";
+            }
+        }
     };
     UserActivitiesComponent.prototype.changeToSponsored = function () {
         var _this = this;
@@ -50,6 +65,7 @@ var UserActivitiesComponent = (function () {
         this.userService.getAllUserSponsoredActivities()
             .then(function (activities) {
             _this.currentActivities = activities;
+            _this.initiateActivityStatus();
         });
     };
     return UserActivitiesComponent;

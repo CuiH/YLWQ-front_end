@@ -97,7 +97,7 @@ var CreateActivityComponent = (function () {
                 return _this.activityService.createActivity(activityObject);
             })
                 .subscribe(function () {
-                $.alert("发布成功！");
+                $.alert("发布成功！", function () { return _this.goBack(); });
                 _this.isCreated = "disabled";
                 _this.createActivityText = "已发布";
             });

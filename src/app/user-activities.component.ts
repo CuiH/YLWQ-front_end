@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 import {UserService} from "./user.service";
 
 import {Activity} from "./activity";
+import {zipAll} from "rxjs/operator/zipAll";
 
 
 @Component({
@@ -18,7 +19,7 @@ import {Activity} from "./activity";
 })
 export class UserActivitiesComponent implements OnInit {
 
-	private currentActivities: Activity[] = null;
+	private currentActivities: Activity[] = [];
 
 	private isFirst:string = "active";
 	private isSecond:string = "";
@@ -52,7 +53,23 @@ export class UserActivitiesComponent implements OnInit {
 		this.userService.getAllUserParticipatedActivities()
 			.then((activities) => {
 				this.currentActivities = activities;
+				this.initiateActivityStatus();
 			})
+	}
+
+	private initiateActivityStatus() {
+		for (let i = 0; i < this.currentActivities.length; i++) {
+			const now = new Date();
+			if (new Date(Date.parse(this.currentActivities[i].start_time)) > now) {
+				this.currentActivities[i].status = "未开始";
+			} else {
+				this.currentActivities[i].status = "进行中";
+			}
+
+			if (new Date(Date.parse(this.currentActivities[i].end_time)) < now) {
+				this.currentActivities[i].status = "已结束";
+			}
+		}
 	}
 
 	private changeToSponsored() {
@@ -62,6 +79,7 @@ export class UserActivitiesComponent implements OnInit {
 		this.userService.getAllUserSponsoredActivities()
 			.then((activities) => {
 				this.currentActivities = activities;
+				this.initiateActivityStatus();
 			})
 	}
 

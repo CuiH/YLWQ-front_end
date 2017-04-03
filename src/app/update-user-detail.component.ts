@@ -52,6 +52,8 @@ export class UpdateUserDetailComponent implements OnInit {
 			.then((user) => {
 				this.username = user.username;
 				this.userDetail = user.userDetail;
+
+				this.userDetail.birthdate = this.userDetail.birthdate ? this.userDetail.birthdate.split('T')[0] : null;
 				this.userDetail.description = this.userDetail.description ? this.userDetail.description : "";
 			});
 	}
@@ -62,7 +64,7 @@ export class UpdateUserDetailComponent implements OnInit {
 		if (this.validateForm()) {
 			this.userService.updateUserDetail(this.userDetail)
 				.then(() => {
-					$.alert("修改成功！");
+					$.alert("修改成功！", () => this.goBack());
 					this.submitButtonText = "提交";
 				});
 		}
@@ -83,6 +85,8 @@ export class UpdateUserDetailComponent implements OnInit {
 
 			return false;
 		}
+
+		console.log(this.userDetail.description)
 
 		if (this.userDetail.description && this.userDetail.description.length > 200) {
 			$.alert("自我介绍过长");

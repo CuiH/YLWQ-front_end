@@ -3,3 +3,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.add-margin {
+    margin-top: 0.8rem;
+}

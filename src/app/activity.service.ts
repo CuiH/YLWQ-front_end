@@ -77,8 +77,6 @@ export class ActivityService {
 	}
 
 	getAllActivityParticipantsById(id: number): Promise<User[]> {
-		$.showPreloader();
-
 		let options = new RequestOptions({
 			method: RequestMethod.Get,
 			headers: new Headers({
@@ -88,11 +86,7 @@ export class ActivityService {
 
 		return this.http.request('http://172.18.43.152:3000/api/activity/get_all_participants?activity_id=' + id, options)
 			.toPromise()
-			.then((res) => {
-				$.hidePreloader();
-
-				return res.json().data.participants as User[];
-			})
+			.then((res) => res.json().data.participants as User[])
 			.catch(this.handleError);
 	}
 

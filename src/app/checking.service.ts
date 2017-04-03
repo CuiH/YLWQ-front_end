@@ -74,6 +74,19 @@ export class CheckingService {
 			.catch(this.handleError);
 	}
 
+	checkUserActivitySponsor(userId: number, activityId: number): Promise<boolean> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_sponsor?user_id=' + userId + "&activityId=" + activityId, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.result;
+			})
+			.catch(this.handleError);
+	}
+
 	private handleError(err: any): any {
 		$.hidePreloader();
 

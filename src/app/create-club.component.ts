@@ -71,7 +71,7 @@ export class CreateClubComponent implements OnInit {
 
 			const clubObject = this.clubForm.value as Club;
 			this.clubService.createClub(clubObject).then(() => {
-				$.alert("创建成功！");
+				$.alert("创建成功！", () => this.goBack());
 				this.isCreated = "disabled";
 				this.createClubButtonText = "已创建";
 			});

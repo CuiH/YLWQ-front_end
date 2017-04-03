@@ -36,8 +36,9 @@
 		</div>
 		<div *ngIf="notification.opened" class="card-content">
 			<div *ngIf="notification.type == 'JC'" class="card-content-inner">您已加入群 <a [routerLink]="['/club', notification.object_id]">{{notification.object_name}}</a></div>
-			<div *ngIf="notification.type == 'AC'" class="card-content-inner">群 <a [routerLink]="['/club', notification.subject_id]">{{notification.subject_name}}</a> 发起了 <a [routerLink]="['/activity', notification.object_id]">新的活动</a></div>
+			<div *ngIf="notification.type == 'AC'" class="card-content-inner">群 <a [routerLink]="['/club', notification.subject_id]">{{notification.subject_name}}</a> 发起了新活动 <a [routerLink]="['/activity', notification.object_id]">{{notification.object_name}}</a></div>
 			<div *ngIf="notification.type == 'A'" class="card-content-inner">您收到了新的 <a [routerLink]="['/application', notification.object_id]">入群申请</a></div>
+			<div *ngIf="notification.type == 'AB'" class="card-content-inner">您参与的活动 <a [routerLink]="['/activity', notification.subject_id]">{{notification.subject_name}}</a> 公布了账单</div>
 			<div *ngIf="notification.type == 'AR'" class="card-content-inner">您加入群 <a [routerLink]="['/club', notification.object_id]">{{notification.object_name}}</a> 的申请已被回绝</div>
 		</div>
 	</div>

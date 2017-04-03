@@ -32,6 +32,7 @@ var create_club_component_1 = require("./create-club.component");
 var user_detail_component_1 = require("./user-detail.component");
 var club_messages_component_1 = require("./club-messages.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
+var create_activity_bill_component_1 = require("./create-activity-bill.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -65,7 +66,8 @@ AppModule = __decorate([
             create_club_component_1.CreateClubComponent,
             user_detail_component_1.UserDetailComponent,
             club_messages_component_1.ClubMessagesComponent,
-            update_user_detail_component_1.UpdateUserDetailComponent
+            update_user_detail_component_1.UpdateUserDetailComponent,
+            create_activity_bill_component_1.CreateActivityBillComponent
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },

@@ -67,7 +67,7 @@ var CreateClubComponent = (function () {
         if (this.validateForm()) {
             var clubObject = this.clubForm.value;
             this.clubService.createClub(clubObject).then(function () {
-                $.alert("创建成功！");
+                $.alert("创建成功！", function () { return _this.goBack(); });
                 _this.isCreated = "disabled";
                 _this.createClubButtonText = "已创建";
             });

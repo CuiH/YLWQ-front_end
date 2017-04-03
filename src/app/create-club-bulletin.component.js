@@ -77,7 +77,7 @@ var CreateClubBulletinComponent = (function () {
                 return _this.clubBulletinService.createClubBulletin(clubBulletinObject_1);
             })
                 .subscribe(function () {
-                $.alert("发布成功！");
+                $.alert("发布成功！", function () { return _this.goBack(); });
                 _this.isPublished = "disabled";
                 _this.createClubBulletinButtonText = "已发布";
             });

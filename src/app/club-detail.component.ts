@@ -80,9 +80,14 @@ export class ClubDetailComponent implements OnInit {
 							this.isLoaded = true;
 
 							if (this.isMember) {
-								this.clubService.getLatestClubBulletinById(this.club.id).then(clubBulletin => this.clubBulletin = clubBulletin);
-								this.checkingService.checkUserClubMapAdmin(this.userService.getCurrentUserId(), this.club.id).then(result => this.isAdmin = result);
-								this.clubService.getLatestThreeClubMessagesById(this.club.id).then(clubMessages => this.clubMessages = clubMessages);
+								this.clubService.getLatestClubBulletinById(this.club.id)
+									.then(clubBulletin => this.clubBulletin = clubBulletin);
+
+								this.checkingService.checkUserClubMapAdmin(this.userService.getCurrentUserId(), this.club.id)
+									.then(result => this.isAdmin = result);
+
+								this.clubService.getLatestThreeClubMessagesById(this.club.id)
+									.then(clubMessages => this.clubMessages = clubMessages);
 							} else {
 								this.checkingService.checkApplicationUnread(this.userService.getCurrentUserId(), this.club.id).then((result) => {
 									if (result) {

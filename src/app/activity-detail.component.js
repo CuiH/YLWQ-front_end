@@ -33,6 +33,8 @@ var ActivityDetailComponent = (function () {
         this.activity = new activity_1.Activity();
         this.attendActivityButtonText = "参与该活动";
         this.isParticipant = false;
+        this.isSponsor = false;
+        this.isClubAdmin = false;
     }
     ActivityDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -45,11 +47,23 @@ var ActivityDetailComponent = (function () {
             .switchMap(function (params) { return _this.activityService.getActivityById(+params['id']); })
             .subscribe(function (activity) {
             _this.activity = activity;
-            _this.checkingService.checkUserActivityMap(_this.userService.getCurrentUserId(), _this.activity.id)
-                .then(function (result) {
-                _this.isParticipant = result;
-            });
+            _this.initiateActivityStatus();
+            _this.checkingService.checkUserActivityMap(_this.userService.getCurrentUserId(), _this.activity.id).then(function (result) { return _this.isParticipant = result; });
+            _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.activity.club_id).then(function (result) { return _this.isClubAdmin = result; });
+            _this.checkingService.checkUserActivitySponsor(_this.userService.getCurrentUserId(), _this.activity.id).then(function (result) { return _this.isSponsor = result; });
         });
+    };
+    ActivityDetailComponent.prototype.initiateActivityStatus = function () {
+        var now = new Date();
+        if (new Date(Date.parse(this.activity.start_time)) > now) {
+            this.activity.status = "未开始";
+        }
+        else {
+            this.activity.status = "进行中";
+        }
+        if (new Date(Date.parse(this.activity.end_time)) < now) {
+            this.activity.status = "已结束";
+        }
     };
     ActivityDetailComponent.prototype.goBack = function () {
         this.location.back();

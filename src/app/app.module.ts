@@ -27,6 +27,7 @@ import {CreateClubComponent} from "./create-club.component";
 import {UserDetailComponent} from "./user-detail.component";
 import {ClubMessagesComponent} from "./club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
+import {CreateActivityBillComponent} from "./create-activity-bill.component";
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import {UpdateUserDetailComponent} from "./update-user-detail.component";
 		CreateClubComponent,
 		UserDetailComponent,
 		ClubMessagesComponent,
-		UpdateUserDetailComponent
+		UpdateUserDetailComponent,
+		CreateActivityBillComponent
 	],
 
 	providers: [

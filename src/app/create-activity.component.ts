@@ -95,7 +95,7 @@ export class CreateActivityComponent implements OnInit {
 					return this.activityService.createActivity(activityObject)
 				})
 				.subscribe(() => {
-					$.alert("发布成功！");
+					$.alert("发布成功！", () => this.goBack());
 
 					this.isCreated = "disabled";
 					this.createActivityText = "已发布";

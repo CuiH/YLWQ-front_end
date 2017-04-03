@@ -18,4 +18,5 @@ export class Activity {
 	attend_time: string;
 	sponsor_user_id: number;
 	sponsor_username: string;
+	status: string;
 }

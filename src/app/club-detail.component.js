@@ -59,9 +59,12 @@ var ClubDetailComponent = (function () {
                     _this.isMember = result;
                     _this.isLoaded = true;
                     if (_this.isMember) {
-                        _this.clubService.getLatestClubBulletinById(_this.club.id).then(function (clubBulletin) { return _this.clubBulletin = clubBulletin; });
-                        _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) { return _this.isAdmin = result; });
-                        _this.clubService.getLatestThreeClubMessagesById(_this.club.id).then(function (clubMessages) { return _this.clubMessages = clubMessages; });
+                        _this.clubService.getLatestClubBulletinById(_this.club.id)
+                            .then(function (clubBulletin) { return _this.clubBulletin = clubBulletin; });
+                        _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.club.id)
+                            .then(function (result) { return _this.isAdmin = result; });
+                        _this.clubService.getLatestThreeClubMessagesById(_this.club.id)
+                            .then(function (clubMessages) { return _this.clubMessages = clubMessages; });
                     }
                     else {
                         _this.checkingService.checkApplicationUnread(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) {

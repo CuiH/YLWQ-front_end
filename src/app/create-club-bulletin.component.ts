@@ -81,7 +81,7 @@ export class CreateClubBulletinComponent implements OnInit {
 					return this.clubBulletinService.createClubBulletin(clubBulletinObject)
 				})
 				.subscribe(() => {
-					$.alert("发布成功！");
+					$.alert("发布成功！", () => this.goBack());
 					this.isPublished = "disabled";
 					this.createClubBulletinButtonText = "已发布";
 				});

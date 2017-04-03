@@ -34,6 +34,8 @@ export class ActivityDetailComponent implements OnInit {
 	private attendActivityButtonText = "参与该活动";
 
 	private isParticipant = false;
+	private isSponsor = false;
+	private isClubAdmin = false;
 
 	constructor(
 		private location: Location,
@@ -59,37 +61,52 @@ export class ActivityDetailComponent implements OnInit {
 			.switchMap((params: Params) => this.activityService.getActivityById(+params['id']))
 			.subscribe((activity) => {
 				this.activity = activity;
+				this.initiateActivityStatus();
 
-				this.checkingService.checkUserActivityMap(this.userService.getCurrentUserId(), this.activity.id)
-					.then((result) => {
-						this.isParticipant = result;
-					})
+				this.checkingService.checkUserActivityMap(this.userService.getCurrentUserId(), this.activity.id).then((result) => this.isParticipant = result);
+				this.checkingService.checkUserClubMapAdmin(this.userService.getCurrentUserId(), this.activity.club_id).then((result) => this.isClubAdmin = result);
+				this.checkingService.checkUserActivitySponsor(this.userService.getCurrentUserId(), this.activity.id).then((result) => this.isSponsor = result);
 			});
 	}
 
-	goBack(): void {
+	private initiateActivityStatus() {
+
+		const now = new Date();
+		if (new Date(Date.parse(this.activity.start_time)) > now) {
+			this.activity.status = "未开始";
+		} else {
+			this.activity.status = "进行中";
+		}
+
+		if (new Date(Date.parse(this.activity.end_time)) < now) {
+			this.activity.status = "已结束";
+		}
+
+	}
+
+	private goBack(): void {
 		this.location.back();
 	}
 
-	showBriefIntro(): void {
+	private showBriefIntro(): void {
 		if (!this.activity) return;
 
 		$.alert(this.activity.brief_intro, "简介");
 	}
 
-	showNote(): void {
+	private showNote(): void {
 		if (!this.activity) return;
 
 		$.alert(this.activity.note, "备注");
 	}
 
-	showLocation(): void {
+	private showLocation(): void {
 		if (!this.activity) return;
 
 		$.alert(this.activity.location, "地点");
 	}
 
-	attendActivity(): void {
+	private attendActivity(): void {
 		this.attendActivityButtonText = "处理中...";
 		this.activatedRoute.params
 			.switchMap((params: Params) => this.activityService.attendActivity(+params['id']))

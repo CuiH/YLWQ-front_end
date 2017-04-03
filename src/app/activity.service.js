@@ -67,7 +67,6 @@ var ActivityService = (function () {
             .catch(this.handleError);
     };
     ActivityService.prototype.getAllActivityParticipantsById = function (id) {
-        $.showPreloader();
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
             headers: new http_1.Headers({
@@ -76,10 +75,7 @@ var ActivityService = (function () {
         });
         return this.http.request('http://172.18.43.152:3000/api/activity/get_all_participants?activity_id=' + id, options)
             .toPromise()
-            .then(function (res) {
-            $.hidePreloader();
-            return res.json().data.participants;
-        })
+            .then(function (res) { return res.json().data.participants; })
             .catch(this.handleError);
     };
     ActivityService.prototype.attendActivity = function (activityId) {

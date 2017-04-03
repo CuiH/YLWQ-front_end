@@ -28,6 +28,7 @@ var create_club_component_1 = require("./create-club.component");
 var user_detail_component_1 = require("./user-detail.component");
 var club_messages_component_1 = require("./club-messages.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
+var create_activity_bill_component_1 = require("./create-activity-bill.component");
 var routes = [
     { path: '', redirectTo: '/page_home', pathMatch: 'full' },
     { path: 'log_in', component: log_in_component_1.LogInComponent },
@@ -48,6 +49,7 @@ var routes = [
     { path: 'user/:id', component: user_detail_component_1.UserDetailComponent },
     { path: 'club_messages/:club_id', component: club_messages_component_1.ClubMessagesComponent },
     { path: 'update_user_detail', component: update_user_detail_component_1.UpdateUserDetailComponent },
+    { path: 'create_activity_bill/:activity_id', component: create_activity_bill_component_1.CreateActivityBillComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
