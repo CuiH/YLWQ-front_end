@@ -31,7 +31,7 @@
 					<div class="item-after">{{club.create_time | date}}</div>
 				</div>
 			</li>
-			<li class="item-content item-link">
+			<li class="item-content item-link" [routerLink]="['/user', club.founder_user_id]">
 				<div class="item-inner">
 					<div class="item-title">创建人</div>
 					<div class="item-after">{{club.founder_username}}</div>
@@ -59,10 +59,18 @@
 			<div class="card-content">
 				<div class="card-content-inner">{{clubBulletin.content}}</div>
 			</div>
-			<div class="card-footer">{{clubBulletin.publisher_username}} 发布于 {{clubBulletin.publish_time | date}}</div>
+			<div class="card-footer">
+				<div></div>
+				<div>
+					<a [routerLink]="['/user', clubBulletin.publisher_user_id]">{{clubBulletin.publisher_username}}</a> 发布于 {{clubBulletin.publish_time | date: 'short'}}
+				</div>
+			</div>
 		</div>
 
-		<div class="content-block-title">群动态</div>
+		<div class="content-block-title">
+			群动态
+			<a [routerLink]="['/club_messages', club.id]" class="pull-right">更多</a>
+		</div>
 		<div *ngIf="clubMessages.length == 0" class="card">
 			<div class="card-header">暂无</div>
 		</div>
@@ -72,11 +80,10 @@
 					<li *ngFor="let message of clubMessages">
 						<div class="item item-content change-color">
 							<div class="item-inner">
-								<div *ngIf="message.type == 'A'" class="item-text">{{message.operator_username}} 发布了 <a [routerLink]="['/activity', message.target_id]">新活动</a></div>
-								<div *ngIf="message.type == 'C'" class="item-text">{{message.operator_username}} 创建了群组</div>
-								<div *ngIf="message.type == 'B'" class="item-text">{{message.operator_username}} 发布了 <a>新公告</a></div>
-								<div *ngIf="message.type == 'E'" class="item-text">{{message.target_name}} 加入了群组</div>
-								<div class="item-subtitle">{{message.create_time | date}}</div>
+								<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 发布了 <a [routerLink]="['/activity', message.target_id]">新活动</a></div>
+								<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 创建了群组</div>
+								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 加入了群组</div>
+								<div class="pull-right item-subtitle">{{message.create_time | date: 'short'}}</div>
 							</div>
 						</div>
 					</li>
@@ -98,7 +105,7 @@
 		</ul>
 	</div>
 
-	<div *ngIf="loggedIn && !isMember && !isClicked" class="content-block">
+	<div *ngIf="loggedIn && !isMember && !isClicked && isLoaded" class="content-block">
 		<button *ngIf="!isMember" [ngClass]="isApplied" (click)="showForm()" disabled="{{isApplied}}" class="set-width button button-big button-fill button-success">申请加入该群组</button>
 	</div>
 

@@ -1,0 +1,11 @@
+input {
+    border: none;
+}
+
+.button {
+    width: 100%;
+}
+
+.add-padding {
+    padding-left: 0.25rem;
+}

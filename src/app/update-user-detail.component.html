@@ -1,0 +1,64 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">修改个人信息</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<ul>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-name"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">用户名</div>
+						<div class="item-input add-padding">
+							{{username}}
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-name"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">生日</div>
+						<div class="item-input">
+							<input type="date" class="datetime-picker" [(ngModel)]="userDetail.birthdate" placeholder="">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-gender"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">性别</div>
+						<div class="item-input">
+							<select [(ngModel)]="userDetail.gender">
+								<option value="1">男</option>
+								<option value="0">女</option>
+								<option value="2">保密</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-comment"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">自我介绍</div>
+						<div class="item-input">
+							<textarea maxlength="200" [(ngModel)]="userDetail.description" placeholder="最多200字"></textarea>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="content-block">
+		<button (click)="onSubmit()" class="button button-big button-fill button-success">{{submitButtonText}}</button>
+	</div>
+</div>

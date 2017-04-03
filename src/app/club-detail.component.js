@@ -37,6 +37,7 @@ var ClubDetailComponent = (function () {
         this.loggedIn = false;
         this.isAdmin = false;
         this.isClicked = false;
+        this.isLoaded = false;
         this.isApplied = "";
         this.clubBulletin = new club_bulletin_1.ClubBulletin();
         this.clubMessages = [];
@@ -56,6 +57,7 @@ var ClubDetailComponent = (function () {
                 _this.checkingService.checkUserClubMap(_this.userService.getCurrentUserId(), _this.club.id)
                     .then(function (result) {
                     _this.isMember = result;
+                    _this.isLoaded = true;
                     if (_this.isMember) {
                         _this.clubService.getLatestClubBulletinById(_this.club.id).then(function (clubBulletin) { return _this.clubBulletin = clubBulletin; });
                         _this.checkingService.checkUserClubMapAdmin(_this.userService.getCurrentUserId(), _this.club.id).then(function (result) { return _this.isAdmin = result; });

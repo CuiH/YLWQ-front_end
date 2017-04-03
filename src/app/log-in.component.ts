@@ -26,6 +26,7 @@ export class LogInComponent implements OnInit {
 	private userForm: FormGroup;
 
 	private logInButtonText = "登录";
+	private registerButtonText = "注册";
 
 	constructor(
 		private userService: UserService,
@@ -80,17 +81,29 @@ export class LogInComponent implements OnInit {
 		return true;
 	}
 
-	private onSubmit(): void {
+	private onLogIn(): void {
 		this.logInButtonText = "登录中...";
 
 		if(this.validateForm()) {
 			this.userService.logIn(this.userForm.value as User)
 				.then((username) => {
-					this.location.back();
+					$.alert("登录成功", () => this.location.back());
 				})
 		}
 
 		this.logInButtonText = "登录";
+	}
+
+	private onRegister(): void {
+		this.registerButtonText = "注册中...";
+
+		if(this.validateForm()) {
+			this.userService.register(this.userForm.value as User)
+				.then(() => this.userService.logIn(this.userForm.value as User))
+				.then(() => $.alert("注册成功", () => this.location.back()));
+		}
+
+		this.registerButtonText = "注册";
 	}
 
 	formFields = {

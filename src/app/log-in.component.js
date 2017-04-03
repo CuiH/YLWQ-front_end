@@ -25,6 +25,7 @@ var LogInComponent = (function () {
         this.location = location;
         this.router = router;
         this.logInButtonText = "登录";
+        this.registerButtonText = "注册";
         this.formFields = {
             username: '',
             password: ''
@@ -77,16 +78,26 @@ var LogInComponent = (function () {
         }
         return true;
     };
-    LogInComponent.prototype.onSubmit = function () {
+    LogInComponent.prototype.onLogIn = function () {
         var _this = this;
         this.logInButtonText = "登录中...";
         if (this.validateForm()) {
             this.userService.logIn(this.userForm.value)
                 .then(function (username) {
-                _this.location.back();
+                $.alert("登录成功", function () { return _this.location.back(); });
             });
         }
         this.logInButtonText = "登录";
+    };
+    LogInComponent.prototype.onRegister = function () {
+        var _this = this;
+        this.registerButtonText = "注册中...";
+        if (this.validateForm()) {
+            this.userService.register(this.userForm.value)
+                .then(function () { return _this.userService.logIn(_this.userForm.value); })
+                .then(function () { return $.alert("注册成功", function () { return _this.location.back(); }); });
+        }
+        this.registerButtonText = "注册";
     };
     return LogInComponent;
 }());

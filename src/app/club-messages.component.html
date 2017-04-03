@@ -1,0 +1,24 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">群动态</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div *ngIf="clubMessages.length == 0" class="card">
+		<div class="card-header">暂无</div>
+	</div>
+	<div *ngFor="let message of clubMessages" class="card">
+		<div class="list-block media-list">
+			<div class="item item-content change-color">
+				<div class="item-inner">
+					<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 发布了 <a [routerLink]="['/activity', message.target_id]">新活动</a></div>
+					<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 创建了群组</div>
+					<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 加入了群组</div>
+					<div class="item-subtitle">{{message.create_time | date: "short"}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

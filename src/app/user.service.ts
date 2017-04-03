@@ -17,6 +17,7 @@ import {Activity} from "./activity";
 import "zepto";
 import "sm";
 import {Notification} from "./notification";
+import {UserDetail} from "./user-detail";
 
 declare let $: any;
 
@@ -109,10 +110,71 @@ export class UserService {
 			.catch(this.handleError);
 	}
 
+	register(user: User): Promise<any> {
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded"
+			}),
+			body: 'username=' + user.username + '&password=' + user.password,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/register', options)
+			.toPromise()
+			.then((res) => {
+				$.hidePreloader();
+			})
+			.catch(this.handleError);
+	}
+
 	logOff(): void {
 		this.cookieService.removeAll();
 
 		this.loggedIn = false;
+	}
+
+	getUserById(id: number): Promise<User> {
+		if (id ==0) id = this.getCurrentUserId();
+
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/' + id, options)
+			.toPromise()
+			.then((res) => {
+				$.hidePreloader();
+				let userDetail = res.json().data.user.user_detail as UserDetail;
+				let user = res.json().data.user as User;
+				user.userDetail = userDetail;
+
+				return user;
+			})
+			.catch(this.handleError);
+	}
+
+	updateUserDetail(userDetail: UserDetail): Promise<any> {
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded",
+				'x-access-token': this.currentUserToken
+			}),
+			body: 'gender=' + userDetail.gender + '&description=' + userDetail.description + '&birthdate=' + userDetail.birthdate,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/update', options)
+			.toPromise()
+			.then(() => {
+				$.hidePreloader();
+			})
+			.catch(this.handleError);
 	}
 
 	getAllUserClubs(): Promise<Club[]> {

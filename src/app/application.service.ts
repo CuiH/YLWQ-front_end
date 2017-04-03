@@ -37,7 +37,7 @@ export class ApplicationService {
 			}),
 		});
 
-		return this.http.request('http://localhost:3000/api/application/' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/application/' + id, options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();
@@ -59,7 +59,7 @@ export class ApplicationService {
 			body: 'club_id=' + clubId + '&message=' + message,
 		});
 
-		return this.http.request('http://localhost:3000/api/application/create', options)
+		return this.http.request('http://172.18.43.152:3000/api/application/create', options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();

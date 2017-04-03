@@ -19,6 +19,10 @@ import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 import {PageMessagesComponent} from "./page-messages.component";
 import {ApplicationDetailComponent} from "./application-detail.component";
 import {CreateActivityComponent} from "./create-activity.component";
+import {CreateClubComponent} from "./create-club.component";
+import {UserDetailComponent} from "./user-detail.component";
+import {ClubMessagesComponent} from "./club-messages.component";
+import {UpdateUserDetailComponent} from "./update-user-detail.component";
 
 
 const routes: Routes = [
@@ -37,6 +41,10 @@ const routes: Routes = [
 	{path: 'create_club_bulletin/:club_id', component: CreateClubBulletinComponent},
 	{path: 'application/:id', component: ApplicationDetailComponent},
 	{path: 'create_activity/:club_id', component: CreateActivityComponent},
+	{path: 'create_club', component: CreateClubComponent},
+	{path: 'user/:id', component: UserDetailComponent},
+	{path: 'club_messages/:club_id', component: ClubMessagesComponent},
+	{path: 'update_user_detail', component: UpdateUserDetailComponent},
 ];
 
 @NgModule({

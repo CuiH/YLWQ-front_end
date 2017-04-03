@@ -30,6 +30,28 @@ export class ClubService {
 		$.init();
 	};
 
+	createClub(club: Club): Promise<boolean> {
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded",
+				'x-access-token': this.userService.getCurrentUserToken()
+			}),
+			body: 'name=' + club.name + '&brief_intro=' + club.brief_intro,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/create', options)
+			.toPromise()
+			.then((res) => {
+				$.hidePreloader();
+
+				return true;
+			})
+			.catch(this.handleError);
+	}
+
 	getClubById(id: number): Promise<Club> {
 		$.showPreloader();
 
@@ -110,6 +132,26 @@ export class ClubService {
 		return this.http.request('http://172.18.43.152:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
 			.toPromise()
 			.then((res) => {
+				return res.json().data.clubMessages as ClubMessage[];
+			})
+			.catch(this.handleError);
+	}
+
+	getAllClubMessagesById(id: number): Promise<ClubMessage[]> {
+		$.showPreloader();
+
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.userService.getCurrentUserToken()
+			}),
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id, options)
+			.toPromise()
+			.then((res) => {
+				$.hidePreloader();
+
 				return res.json().data.clubMessages as ClubMessage[];
 			})
 			.catch(this.handleError);

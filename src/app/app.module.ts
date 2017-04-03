@@ -23,6 +23,10 @@ import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 import {PageMessagesComponent} from "./page-messages.component";
 import {ApplicationDetailComponent} from "./application-detail.component";
 import {CreateActivityComponent} from "./create-activity.component";
+import {CreateClubComponent} from "./create-club.component";
+import {UserDetailComponent} from "./user-detail.component";
+import {ClubMessagesComponent} from "./club-messages.component";
+import {UpdateUserDetailComponent} from "./update-user-detail.component";
 
 
 @NgModule({
@@ -49,7 +53,11 @@ import {CreateActivityComponent} from "./create-activity.component";
 		CreateClubBulletinComponent,
 		PageMessagesComponent,
 		ApplicationDetailComponent,
-		CreateActivityComponent
+		CreateActivityComponent,
+		CreateClubComponent,
+		UserDetailComponent,
+		ClubMessagesComponent,
+		UpdateUserDetailComponent
 	],
 
 	providers: [

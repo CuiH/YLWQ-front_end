@@ -24,6 +24,24 @@ var ClubService = (function () {
         $.init();
     }
     ;
+    ClubService.prototype.createClub = function (club) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+            body: 'name=' + club.name + '&brief_intro=' + club.brief_intro,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/create', options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            return true;
+        })
+            .catch(this.handleError);
+    };
     ClubService.prototype.getClubById = function (id) {
         $.showPreloader();
         var options = new http_1.RequestOptions({
@@ -91,6 +109,22 @@ var ClubService = (function () {
         return this.http.request('http://172.18.43.152:3000/api/club/get_latest_three_club_messages?club_id=' + id, options)
             .toPromise()
             .then(function (res) {
+            return res.json().data.clubMessages;
+        })
+            .catch(this.handleError);
+    };
+    ClubService.prototype.getAllClubMessagesById = function (id) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id, options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
             return res.json().data.clubMessages;
         })
             .catch(this.handleError);

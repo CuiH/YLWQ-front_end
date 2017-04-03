@@ -1,0 +1,46 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">{{user.username}}</h1>
+	<button *ngIf="isSelf" [routerLink]="['/update_user_detail']" class="button button-link button-nav pull-right add-padding">
+		编辑
+	</button>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title"></div>
+	<div class="list-block">
+		<ul>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">用户名</div>
+					<div class="item-after">{{user.username}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">性别</div>
+					<div *ngIf="user.userDetail.gender">
+						<div *ngIf="user.userDetail.gender == 1" class="item-after">男</div>
+						<div *ngIf="user.userDetail.gender == 0" class="item-after">女</div>
+					</div>
+					<div *ngIf="!user.userDetail.gender" class="item-after">保密</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">生日</div>
+					<div class="item-after">{{user.userDetail.birthdate | date: 'yyyyMMdd'}}</div>
+				</div>
+			</li>
+			<li class="item-content item-link" (click)="showDescription()">
+				<div class="item-inner">
+					<div class="item-title">自我介绍</div>
+					<div class="item-after">{{user.userDetail.description}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</div>

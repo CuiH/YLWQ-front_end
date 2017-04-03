@@ -1,3 +1,4 @@
+import {UserDetail} from "./user-detail";
 /**
  * Created by CuiH on 2017/3/28.
  */
@@ -8,4 +9,6 @@ export class User {
 	password: string;
 	join_time: string;
 	role: string;
+
+	userDetail: UserDetail = new UserDetail();
 }

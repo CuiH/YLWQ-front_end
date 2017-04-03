@@ -28,6 +28,10 @@ var create_club_bulletin_component_1 = require("./create-club-bulletin.component
 var page_messages_component_1 = require("./page-messages.component");
 var application_detail_component_1 = require("./application-detail.component");
 var create_activity_component_1 = require("./create-activity.component");
+var create_club_component_1 = require("./create-club.component");
+var user_detail_component_1 = require("./user-detail.component");
+var club_messages_component_1 = require("./club-messages.component");
+var update_user_detail_component_1 = require("./update-user-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -57,7 +61,11 @@ AppModule = __decorate([
             create_club_bulletin_component_1.CreateClubBulletinComponent,
             page_messages_component_1.PageMessagesComponent,
             application_detail_component_1.ApplicationDetailComponent,
-            create_activity_component_1.CreateActivityComponent
+            create_activity_component_1.CreateActivityComponent,
+            create_club_component_1.CreateClubComponent,
+            user_detail_component_1.UserDetailComponent,
+            club_messages_component_1.ClubMessagesComponent,
+            update_user_detail_component_1.UpdateUserDetailComponent
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },

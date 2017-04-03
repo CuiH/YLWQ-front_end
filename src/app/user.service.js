@@ -83,9 +83,60 @@ var UserService = (function () {
         })
             .catch(this.handleError);
     };
+    UserService.prototype.register = function (user) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded"
+            }),
+            body: 'username=' + user.username + '&password=' + user.password,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/register', options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+        })
+            .catch(this.handleError);
+    };
     UserService.prototype.logOff = function () {
         this.cookieService.removeAll();
         this.loggedIn = false;
+    };
+    UserService.prototype.getUserById = function (id) {
+        if (id == 0)
+            id = this.getCurrentUserId();
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/' + id, options)
+            .toPromise()
+            .then(function (res) {
+            $.hidePreloader();
+            var userDetail = res.json().data.user.user_detail;
+            var user = res.json().data.user;
+            user.userDetail = userDetail;
+            return user;
+        })
+            .catch(this.handleError);
+    };
+    UserService.prototype.updateUserDetail = function (userDetail) {
+        $.showPreloader();
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.currentUserToken
+            }),
+            body: 'gender=' + userDetail.gender + '&description=' + userDetail.description + '&birthdate=' + userDetail.birthdate,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/update', options)
+            .toPromise()
+            .then(function () {
+            $.hidePreloader();
+        })
+            .catch(this.handleError);
     };
     UserService.prototype.getAllUserClubs = function () {
         $.showPreloader();

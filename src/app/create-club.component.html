@@ -1,21 +1,21 @@
 <!-- 标题栏 -->
 <header class="bar bar-nav">
 	<a class="icon icon-left pull-left" (click)="goBack()"></a>
-	<h1 class="title">发布公告</h1>
+	<h1 class="title">创建群</h1>
 </header>
 
 <!-- 页面内容 -->
 <div class="content">
 	<div class="list-block">
-		<form [formGroup]="clubBulletinForm">
+		<form [formGroup]="clubForm">
 			<ul>
 				<li>
 					<div class="item-content">
 						<div class="item-media"><i class="icon icon-form-name"></i></div>
 						<div class="item-inner">
-							<div class="item-title label">标题</div>
+							<div class="item-title label">名字</div>
 							<div class="item-input">
-								<input formControlName="title" maxlength="30" type="text" placeholder="必填，最多30字">
+								<input formControlName="name" maxlength="30" type="text" placeholder="最多30字，创建后不可更改">
 							</div>
 						</div>
 					</div>
@@ -24,9 +24,9 @@
 					<div class="item-content">
 						<div class="item-media"><i class="icon icon-form-comment"></i></div>
 						<div class="item-inner">
-							<div class="item-title label">内容</div>
+							<div class="item-title label">简介</div>
 							<div class="item-input">
-								<textarea maxlength="200" formControlName="content" placeholder="必填，最多200字"></textarea>
+								<textarea maxlength="200" formControlName="brief_intro" placeholder="最多200字"></textarea>
 							</div>
 						</div>
 					</div>
@@ -35,6 +35,6 @@
 		</form>
 	</div>
 	<div class="content-block">
-		<button (click)="onSubmit()" class="set-width button button-big button-fill button-success" [ngClass]="isPublished" disabled="{{isPublished}}">{{createClubBulletinButtonText}}</button>
+		<button (click)="onSubmit()" class="set-width button button-big button-fill button-success set-width" [ngClass]="isCreated" disabled="{{isCreated}}">{{createClubButtonText}}</button>
 	</div>
 </div>

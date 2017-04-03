@@ -41,6 +41,7 @@ export class ClubDetailComponent implements OnInit {
 	private loggedIn = false;
 	private isAdmin = false;
 	private isClicked = false;
+	private isLoaded = false;
 	private isApplied = "";
 
 	private clubBulletin: ClubBulletin = new ClubBulletin();
@@ -76,6 +77,7 @@ export class ClubDetailComponent implements OnInit {
 					this.checkingService.checkUserClubMap(this.userService.getCurrentUserId(), this.club.id)
 						.then((result) => {
 							this.isMember = result;
+							this.isLoaded = true;
 
 							if (this.isMember) {
 								this.clubService.getLatestClubBulletinById(this.club.id).then(clubBulletin => this.clubBulletin = clubBulletin);
