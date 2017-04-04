@@ -4,7 +4,6 @@
  */
 var ActivityBill = (function () {
     function ActivityBill() {
-        this.note = "";
     }
     return ActivityBill;
 }());

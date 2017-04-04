@@ -11,7 +11,7 @@
 			<li *ngFor="let participant of participants" class="item-content item-link">
 				<div class="item-inner">
 					<div class="item-title">{{participant.username}}</div>
-					<div class="item-after">{{participant.attend_time | date}} 参加</div>
+					<div class="item-after">{{participant.attend_time | date: 'short'}} 参加</div>
 				</div>
 			</li>
 		</ul>

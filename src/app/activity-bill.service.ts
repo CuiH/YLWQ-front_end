@@ -2,7 +2,7 @@
  * Created by CuiH on 2017/4/3.
  */
 
-import {Http, RequestMethod, RequestOptions, Headers, Jsonp} from "@angular/http";
+import {Http, RequestMethod, RequestOptions, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
 
 import 'rxjs/add/operator/toPromise';
@@ -20,29 +20,40 @@ export class ActivityBillService {
 
 	constructor(
 		private http: Http,
-		private jsonp: Jsonp,
 	    private userService: UserService
 	) {
 		$.init();
 	};
 
 	createActivityBill(activityBill: ActivityBill): Promise<any> {
-
-		console.log(JSON.stringify(activityBill))
 		let options = new RequestOptions({
 			method: RequestMethod.Post,
 			headers: new Headers({
-				'Content-Type': "application/x-www-form-urlencoded",
-				'x-access-token': this.userService.getCurrentUserToken()
+				'Content-Type': 'application/json',
+				'x-access-token': this.userService.getCurrentUserToken(),
 			}),
-			body: JSON.stringify(activityBill)
+			body: JSON.stringify(activityBill),
 		});
 
-		return this.jsonp.request('http://172.18.43.152:3000/api/activity_bill/create', options)
+		return this.http.request('http://172.18.43.152:3000/api/activity_bill/create', options)
 			.toPromise()
 			.then(() => {
 				return;
 			})
+			.catch(this.handleError);
+	}
+
+	getActivityBillById(id: number): Promise<ActivityBill> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.userService.getCurrentUserToken(),
+			}),
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/activity_bill/' + id, options)
+			.toPromise()
+			.then((res) => res.json().data.activityBill as ActivityBill)
 			.catch(this.handleError);
 	}
 

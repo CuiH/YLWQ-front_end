@@ -46,6 +46,7 @@ export class UserDetailComponent implements OnInit {
 			.switchMap((params: Params) => this.userService.getUserById(+params['id']))
 			.subscribe((user) => {
 				this.user = user;
+
 				if (this.userService.getCurrentUserId() == user.id) this.isSelf = true;
 			});
 	}

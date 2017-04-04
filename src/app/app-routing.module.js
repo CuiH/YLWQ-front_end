@@ -29,6 +29,10 @@ var user_detail_component_1 = require("./user-detail.component");
 var club_messages_component_1 = require("./club-messages.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
 var create_activity_bill_component_1 = require("./create-activity-bill.component");
+var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
+var update_activity_component_1 = require("./update-activity.component");
+var update_club_component_1 = require("./update-club.component");
+var news_detail_component_1 = require("./news-detail.component");
 var routes = [
     { path: '', redirectTo: '/page_home', pathMatch: 'full' },
     { path: 'log_in', component: log_in_component_1.LogInComponent },
@@ -45,11 +49,15 @@ var routes = [
     { path: 'create_club_bulletin/:club_id', component: create_club_bulletin_component_1.CreateClubBulletinComponent },
     { path: 'application/:id', component: application_detail_component_1.ApplicationDetailComponent },
     { path: 'create_activity/:club_id', component: create_activity_component_1.CreateActivityComponent },
+    { path: 'update_activity/:id', component: update_activity_component_1.UpdateActivityComponent },
     { path: 'create_club', component: create_club_component_1.CreateClubComponent },
     { path: 'user/:id', component: user_detail_component_1.UserDetailComponent },
     { path: 'club_messages/:club_id', component: club_messages_component_1.ClubMessagesComponent },
     { path: 'update_user_detail', component: update_user_detail_component_1.UpdateUserDetailComponent },
     { path: 'create_activity_bill/:activity_id', component: create_activity_bill_component_1.CreateActivityBillComponent },
+    { path: 'activity_bill/:id', component: activity_bill_detail_component_1.ActivityBillDetailComponent },
+    { path: 'update_club/:id', component: update_club_component_1.UpdateClubComponent },
+    { path: 'news/:id', component: news_detail_component_1.NewsDetailComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

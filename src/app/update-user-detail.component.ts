@@ -53,7 +53,6 @@ export class UpdateUserDetailComponent implements OnInit {
 				this.username = user.username;
 				this.userDetail = user.userDetail;
 
-				this.userDetail.birthdate = this.userDetail.birthdate ? this.userDetail.birthdate.split('T')[0] : null;
 				this.userDetail.description = this.userDetail.description ? this.userDetail.description : "";
 			});
 	}
@@ -85,8 +84,6 @@ export class UpdateUserDetailComponent implements OnInit {
 
 			return false;
 		}
-
-		console.log(this.userDetail.description)
 
 		if (this.userDetail.description && this.userDetail.description.length > 200) {
 			$.alert("自我介绍过长");

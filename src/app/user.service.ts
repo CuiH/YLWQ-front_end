@@ -136,9 +136,7 @@ export class UserService {
 	}
 
 	getUserById(id: number): Promise<User> {
-		if (id ==0) id = this.getCurrentUserId();
-
-		$.showPreloader();
+		if (id == 0) id = this.getCurrentUserId();
 
 		let options = new RequestOptions({
 			method: RequestMethod.Get,
@@ -146,14 +144,7 @@ export class UserService {
 
 		return this.http.request('http://172.18.43.152:3000/api/user/' + id, options)
 			.toPromise()
-			.then((res) => {
-				$.hidePreloader();
-				let userDetail = res.json().data.user.user_detail as UserDetail;
-				let user = res.json().data.user as User;
-				user.userDetail = userDetail;
-
-				return user;
-			})
+			.then((res) => res.json().data.user as User)
 			.catch(this.handleError);
 	}
 

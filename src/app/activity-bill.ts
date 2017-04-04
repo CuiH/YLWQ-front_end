@@ -6,8 +6,11 @@ import {ActivityBillParticipantPayment} from "./activity-bill-participant-paymen
 
 export class ActivityBill {
 	id: number;
-	note: string = "";
-	activity_id: number;
+	status: string;
+	publish_time: string;
+	last_modify_time: string;
+	publisher_user_id: number;
+	publisher_username: string;
 
 	activityBillItems: ActivityBillItem[];
 	activityBillParticipantPayments: ActivityBillParticipantPayment[];

@@ -33,6 +33,11 @@ var user_detail_component_1 = require("./user-detail.component");
 var club_messages_component_1 = require("./club-messages.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
 var create_activity_bill_component_1 = require("./create-activity-bill.component");
+var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
+var update_activity_component_1 = require("./update-activity.component");
+var update_club_component_1 = require("./update-club.component");
+var news_detail_component_1 = require("./news-detail.component");
+var safe_html_pipe_1 = require("./safe-html.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -67,7 +72,12 @@ AppModule = __decorate([
             user_detail_component_1.UserDetailComponent,
             club_messages_component_1.ClubMessagesComponent,
             update_user_detail_component_1.UpdateUserDetailComponent,
-            create_activity_bill_component_1.CreateActivityBillComponent
+            create_activity_bill_component_1.CreateActivityBillComponent,
+            activity_bill_detail_component_1.ActivityBillDetailComponent,
+            update_activity_component_1.UpdateActivityComponent,
+            update_club_component_1.UpdateClubComponent,
+            news_detail_component_1.NewsDetailComponent,
+            safe_html_pipe_1.SafeHtmlPipe
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },

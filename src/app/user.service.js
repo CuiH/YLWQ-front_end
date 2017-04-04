@@ -106,19 +106,12 @@ var UserService = (function () {
     UserService.prototype.getUserById = function (id) {
         if (id == 0)
             id = this.getCurrentUserId();
-        $.showPreloader();
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
         });
         return this.http.request('http://172.18.43.152:3000/api/user/' + id, options)
             .toPromise()
-            .then(function (res) {
-            $.hidePreloader();
-            var userDetail = res.json().data.user.user_detail;
-            var user = res.json().data.user;
-            user.userDetail = userDetail;
-            return user;
-        })
+            .then(function (res) { return res.json().data.user; })
             .catch(this.handleError);
     };
     UserService.prototype.updateUserDetail = function (userDetail) {

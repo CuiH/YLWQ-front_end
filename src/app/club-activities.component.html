@@ -19,18 +19,16 @@
 							<!--<div class="item-title-row">-->
 							<!--<div class="item-title">标题</div>-->
 							<!--</div>-->
+							<div class="item-subtitle">{{activity.start_time | date: 'short'}} - {{activity.end_time | date: 'short'}}</div>
 							<div class="item-subtitle">简介：{{activity.brief_intro}}</div>
-							<div class="item-subtitle">开始时间：{{activity.start_time | date}}</div>
-							<div class="item-subtitle">结束时间：{{activity.end_time | date}}</div>
 							<div class="item-subtitle">地点：{{activity.location}}</div>
-							<div class="item-subtitle">发起人：{{activity.sponsor_username}}</div>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="card-footer">
-			<span>{{activity.create_time| date}} 发起</span>
+			<span>{{activity.create_time| date: 'short'}} 由 <a [routerLink]="['/user', activity.sponsor_user_id]">{{activity.sponsor_username}}</a> 发起</span>
 			<span>共 {{activity.participant_number}} 人</span>
 		</div>
 	</div>

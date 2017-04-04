@@ -50,6 +50,27 @@ var ActivityService = (function () {
         })
             .catch(this.handleError);
     };
+    ActivityService.prototype.updateActivity = function (activity) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+            body: 'id=' + activity.id +
+                '&start_time=' + activity.start_time +
+                '&end_time=' + activity.end_time +
+                '&location=' + activity.location +
+                '&brief_intro=' + activity.brief_intro +
+                '&note=' + activity.note,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity/update', options)
+            .toPromise()
+            .then(function (res) {
+            return true;
+        })
+            .catch(this.handleError);
+    };
     ActivityService.prototype.getActivityById = function (id) {
         $.showPreloader();
         var options = new http_1.RequestOptions({

@@ -1,0 +1,15 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">资讯</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-padded">
+		<h3>{{news.title}}</h3>
+		<div class="subtitle">{{news.author}} {{news.publish_time | date}}</div>
+		<div class="divider"></div>
+		<div [innerHTML]="news.content"></div>
+	</div>
+</div>

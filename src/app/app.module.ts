@@ -1,7 +1,7 @@
 import {NgModule, LOCALE_ID}      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import {HttpModule}    from '@angular/http';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -28,6 +28,11 @@ import {UserDetailComponent} from "./user-detail.component";
 import {ClubMessagesComponent} from "./club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
+import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
+import {UpdateActivityComponent} from "./update-activity.component";
+import {UpdateClubComponent} from "./update-club.component";
+import {NewsDetailComponent} from "./news-detail.component";
+import {SafeHtmlPipe} from "./safe-html.pipe";
 
 
 @NgModule({
@@ -59,7 +64,12 @@ import {CreateActivityBillComponent} from "./create-activity-bill.component";
 		UserDetailComponent,
 		ClubMessagesComponent,
 		UpdateUserDetailComponent,
-		CreateActivityBillComponent
+		CreateActivityBillComponent,
+		ActivityBillDetailComponent,
+		UpdateActivityComponent,
+		UpdateClubComponent,
+		NewsDetailComponent,
+		SafeHtmlPipe
 	],
 
 	providers: [

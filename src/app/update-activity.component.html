@@ -1,0 +1,82 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">编辑活动</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block">
+		<ul>
+			<form [formGroup]="activityForm">
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">活动名称</div>
+							<div class="item-input">
+								<div class="item-input add-padding">
+									{{activity.name}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">活动简介</div>
+							<div class="item-input">
+								<textarea maxlength="200" formControlName="brief_intro" placeholder="最多200字"></textarea>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">开始时间</div>
+							<div class="item-input">
+								<input type="text" (change)="activity.start_time=$event.target.value" placeholder="必填" class="datetime-picker-1 remove-border"/>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">结束时间</div>
+							<div class="item-input">
+								<input type="text" (change)="activity.end_time=$event.target.value" placeholder="必填" class="datetime-picker-2 remove-border"/>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">地点</div>
+							<div class="item-input">
+								<textarea maxlength="100" formControlName="location" placeholder="必填，最多100字"></textarea>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">备注</div>
+							<div class="item-input">
+								<textarea maxlength="200" formControlName="note" placeholder="最多200字"></textarea>
+							</div>
+						</div>
+					</div>
+				</li>
+
+			</form>
+		</ul>
+	</div>
+	<div class="content-block">
+		<button (click)="onSubmit()" class="set-width button button-big button-fill button-success">{{submitActivityText}}</button>
+	</div>
+</div>

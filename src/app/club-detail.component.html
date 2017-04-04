@@ -81,6 +81,7 @@
 						<div class="item item-content change-color">
 							<div class="item-inner">
 								<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 发起了新活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a></div>
+								<div *ngIf="message.type == 'AU'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 更新了活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a></div>
 								<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 创建了群组</div>
 								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 加入了群组</div>
 								<div *ngIf="message.type == 'AB'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 公布了活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a> 的账单</div>
@@ -103,6 +104,7 @@
 	<div *ngIf="loggedIn && isMember" class="list-block">
 		<ul>
 			<li><a class="item-link list-button" [routerLink]="['/create_activity', club.id]">发起新的活动</a></li>
+			<li><a *ngIf="isAdmin" class="item-link list-button" [routerLink]="['/update_club', club.id]">更改群信息</a></li>
 		</ul>
 	</div>
 

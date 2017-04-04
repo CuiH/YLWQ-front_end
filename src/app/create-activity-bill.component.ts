@@ -69,7 +69,7 @@ export class CreateActivityBillComponent implements OnInit {
 		this.activatedRoute.params
 			.switchMap((params: Params) => this.activityService.getActivityById(+params['activity_id']))
 			.subscribe((activity) => {
-				this.activityBill.activity_id = activity.id;
+				this.activityBill.id = activity.id;
 
 				this.activityService.getAllActivityParticipantsById(activity.id)
 					.then((participants) => {
@@ -148,6 +148,8 @@ export class CreateActivityBillComponent implements OnInit {
 				$.alert("请为付款项 #" + (i+1) + " 选择支付人");
 
 				return false;
+			} else {
+				currentItem.payer_user_id = +currentItem.payer_user_id;
 			}
 
 			itemsTotal += currentItem.cost;

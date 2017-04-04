@@ -42,6 +42,22 @@ var ClubService = (function () {
         })
             .catch(this.handleError);
     };
+    ClubService.prototype.updateClub = function (club) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+            body: 'id=' + club.id + '&brief_intro=' + club.brief_intro,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/update', options)
+            .toPromise()
+            .then(function (res) {
+            return true;
+        })
+            .catch(this.handleError);
+    };
     ClubService.prototype.getClubById = function (id) {
         $.showPreloader();
         var options = new http_1.RequestOptions({

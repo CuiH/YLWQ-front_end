@@ -27,8 +27,6 @@ export class NotificationService {
 	};
 
 	readNotification(id: number): Promise<any> {
-		$.showPreloader();
-
 		let options = new RequestOptions({
 			method: RequestMethod.Post,
 			headers: new Headers({
@@ -41,8 +39,6 @@ export class NotificationService {
 		return this.http.request('http://172.18.43.152:3000/api/notification/read', options)
 			.toPromise()
 			.then((res) => {
-				$.hidePreloader();
-
 				return;
 			})
 			.catch(this.handleError);

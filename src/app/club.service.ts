@@ -52,6 +52,24 @@ export class ClubService {
 			.catch(this.handleError);
 	}
 
+	updateClub(club: Club): Promise<any> {
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded",
+				'x-access-token': this.userService.getCurrentUserToken()
+			}),
+			body: 'id=' + club.id + '&brief_intro=' + club.brief_intro,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/update', options)
+			.toPromise()
+			.then((res) => {
+				return true;
+			})
+			.catch(this.handleError);
+	}
+
 	getClubById(id: number): Promise<Club> {
 		$.showPreloader();
 

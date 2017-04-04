@@ -6,28 +6,13 @@
 
 <div class="content native-scroll">
 	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id]">
-		<div class="card-header">{{club.name}}</div>
+		<div class="card-header change-text">{{club.name}}</div>
 		<div class="card-content">
-			<div class="list-block media-list">
-				<ul>
-					<li class="item-content">
-						<!--<div class="item-media">-->
-							<!--<img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="44">-->
-						<!--</div>-->
-						<div class="item-inner">
-							<!--<div class="item-title-row">-->
-								<!--<div class="item-title">标题</div>-->
-							<!--</div>-->
-							<div class="item-subtitle change-text"><span>简介：</span>{{club.brief_intro}}</div>
-						</div>
-					</li>
-				</ul>
-			</div>
+			<div class="card-content-inner"><span>简介：</span>{{club.brief_intro}}</div>
 		</div>
 		<div class="card-footer">
-			<span>{{club.join_time | date:'short'}} 加入</span>
+			<span>{{club.join_time | date}} 加入</span>
 			<span>{{club.member_number}} 名成员</span>
 		</div>
 	</div>
-
 </div>

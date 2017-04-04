@@ -7,15 +7,12 @@ import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 
 import {UserService} from "./user.service";
-import {ClubBulletin} from "./club-bulletin";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
-import {ClubBulletinService} from "./club-bulletin-service";
+import {Activity} from "./activity";
+import {ActivityService} from "./activity.service";
 
 import "zepto";
 import "sm";
-import {Activity} from "./activity";
-import {ActivityService} from "./activity.service";
-import {validTimeValidator} from "./valid-time.directive";
 
 declare let $: any;
 
@@ -87,7 +84,7 @@ export class CreateActivityComponent implements OnInit {
 		if (this.validateForm() && this.validateTime()) {
 			this.activatedRoute.params
 				.switchMap((params: Params) => {
-					const activityObject = this.activityForm.value as Activity;
+					let activityObject = this.activityForm.value as Activity;
 					activityObject.start_time = this.startTime;
 					activityObject.end_time = this.endTime;
 					activityObject.club_id = +params['club_id'];

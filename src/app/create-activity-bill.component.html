@@ -9,7 +9,10 @@
 	<div class="content-block-title">付款项</div>
 	<div class="list-block">
 		<div  *ngFor="let activityBillItem of activityBillItems; let i = index">
-			<div class="add-margin"># {{i+1}}</div>
+			<div class="add-margin-2">
+				# {{i+1}}
+				<a *ngIf="i != 0" (click)="activityBillItems.splice(i, 1)">删除该项</a>
+			</div>
 			<ul>
 				<li>
 					<div class="item-content">
@@ -36,7 +39,7 @@
 						<div class="item-inner">
 							<div class="item-title label">支付人</div>
 							<div class="item-input">
-								<select [(ngModel)]="activityBillItem.payer_user_id">
+								<select [(ngModel)]="+activityBillItem.payer_user_id">
 									<option *ngFor="let member of members" [value]="member.id">{{member.username}}</option>
 								</select>
 							</div>

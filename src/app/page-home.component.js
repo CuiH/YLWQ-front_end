@@ -13,12 +13,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("./user.service");
+var new_service_1 = require("./new.service");
 var PageHomeComponent = (function () {
-    function PageHomeComponent(userService) {
+    function PageHomeComponent(userService, newsService) {
         this.userService = userService;
+        this.newsService = newsService;
+        this.news = [];
     }
     PageHomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.loggedIn = this.userService.isLoggedIn();
+        this.newsService.getLatestEightNews()
+            .then(function (news) { return _this.news = news; });
     };
     return PageHomeComponent;
 }());
@@ -27,8 +33,10 @@ PageHomeComponent = __decorate([
         selector: 'page-home',
         templateUrl: './page-home.component.html',
         styleUrls: ['./page-home.component.css'],
+        providers: [new_service_1.NewsService]
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService,
+        new_service_1.NewsService])
 ], PageHomeComponent);
 exports.PageHomeComponent = PageHomeComponent;
 //# sourceMappingURL=page-home.component.js.map

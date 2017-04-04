@@ -18,28 +18,38 @@ require("zepto");
 require("sm");
 var user_service_1 = require("./user.service");
 var ActivityBillService = (function () {
-    function ActivityBillService(http, jsonp, userService) {
+    function ActivityBillService(http, userService) {
         this.http = http;
-        this.jsonp = jsonp;
         this.userService = userService;
         $.init();
     }
     ;
     ActivityBillService.prototype.createActivityBill = function (activityBill) {
-        console.log(JSON.stringify(activityBill));
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Post,
             headers: new http_1.Headers({
-                'Content-Type': "application/x-www-form-urlencoded",
-                'x-access-token': this.userService.getCurrentUserToken()
+                'Content-Type': 'application/json',
+                'x-access-token': this.userService.getCurrentUserToken(),
             }),
-            body: JSON.stringify(activityBill)
+            body: JSON.stringify(activityBill),
         });
-        return this.jsonp.request('http://172.18.43.152:3000/api/activity_bill/create', options)
+        return this.http.request('http://172.18.43.152:3000/api/activity_bill/create', options)
             .toPromise()
             .then(function () {
             return;
         })
+            .catch(this.handleError);
+    };
+    ActivityBillService.prototype.getActivityBillById = function (id) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken(),
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity_bill/' + id, options)
+            .toPromise()
+            .then(function (res) { return res.json().data.activityBill; })
             .catch(this.handleError);
     };
     ActivityBillService.prototype.handleError = function (err) {
@@ -52,7 +62,6 @@ var ActivityBillService = (function () {
 ActivityBillService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http,
-        http_1.Jsonp,
         user_service_1.UserService])
 ], ActivityBillService);
 exports.ActivityBillService = ActivityBillService;

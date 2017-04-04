@@ -50,7 +50,7 @@ var CreateActivityBillComponent = (function () {
         this.activatedRoute.params
             .switchMap(function (params) { return _this.activityService.getActivityById(+params['activity_id']); })
             .subscribe(function (activity) {
-            _this.activityBill.activity_id = activity.id;
+            _this.activityBill.id = activity.id;
             _this.activityService.getAllActivityParticipantsById(activity.id)
                 .then(function (participants) {
                 _this.participants = participants;
@@ -113,6 +113,9 @@ var CreateActivityBillComponent = (function () {
             else if (currentItem.payer_user_id == null) {
                 $.alert("请为付款项 #" + (i + 1) + " 选择支付人");
                 return false;
+            }
+            else {
+                currentItem.payer_user_id = +currentItem.payer_user_id;
             }
             itemsTotal += currentItem.cost;
         }

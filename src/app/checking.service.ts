@@ -79,7 +79,7 @@ export class CheckingService {
 			method: RequestMethod.Get,
 		});
 
-		return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_sponsor?user_id=' + userId + "&activityId=" + activityId, options)
+		return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_sponsor?user_id=' + userId + "&activity_id=" + activityId, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.result;

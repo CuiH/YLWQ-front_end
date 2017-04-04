@@ -10,6 +10,12 @@ button {
 }
 
 .add-margin {
-    margin-top: 0.6rem;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    text-align: right;
+}
+
+.add-margin-2 {
+    margin-top: 0.5rem;
     margin-left: 0.3rem;
 }

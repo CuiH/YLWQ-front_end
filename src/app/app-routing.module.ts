@@ -24,6 +24,10 @@ import {UserDetailComponent} from "./user-detail.component";
 import {ClubMessagesComponent} from "./club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
+import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
+import {UpdateActivityComponent} from "./update-activity.component";
+import {UpdateClubComponent} from "./update-club.component";
+import {NewsDetailComponent} from "./news-detail.component";
 
 
 const routes: Routes = [
@@ -42,11 +46,15 @@ const routes: Routes = [
 	{path: 'create_club_bulletin/:club_id', component: CreateClubBulletinComponent},
 	{path: 'application/:id', component: ApplicationDetailComponent},
 	{path: 'create_activity/:club_id', component: CreateActivityComponent},
+	{path: 'update_activity/:id', component: UpdateActivityComponent},
 	{path: 'create_club', component: CreateClubComponent},
 	{path: 'user/:id', component: UserDetailComponent},
 	{path: 'club_messages/:club_id', component: ClubMessagesComponent},
 	{path: 'update_user_detail', component: UpdateUserDetailComponent},
 	{path: 'create_activity_bill/:activity_id', component: CreateActivityBillComponent},
+	{path: 'activity_bill/:id', component: ActivityBillDetailComponent},
+	{path: 'update_club/:id', component: UpdateClubComponent},
+	{path: 'news/:id', component: NewsDetailComponent},
 ];
 
 @NgModule({

@@ -40,7 +40,6 @@ var UpdateUserDetailComponent = (function () {
             .then(function (user) {
             _this.username = user.username;
             _this.userDetail = user.userDetail;
-            _this.userDetail.birthdate = _this.userDetail.birthdate ? _this.userDetail.birthdate.split('T')[0] : null;
             _this.userDetail.description = _this.userDetail.description ? _this.userDetail.description : "";
         });
     };
@@ -65,7 +64,6 @@ var UpdateUserDetailComponent = (function () {
             $.alert("请输入合法的性别");
             return false;
         }
-        console.log(this.userDetail.description);
         if (this.userDetail.description && this.userDetail.description.length > 200) {
             $.alert("自我介绍过长");
             return false;

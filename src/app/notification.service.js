@@ -25,7 +25,6 @@ var NotificationService = (function () {
     }
     ;
     NotificationService.prototype.readNotification = function (id) {
-        $.showPreloader();
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Post,
             headers: new http_1.Headers({
@@ -37,7 +36,6 @@ var NotificationService = (function () {
         return this.http.request('http://172.18.43.152:3000/api/notification/read', options)
             .toPromise()
             .then(function (res) {
-            $.hidePreloader();
             return;
         })
             .catch(this.handleError);

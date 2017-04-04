@@ -70,7 +70,7 @@ var CheckingService = (function () {
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
         });
-        return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_sponsor?user_id=' + userId + "&activityId=" + activityId, options)
+        return this.http.request('http://172.18.43.152:3000/api/checking/user_activity_sponsor?user_id=' + userId + "&activity_id=" + activityId, options)
             .toPromise()
             .then(function (res) {
             return res.json().data.result;

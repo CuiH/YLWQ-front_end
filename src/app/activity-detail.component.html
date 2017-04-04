@@ -71,7 +71,7 @@
 	<div class="list-block">
 		<ul>
 			<li><a class="item-link list-button" [routerLink]="['/activity_participants', activity.id]">查看所有参与者</a></li>
-			<li *ngIf="activity.activity_bill_status == 'P'"><a class="item-link list-button">查看活动账单</a></li>
+			<li *ngIf="activity.activity_bill_status == 'P'"><a [routerLink]="['/activity_bill', activity.id]" class="item-link list-button">查看活动账单</a></li>
 		</ul>
 	</div>
 
@@ -81,9 +81,10 @@
 		</ul>
 	</div>
 
-	<div *ngIf="!isParticipant && activity.status != '已结束'" class="list-block">
+	<div *ngIf="activity.status != '已结束'" class="list-block">
 		<ul class="add-margin">
-			<li><a (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
+			<li><a *ngIf="isSponsor" class="item-link list-button" [routerLink]="['/update_activity', activity.id]">编辑该活动</a></li>
+			<li><a *ngIf="!isParticipant" (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
 		</ul>
 	</div>
 </div>

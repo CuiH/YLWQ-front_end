@@ -1,0 +1,11 @@
+.add-style {
+    margin-right: 0.3rem;
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+.change-style {
+    display: block;
+    height: auto;
+    text-overflow: clip;
+}

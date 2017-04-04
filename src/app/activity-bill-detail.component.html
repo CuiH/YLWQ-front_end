@@ -1,0 +1,43 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">账单详情</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title">付款项</div>
+	<div class="list-block media-list">
+		<ul>
+			<li *ngFor="let item of activityBill.activityBillItems">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-title-row">
+							<div class="item-title">{{item.description}}</div>
+							<div class="item-after">￥ {{item.cost}}</div>
+						</div>
+						<div class="item-text change-style">支付人：{{item.payer_username}}</div>
+						<div class="item-text change-style">备注：{{item.note}}</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="add-style">
+			总计：￥{{totalCost}}
+		</div>
+	</div>
+
+	<div class="content-block-title">付款人</div>
+	<div class="list-block">
+		<ul>
+			<li *ngFor="let payment of activityBill.activityBillParticipantPayments" class="item-content">
+				<div class="item-inner">
+					<div class="item-title">{{payment.participant_username}}</div>
+					<div class="item-after">
+						<div class="item-after">{{payment.amount}} 元</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
