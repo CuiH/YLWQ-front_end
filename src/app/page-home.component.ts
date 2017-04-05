@@ -2,7 +2,10 @@
  * Created by CuiH on 2017/3/29.
  */
 
-import {Component, OnInit} from "@angular/core";
+import {
+	Component, OnInit, OnDestroy, AfterViewChecked, AfterViewInit, AfterContentChecked,
+	AfterContentInit, DoCheck
+} from "@angular/core";
 
 import {UserService} from "./user.service";
 import {NewsService} from "./new.service";
