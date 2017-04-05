@@ -20,8 +20,8 @@ require("sm");
 var activity_bill_service_1 = require("./activity-bill.service");
 var activity_bill_participant_payment_1 = require("./activity-bill-participant-payment");
 var activity_bill_item_1 = require("./activity-bill-item");
-var activity_service_1 = require("./activity.service");
-var club_service_1 = require("./club.service");
+var activity_service_1 = require("./activity/activity.service");
+var club_service_1 = require("./club/club.service");
 var activity_bill_1 = require("./activity-bill");
 var CreateActivityBillComponent = (function () {
     function CreateActivityBillComponent(userService, activityBillService, activityService, clubService, activatedRoute, location, router) {

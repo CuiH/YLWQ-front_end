@@ -17,27 +17,18 @@ var log_in_component_1 = require("./log-in.component");
 var page_my_component_1 = require("./page-my.component");
 var page_home_component_1 = require("./page-home.component");
 var user_clubs_component_1 = require("./user-clubs.component");
-var club_detail_component_1 = require("./club-detail.component");
 var checking_service_1 = require("./checking.service");
 var user_activities_component_1 = require("./user-activities.component");
-var activity_detail_component_1 = require("./activity-detail.component");
-var club_activities_component_1 = require("./club-activities.component");
-var club_members_component_1 = require("./club-members.component");
-var activity_participants_component_1 = require("./activity-participants.component");
-var create_club_bulletin_component_1 = require("./create-club-bulletin.component");
 var page_messages_component_1 = require("./page-messages.component");
-var application_detail_component_1 = require("./application-detail.component");
-var create_activity_component_1 = require("./create-activity.component");
-var create_club_component_1 = require("./create-club.component");
 var user_detail_component_1 = require("./user-detail.component");
-var club_messages_component_1 = require("./club-messages.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
 var create_activity_bill_component_1 = require("./create-activity-bill.component");
 var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
-var update_activity_component_1 = require("./update-activity.component");
-var update_club_component_1 = require("./update-club.component");
 var news_detail_component_1 = require("./news-detail.component");
-var safe_html_pipe_1 = require("./safe-html.pipe");
+var activity_module_1 = require("./activity/activity.module");
+var club_module_1 = require("./club/club.module");
+var application_module_1 = require("./application/application.module");
+var club_bulletin_module_1 = require("./club-bulletin/club-bulletin.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49,6 +40,10 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            activity_module_1.ActivityModule,
+            club_module_1.ClubModule,
+            application_module_1.ApplicationModule,
+            club_bulletin_module_1.ClubBulletinModule,
             app_routing_module_1.AppRoutingModule,
             forms_1.ReactiveFormsModule
         ],
@@ -58,26 +53,13 @@ AppModule = __decorate([
             page_my_component_1.PageMyComponent,
             page_home_component_1.PageHomeComponent,
             user_clubs_component_1.UserClubsComponent,
-            club_detail_component_1.ClubDetailComponent,
             user_activities_component_1.UserActivitiesComponent,
-            activity_detail_component_1.ActivityDetailComponent,
-            club_activities_component_1.ClubActivitiesComponent,
-            club_members_component_1.ClubMembersComponent,
-            activity_participants_component_1.ActivityParticipantsComponent,
-            create_club_bulletin_component_1.CreateClubBulletinComponent,
             page_messages_component_1.PageMessagesComponent,
-            application_detail_component_1.ApplicationDetailComponent,
-            create_activity_component_1.CreateActivityComponent,
-            create_club_component_1.CreateClubComponent,
             user_detail_component_1.UserDetailComponent,
-            club_messages_component_1.ClubMessagesComponent,
             update_user_detail_component_1.UpdateUserDetailComponent,
             create_activity_bill_component_1.CreateActivityBillComponent,
             activity_bill_detail_component_1.ActivityBillDetailComponent,
-            update_activity_component_1.UpdateActivityComponent,
-            update_club_component_1.UpdateClubComponent,
             news_detail_component_1.NewsDetailComponent,
-            safe_html_pipe_1.SafeHtmlPipe
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },

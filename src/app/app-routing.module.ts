@@ -9,24 +9,13 @@ import { LogInComponent }       from "./log-in.component";
 import { PageMyComponent } from "./page-my.component";
 import {PageHomeComponent} from "./page-home.component";
 import {UserClubsComponent} from "./user-clubs.component";
-import {ClubDetailComponent} from "./club-detail.component";
 import {UserActivitiesComponent} from "./user-activities.component";
-import {ActivityDetailComponent} from "./activity-detail.component";
-import {ClubActivitiesComponent} from "./club-activities.component";
-import {ClubMembersComponent} from "./club-members.component";
-import {ActivityParticipantsComponent} from "./activity-participants.component";
-import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
 import {PageMessagesComponent} from "./page-messages.component";
-import {ApplicationDetailComponent} from "./application-detail.component";
-import {CreateActivityComponent} from "./create-activity.component";
-import {CreateClubComponent} from "./create-club.component";
 import {UserDetailComponent} from "./user-detail.component";
-import {ClubMessagesComponent} from "./club-messages.component";
+import {ClubMessagesComponent} from "./club/club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
 import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
-import {UpdateActivityComponent} from "./update-activity.component";
-import {UpdateClubComponent} from "./update-club.component";
 import {NewsDetailComponent} from "./news-detail.component";
 
 
@@ -37,23 +26,12 @@ const routes: Routes = [
 	{path: 'page_home', component: PageHomeComponent},
 	{path: 'page_messages', component: PageMessagesComponent},
 	{path: 'clubs', component: UserClubsComponent},
-	{path: 'club/:id', component: ClubDetailComponent},
 	{path: 'activities', component: UserActivitiesComponent},
-	{path: 'activity/:id', component: ActivityDetailComponent},
-	{path: 'club_activities/:club_id', component: ClubActivitiesComponent},
-	{path: 'club_members/:club_id', component: ClubMembersComponent},
-	{path: 'activity_participants/:activity_id', component: ActivityParticipantsComponent},
-	{path: 'create_club_bulletin/:club_id', component: CreateClubBulletinComponent},
-	{path: 'application/:id', component: ApplicationDetailComponent},
-	{path: 'create_activity/:club_id', component: CreateActivityComponent},
-	{path: 'update_activity/:id', component: UpdateActivityComponent},
-	{path: 'create_club', component: CreateClubComponent},
 	{path: 'user/:id', component: UserDetailComponent},
 	{path: 'club_messages/:club_id', component: ClubMessagesComponent},
 	{path: 'update_user_detail', component: UpdateUserDetailComponent},
 	{path: 'create_activity_bill/:activity_id', component: CreateActivityBillComponent},
 	{path: 'activity_bill/:id', component: ActivityBillDetailComponent},
-	{path: 'update_club/:id', component: UpdateClubComponent},
 	{path: 'news/:id', component: NewsDetailComponent},
 ];
 

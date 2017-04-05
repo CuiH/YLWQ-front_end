@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 
 import {UserService} from "./user.service";
 
-import {Activity} from "./activity";
+import {Activity} from "./activity/activity";
 import {zipAll} from "rxjs/operator/zipAll";
 
 

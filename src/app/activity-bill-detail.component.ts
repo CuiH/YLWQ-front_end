@@ -6,7 +6,7 @@ import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 
-import {ActivityService} from "./activity.service";
+import {ActivityService} from "./activity/activity.service";
 import {UserService} from "./user.service";
 import {ActivityBillService} from "./activity-bill.service";
 import {ActivityBill} from "./activity-bill";

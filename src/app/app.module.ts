@@ -12,27 +12,19 @@ import { LogInComponent }      from "./log-in.component";
 import { PageMyComponent }         from "./page-my.component";
 import {PageHomeComponent} from "./page-home.component";
 import {UserClubsComponent} from "./user-clubs.component";
-import {ClubDetailComponent} from "./club-detail.component";
 import {CheckingService} from "./checking.service";
 import {UserActivitiesComponent} from "./user-activities.component";
-import {ActivityDetailComponent} from "./activity-detail.component";
-import {ClubActivitiesComponent} from "./club-activities.component";
-import {ClubMembersComponent} from "./club-members.component";
-import {ActivityParticipantsComponent} from "./activity-participants.component";
-import {CreateClubBulletinComponent} from "./create-club-bulletin.component";
+import {CreateClubBulletinComponent} from "./club-bulletin/create-club-bulletin.component";
 import {PageMessagesComponent} from "./page-messages.component";
-import {ApplicationDetailComponent} from "./application-detail.component";
-import {CreateActivityComponent} from "./create-activity.component";
-import {CreateClubComponent} from "./create-club.component";
 import {UserDetailComponent} from "./user-detail.component";
-import {ClubMessagesComponent} from "./club-messages.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
 import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
-import {UpdateActivityComponent} from "./update-activity.component";
-import {UpdateClubComponent} from "./update-club.component";
 import {NewsDetailComponent} from "./news-detail.component";
-import {SafeHtmlPipe} from "./safe-html.pipe";
+import {ActivityModule} from "./activity/activity.module";
+import {ClubModule} from "./club/club.module";
+import {ApplicationModule} from "./application/application.module";
+import {ClubBulletinModule} from "./club-bulletin/club-bulletin.module";
 
 
 @NgModule({
@@ -40,6 +32,10 @@ import {SafeHtmlPipe} from "./safe-html.pipe";
 		BrowserModule,
 		FormsModule,
 		HttpModule,
+		ActivityModule,
+		ClubModule,
+		ApplicationModule,
+		ClubBulletinModule,
 		AppRoutingModule,
 		ReactiveFormsModule
 	],
@@ -50,26 +46,13 @@ import {SafeHtmlPipe} from "./safe-html.pipe";
 		PageMyComponent,
 		PageHomeComponent,
 		UserClubsComponent,
-		ClubDetailComponent,
 		UserActivitiesComponent,
-		ActivityDetailComponent,
-		ClubActivitiesComponent,
-		ClubMembersComponent,
-		ActivityParticipantsComponent,
-		CreateClubBulletinComponent,
 		PageMessagesComponent,
-		ApplicationDetailComponent,
-		CreateActivityComponent,
-		CreateClubComponent,
 		UserDetailComponent,
-		ClubMessagesComponent,
 		UpdateUserDetailComponent,
 		CreateActivityBillComponent,
 		ActivityBillDetailComponent,
-		UpdateActivityComponent,
-		UpdateClubComponent,
 		NewsDetailComponent,
-		SafeHtmlPipe
 	],
 
 	providers: [

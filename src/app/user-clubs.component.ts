@@ -7,7 +7,7 @@ import { Location }               from '@angular/common';
 import {Router} from "@angular/router";
 
 import {UserService} from "./user.service";
-import {Club} from "./club";
+import {Club} from "./club/club";
 
 
 @Component({

@@ -8,11 +8,11 @@ import {Injectable} from "@angular/core";
 import 'rxjs/add/operator/toPromise';
 
 import {User} from "./user";
-import {Club} from "./club";
+import {Club} from "./club/club";
 
 import {CookieService} from 'angular2-cookie/core';
 import { CookieOptionsArgs } from 'angular2-cookie/services/cookie-options-args.model';
-import {Activity} from "./activity";
+import {Activity} from "./activity/activity";
 
 import "zepto";
 import "sm";

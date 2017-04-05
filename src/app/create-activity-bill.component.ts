@@ -13,9 +13,9 @@ import "sm";
 import {ActivityBillService} from "./activity-bill.service";
 import {ActivityBillParticipantPayment} from "./activity-bill-participant-payment";
 import {ActivityBillItem} from "./activity-bill-item";
-import {ActivityService} from "./activity.service";
+import {ActivityService} from "./activity/activity.service";
 import {User} from "./user";
-import {ClubService} from "./club.service";
+import {ClubService} from "./club/club.service";
 import {ActivityBill} from "./activity-bill";
 
 declare let $: any;
