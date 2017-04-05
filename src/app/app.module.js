@@ -12,23 +12,19 @@ var http_1 = require("@angular/http");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
-var user_service_1 = require("./user.service");
+var user_service_1 = require("./user/user.service");
 var log_in_component_1 = require("./log-in.component");
 var page_my_component_1 = require("./page-my.component");
 var page_home_component_1 = require("./page-home.component");
-var user_clubs_component_1 = require("./user-clubs.component");
 var checking_service_1 = require("./checking.service");
-var user_activities_component_1 = require("./user-activities.component");
 var page_messages_component_1 = require("./page-messages.component");
-var user_detail_component_1 = require("./user-detail.component");
-var update_user_detail_component_1 = require("./update-user-detail.component");
-var create_activity_bill_component_1 = require("./create-activity-bill.component");
-var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
-var news_detail_component_1 = require("./news-detail.component");
 var activity_module_1 = require("./activity/activity.module");
 var club_module_1 = require("./club/club.module");
 var application_module_1 = require("./application/application.module");
 var club_bulletin_module_1 = require("./club-bulletin/club-bulletin.module");
+var user_module_1 = require("./user/user.module");
+var activity_bill_module_1 = require("./activity-bill/activity-bill.module");
+var news_module_1 = require("./news/news.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,6 +40,9 @@ AppModule = __decorate([
             club_module_1.ClubModule,
             application_module_1.ApplicationModule,
             club_bulletin_module_1.ClubBulletinModule,
+            user_module_1.UserModule,
+            news_module_1.NewsModule,
+            activity_bill_module_1.ActivityBillModule,
             app_routing_module_1.AppRoutingModule,
             forms_1.ReactiveFormsModule
         ],
@@ -52,14 +51,7 @@ AppModule = __decorate([
             log_in_component_1.LogInComponent,
             page_my_component_1.PageMyComponent,
             page_home_component_1.PageHomeComponent,
-            user_clubs_component_1.UserClubsComponent,
-            user_activities_component_1.UserActivitiesComponent,
             page_messages_component_1.PageMessagesComponent,
-            user_detail_component_1.UserDetailComponent,
-            update_user_detail_component_1.UpdateUserDetailComponent,
-            create_activity_bill_component_1.CreateActivityBillComponent,
-            activity_bill_detail_component_1.ActivityBillDetailComponent,
-            news_detail_component_1.NewsDetailComponent,
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },

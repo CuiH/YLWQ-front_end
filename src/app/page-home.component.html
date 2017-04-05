@@ -25,10 +25,10 @@
 
 <!-- 页面内容 -->
 <div class="content">
-	<div class="content-block-title">资讯</div>
+	<div class="content-block-title change-margin">资讯</div>
 	<div class="list-block media-list">
 		<ul>
-			<li *ngFor="let newsItem of news" [routerLink]="['/news', newsItem.id]">
+			<li *ngFor="let newsItem of news" [routerLink]="['/news', newsItem.id, 'detail']">
 				<div class="item-content">
 					<div class="item-media"><img src="{{newsItem.img_url}}"></div>
 					<div class="item-inner">
@@ -40,5 +40,17 @@
 				</div>
 			</li>
 		</ul>
+	</div>
+
+	<div class="content-block-title change-margin">热门群组</div>
+	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id, 'detail']">
+		<div class="card-header change-text">{{club.name}}</div>
+		<div class="card-content">
+			<div class="card-content-inner"><span>简介：</span>{{club.brief_intro}}</div>
+		</div>
+		<div class="card-footer">
+			<span></span>
+			<span class="pull-right">{{club.member_number}} 名成员</span>
+		</div>
 	</div>
 </div>

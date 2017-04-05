@@ -14,12 +14,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/toPromise");
-require("zepto");
-require("sm");
 var CheckingService = (function () {
     function CheckingService(http) {
         this.http = http;
-        $.init();
     }
     ;
     CheckingService.prototype.checkUserClubMap = function (userId, clubId) {
@@ -78,8 +75,6 @@ var CheckingService = (function () {
             .catch(this.handleError);
     };
     CheckingService.prototype.handleError = function (err) {
-        $.hidePreloader();
-        $.alert(err.json().message);
         return Promise.reject(err);
     };
     return CheckingService;

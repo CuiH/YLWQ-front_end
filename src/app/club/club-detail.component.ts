@@ -8,10 +8,10 @@ import {ActivatedRoute, Params} from "@angular/router";
 
 import {ClubService} from "./club.service";
 import {Club} from "./club";
-import {UserService} from "../user.service";
+import {UserService} from "../user/user.service";
 import {CheckingService} from "../checking.service";
 import {ClubBulletin} from "../club-bulletin/club-bulletin";
-import {ClubMessage} from "../club-message";
+import {ClubMessage} from "../club-message/club-message";
 import {ApplicationService} from "../application/application.service";
 
 import 'rxjs/add/operator/switchMap';

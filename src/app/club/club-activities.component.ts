@@ -6,8 +6,7 @@ import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 
-import {UserService} from "../user.service";
-
+import {UserService} from "../user/user.service";
 import {Activity} from "../activity/activity";
 import {ClubService} from "./club.service";
 
@@ -39,7 +38,7 @@ export class ClubActivitiesComponent implements OnInit {
 		}
 
 		this.activatedRoute.params
-			.switchMap((params: Params) => this.clubService.getAllClubActivitiesById(+params['club_id']))
+			.switchMap((params: Params) => this.clubService.getAllClubActivitiesById(+params['id']))
 			.subscribe((activities) => {
 				this.activities = activities;
 			});

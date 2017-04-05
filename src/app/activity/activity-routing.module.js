@@ -10,11 +10,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
-var activity_component_1 = require("../activity/activity.component");
-var create_activity_component_1 = require("../activity/create-activity.component");
-var update_activity_component_1 = require("../activity/update-activity.component");
-var activity_participants_component_1 = require("../activity/activity-participants.component");
-var activity_detail_component_1 = require("../activity/activity-detail.component");
+var activity_component_1 = require("./activity.component");
+var create_activity_component_1 = require("./create-activity.component");
+var update_activity_component_1 = require("./update-activity.component");
+var activity_participants_component_1 = require("./activity-participants.component");
+var activity_detail_component_1 = require("./activity-detail.component");
 var activityRoutes = [
     {
         path: 'activity',

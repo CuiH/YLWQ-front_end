@@ -13,8 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
+var user_service_1 = require("../user/user.service");
 require("rxjs/add/operator/toPromise");
-var user_service_1 = require("../user.service");
 require("zepto");
 require("sm");
 var ClubBulletinService = (function () {

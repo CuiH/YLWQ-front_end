@@ -5,14 +5,14 @@
 import {Http, RequestMethod, RequestOptions, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
 
-import 'rxjs/add/operator/toPromise';
-
 import {Club} from "./club";
 import {Activity} from "../activity/activity";
-import {UserService} from "../user.service";
-import {User} from "../user";
+import {UserService} from "../user/user.service";
+import {User} from "../user/user";
 import {ClubBulletin} from "../club-bulletin/club-bulletin";
-import {ClubMessage} from "../club-message";
+import {ClubMessage} from "../club-message/club-message";
+
+import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
@@ -171,6 +171,19 @@ export class ClubService {
 				$.hidePreloader();
 
 				return res.json().data.clubMessages as ClubMessage[];
+			})
+			.catch(this.handleError);
+	}
+
+	getHottestThreeClubs(): Promise<Club[]> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/get_hottest_three', options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.clubs as Club[];
 			})
 			.catch(this.handleError);
 	}

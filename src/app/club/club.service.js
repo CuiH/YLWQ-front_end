@@ -13,8 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
+var user_service_1 = require("../user/user.service");
 require("rxjs/add/operator/toPromise");
-var user_service_1 = require("../user.service");
 require("zepto");
 require("sm");
 var ClubService = (function () {
@@ -142,6 +142,17 @@ var ClubService = (function () {
             .then(function (res) {
             $.hidePreloader();
             return res.json().data.clubMessages;
+        })
+            .catch(this.handleError);
+    };
+    ClubService.prototype.getHottestThreeClubs = function () {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/get_hottest_three', options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.clubs;
         })
             .catch(this.handleError);
     };

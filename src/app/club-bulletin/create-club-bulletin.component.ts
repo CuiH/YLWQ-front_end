@@ -5,10 +5,10 @@
 import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
-
-import {UserService} from "../user.service";
-import {ClubBulletin} from "./club-bulletin";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+
+import {UserService} from "../user/user.service";
+import {ClubBulletin} from "./club-bulletin";
 import {ClubBulletinService} from "./club-bulletin-service";
 
 import "zepto";

@@ -31,7 +31,7 @@
 					<div class="item-after">{{club.create_time | date}}</div>
 				</div>
 			</li>
-			<li class="item-content item-link" [routerLink]="['/user', club.founder_user_id]">
+			<li class="item-content item-link" [routerLink]="['/user', club.founder_user_id, 'detail']">
 				<div class="item-inner">
 					<div class="item-title">创建人</div>
 					<div class="item-after">{{club.founder_username}}</div>
@@ -49,7 +49,7 @@
 	<div *ngIf="isMember">
 		<div class="content-block-title">
 			群公告
-			<a *ngIf="isAdmin" [routerLink]="['/create_club_bulletin', club.id]" class="pull-right">发布</a>
+			<a *ngIf="isAdmin" [routerLink]="['/club_bulletin/create', club.id]" class="pull-right">发布</a>
 		</div>
 		<div *ngIf="!(clubBulletin && clubBulletin.id)" class="card">
 			<div class="card-header">暂无</div>
@@ -62,14 +62,14 @@
 			<div class="card-footer">
 				<div></div>
 				<div>
-					<a [routerLink]="['/user', clubBulletin.publisher_user_id]">{{clubBulletin.publisher_username}}</a> 发布于 {{clubBulletin.publish_time | date: 'short'}}
+					<a [routerLink]="['/user', clubBulletin.publisher_user_id, 'detail']">{{clubBulletin.publisher_username}}</a> 发布于 {{clubBulletin.publish_time | date: 'short'}}
 				</div>
 			</div>
 		</div>
 
 		<div class="content-block-title">
 			群动态
-			<a [routerLink]="['/club_messages', club.id]" class="pull-right">更多</a>
+			<a [routerLink]="['/club', club.id, 'messages']" class="pull-right">更多</a>
 		</div>
 		<div *ngIf="clubMessages.length == 0" class="card">
 			<div class="card-header">暂无</div>
@@ -80,11 +80,11 @@
 					<li *ngFor="let message of clubMessages">
 						<div class="item item-content change-color">
 							<div class="item-inner">
-								<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 发起了新活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a></div>
-								<div *ngIf="message.type == 'AU'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 更新了活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a></div>
-								<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 创建了群组</div>
-								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 加入了群组</div>
-								<div *ngIf="message.type == 'AB'" class="item-text"><a [routerLink]="['/user', message.operator_user_id]">{{message.operator_username}}</a> 公布了活动 <a [routerLink]="['/activity', message.target_id]">{{message.target_name}}</a> 的账单</div>
+								<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 发起了新活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a></div>
+								<div *ngIf="message.type == 'AU'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 更新了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a></div>
+								<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 创建了群组</div>
+								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 加入了群组</div>
+								<div *ngIf="message.type == 'AB'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 公布了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a> 的账单</div>
 								<div class="pull-right item-subtitle">{{message.create_time | date: 'short'}}</div>
 							</div>
 						</div>
@@ -96,15 +96,15 @@
 
 	<div *ngIf="loggedIn && isMember" class="list-block">
 		<ul>
-			<li><a class="item-link list-button" [routerLink]="['/club_members', club.id]">查看所有成员</a></li>
-			<li><a class="item-link list-button" [routerLink]="['/club_activities', club.id]">查看所有活动</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/club', club.id, 'members']">查看所有成员</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/club', club.id, 'activities']">查看所有活动</a></li>
 		</ul>
 	</div>
 
 	<div *ngIf="loggedIn && isMember" class="list-block">
 		<ul>
-			<li><a class="item-link list-button" [routerLink]="['/create_activity', club.id]">发起新的活动</a></li>
-			<li><a *ngIf="isAdmin" class="item-link list-button" [routerLink]="['/update_club', club.id]">更改群信息</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/activity/create', club.id]">发起新的活动</a></li>
+			<li><a *ngIf="isAdmin" class="item-link list-button" [routerLink]="['/club', club.id, 'update']">更改群信息</a></li>
 		</ul>
 	</div>
 

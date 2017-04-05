@@ -6,13 +6,14 @@ import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router} from "@angular/router";
 
-import {UserService} from "../user.service";
+import {UserService} from "../user/user.service";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {ClubService} from "./club.service";
+import {Club} from "./club";
 
 import "zepto";
 import "sm";
-import {ClubService} from "./club.service";
-import {Club} from "./club";
+
 
 declare let $: any;
 

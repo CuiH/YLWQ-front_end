@@ -15,7 +15,7 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
-var user_service_1 = require("../user.service");
+var user_service_1 = require("../user/user.service");
 var club_service_1 = require("./club.service");
 var club_1 = require("./club");
 require("zepto");

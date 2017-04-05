@@ -5,11 +5,10 @@
 import {Http, RequestMethod, RequestOptions, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
 
-import 'rxjs/add/operator/toPromise';
+import {UserService} from "../user/user.service";
+import {ClubBulletin} from "./club-bulletin";
 
-import {Club} from "../club/club";
-import {UserService} from "../user.service";
-import {ClubBulletin} from "./";
+import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";

@@ -14,7 +14,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
-var user_service_1 = require("../user.service");
+var user_service_1 = require("../user/user.service");
 var club_service_1 = require("./club.service");
 var ClubActivitiesComponent = (function () {
     function ClubActivitiesComponent(clubService, activatedRoute, userService, location, router) {
@@ -32,7 +32,7 @@ var ClubActivitiesComponent = (function () {
             return;
         }
         this.activatedRoute.params
-            .switchMap(function (params) { return _this.clubService.getAllClubActivitiesById(+params['club_id']); })
+            .switchMap(function (params) { return _this.clubService.getAllClubActivitiesById(+params['id']); })
             .subscribe(function (activities) {
             _this.activities = activities;
         });

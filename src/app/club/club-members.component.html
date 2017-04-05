@@ -8,7 +8,7 @@
 <div class="content">
 	<div class="list-block">
 		<ul>
-			<li *ngFor="let member of members" class="item-content item-link">
+			<li *ngFor="let member of members" class="item-content item-link" [routerLink]="['/user', member.id, 'detail']">
 				<div class="item-inner">
 					<div class="item-title">{{member.username}}</div>
 					<div *ngIf="member.role == 'A'" class="item-after">管理员</div>

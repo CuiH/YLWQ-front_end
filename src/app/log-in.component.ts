@@ -7,8 +7,8 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import { Location }               from '@angular/common';
 import {Router} from "@angular/router";
 
-import {UserService} from "./user.service";
-import {User} from "./user";
+import {UserService} from "./user/user.service";
+import {User} from "./user/user";
 
 import "zepto";
 import "sm";

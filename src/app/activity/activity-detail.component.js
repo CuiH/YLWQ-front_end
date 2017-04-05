@@ -15,13 +15,13 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var activity_service_1 = require("./activity.service");
-var user_service_1 = require("../user.service");
+var user_service_1 = require("../user/user.service");
 var activity_1 = require("./activity");
+var checking_service_1 = require("../checking.service");
 require("rxjs/add/operator/switchMap");
 require("rxjs/add/operator/toPromise");
 require("zepto");
 require("sm");
-var checking_service_1 = require("../checking.service");
 var ActivityDetailComponent = (function () {
     function ActivityDetailComponent(location, router, activatedRoute, activityService, userService, checkingService) {
         this.location = location;

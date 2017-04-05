@@ -29,7 +29,7 @@
 					<div class="item-after">{{activity.location}}</div>
 				</div>
 			</li>
-			<li class="item-content item-link" [routerLink]="['/club', activity.club_id]">
+			<li class="item-content item-link" [routerLink]="['/club', activity.club_id, 'detail']">
 				<div class="item-inner">
 					<div class="item-title">承办方</div>
 					<div class="item-after">{{activity.club_name}}</div>
@@ -53,7 +53,7 @@
 					<div class="item-after">{{activity.note}}</div>
 				</div>
 			</li>
-			<li class="item-content item-link">
+			<li class="item-content item-link" [routerLink]="['/user', activity.sponsor_user_id, 'detail']">
 				<div class="item-inner">
 					<div class="item-title">发起人</div>
 					<div class="item-after">{{activity.sponsor_username}}</div>
@@ -70,20 +70,20 @@
 
 	<div class="list-block">
 		<ul>
-			<li><a class="item-link list-button" [routerLink]="['/activity_participants', activity.id]">查看所有参与者</a></li>
-			<li *ngIf="activity.activity_bill_status == 'P'"><a [routerLink]="['/activity_bill', activity.id]" class="item-link list-button">查看活动账单</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/activity', activity.id, 'participants']">查看所有参与者</a></li>
+			<li *ngIf="activity.activity_bill_status == 'P'"><a [routerLink]="['/activity_bill', activity.id, 'detail']" class="item-link list-button">查看活动账单</a></li>
 		</ul>
 	</div>
 
 	<div *ngIf="(activity.activity_bill_status == 'U' && activity.status == '已结束') && (isClubAdmin || isSponsor)" class="list-block">
 		<ul class="add-margin">
-			<li><a class="item-link list-button" [routerLink]="['/create_activity_bill', activity.id]">发布活动账单</a></li>
+			<li><a class="item-link list-button" [routerLink]="['/activity_bill/create', activity.id]">发布活动账单</a></li>
 		</ul>
 	</div>
 
 	<div *ngIf="activity.status != '已结束'" class="list-block">
 		<ul class="add-margin">
-			<li><a *ngIf="isSponsor" class="item-link list-button" [routerLink]="['/update_activity', activity.id]">编辑该活动</a></li>
+			<li><a *ngIf="isSponsor" class="item-link list-button" [routerLink]="['/activity', activity.id, 'update']">编辑该活动</a></li>
 			<li><a *ngIf="!isParticipant" (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
 		</ul>
 	</div>

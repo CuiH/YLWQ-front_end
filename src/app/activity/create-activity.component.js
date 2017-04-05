@@ -14,8 +14,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
-var user_service_1 = require("../user.service");
 var forms_1 = require("@angular/forms");
+var user_service_1 = require("../user/user.service");
 var activity_service_1 = require("./activity.service");
 require("zepto");
 require("sm");

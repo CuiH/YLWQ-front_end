@@ -7,16 +7,15 @@ import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 
 import {ActivityService} from "./activity.service";
-import {UserService} from "../user.service";
+import {UserService} from "../user/user.service";
 import {Activity} from "./activity";
-
+import {CheckingService} from "../checking.service";
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
-import {CheckingService} from "../checking.service";
 
 declare let $: any;
 

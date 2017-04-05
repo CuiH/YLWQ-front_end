@@ -7,11 +7,6 @@ import {Injectable} from "@angular/core";
 
 import 'rxjs/add/operator/toPromise';
 
-import "zepto";
-import "sm";
-
-declare let $: any;
-
 
 @Injectable()
 export class CheckingService {
@@ -19,7 +14,6 @@ export class CheckingService {
 	constructor(
 		private http: Http
 	) {
-		$.init();
 	};
 
 	checkUserClubMap(userId: number, clubId: number): Promise<boolean> {
@@ -88,10 +82,6 @@ export class CheckingService {
 	}
 
 	private handleError(err: any): any {
-		$.hidePreloader();
-
-		$.alert(err.json().message);
-
 		return Promise.reject(err);
 	}
 }

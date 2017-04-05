@@ -2,7 +2,7 @@
  * Created by CuiH on 2017/3/26.
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({

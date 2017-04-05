@@ -5,11 +5,11 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 
-import {ActivityComponent} from "../activity/activity.component";
-import {CreateActivityComponent} from "../activity/create-activity.component";
-import {UpdateActivityComponent} from "../activity/update-activity.component";
-import {ActivityParticipantsComponent} from "../activity/activity-participants.component";
-import {ActivityDetailComponent} from "../activity/activity-detail.component";
+import {ActivityComponent} from "./activity.component";
+import {CreateActivityComponent} from "./create-activity.component";
+import {UpdateActivityComponent} from "./update-activity.component";
+import {ActivityParticipantsComponent} from "./activity-participants.component";
+import {ActivityDetailComponent} from "./activity-detail.component";
 
 
 const activityRoutes: Routes = [

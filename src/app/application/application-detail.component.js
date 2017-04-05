@@ -14,13 +14,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
-var user_service_1 = require("../user.service");
+var user_service_1 = require("../user/user.service");
+var application_service_1 = require("./application.service");
+var application_1 = require("./application");
 require("rxjs/add/operator/switchMap");
 require("rxjs/add/operator/toPromise");
 require("zepto");
 require("sm");
-var application_service_1 = require("./application.service");
-var application_1 = require("./application");
 var ApplicationDetailComponent = (function () {
     function ApplicationDetailComponent(location, activatedRoute, router, userService, applicationService) {
         this.location = location;

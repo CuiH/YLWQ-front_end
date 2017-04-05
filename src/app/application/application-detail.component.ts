@@ -6,16 +6,16 @@ import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 
-import {UserService} from "../user.service";
-
+import {UserService} from "../user/user.service";
+import {ApplicationService} from "./application.service";
+import {Application} from "./application";
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
-import {ApplicationService} from "./application.service";
-import {Application} from "./application";
+
 
 declare let $: any;
 

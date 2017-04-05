@@ -14,11 +14,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
-var user_service_1 = require("../user.service");
+var user_service_1 = require("../user/user.service");
 var forms_1 = require("@angular/forms");
+var club_service_1 = require("./club.service");
 require("zepto");
 require("sm");
-var club_service_1 = require("./club.service");
 var CreateClubComponent = (function () {
     function CreateClubComponent(userService, formBuilder, clubService, location, router) {
         this.userService = userService;

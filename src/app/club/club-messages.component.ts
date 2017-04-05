@@ -6,8 +6,8 @@ import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router, Params, ActivatedRoute} from "@angular/router";
 
-import {UserService} from "../user.service";
-import {ClubMessage} from "../club-message";
+import {UserService} from "../user/user.service";
+import {ClubMessage} from "../club-message/club-message";
 import {ClubService} from "./club.service";
 
 
@@ -38,7 +38,7 @@ export class ClubMessagesComponent implements OnInit {
 		}
 
 		this.activatedRoute.params
-			.switchMap((params: Params) => this.clubService.getAllClubMessagesById(+params['club_id']))
+			.switchMap((params: Params) => this.clubService.getAllClubMessagesById(+params['id']))
 			.subscribe((clubMessages) => {
 				this.clubMessages = clubMessages;
 			});

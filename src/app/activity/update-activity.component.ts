@@ -5,9 +5,9 @@
 import {Component, OnInit} from "@angular/core";
 import { Location }               from '@angular/common';
 import {Router, ActivatedRoute, Params} from "@angular/router";
-
-import {UserService} from "../user.service";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+
+import {UserService} from "../user/user.service";
 import {Activity} from "./activity";
 import {ActivityService} from "./activity.service";
 

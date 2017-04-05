@@ -1,0 +1,18 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">我的群组</h1>
+</header>
+
+<div class="content native-scroll">
+	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id, 'detail']">
+		<div class="card-header change-text">{{club.name}}</div>
+		<div class="card-content">
+			<div class="card-content-inner"><span>简介：</span>{{club.brief_intro}}</div>
+		</div>
+		<div class="card-footer">
+			<span>{{club.join_time | date}} 加入</span>
+			<span>{{club.member_number}} 名成员</span>
+		</div>
+	</div>
+</div>

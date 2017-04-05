@@ -12,19 +12,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var user_service_1 = require("./user.service");
-var new_service_1 = require("./new.service");
+var user_service_1 = require("./user/user.service");
+var new_service_1 = require("./news/new.service");
+var club_service_1 = require("./club/club.service");
 var PageHomeComponent = (function () {
-    function PageHomeComponent(userService, newsService) {
+    function PageHomeComponent(userService, newsService, clubService) {
         this.userService = userService;
         this.newsService = newsService;
+        this.clubService = clubService;
         this.news = [];
+        this.clubs = [];
     }
     PageHomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.loggedIn = this.userService.isLoggedIn();
         this.newsService.getLatestEightNews()
             .then(function (news) { return _this.news = news; });
+        this.clubService.getHottestThreeClubs()
+            .then(function (clubs) { return _this.clubs = clubs; });
     };
     return PageHomeComponent;
 }());
@@ -33,10 +38,11 @@ PageHomeComponent = __decorate([
         selector: 'page-home',
         templateUrl: './page-home.component.html',
         styleUrls: ['./page-home.component.css'],
-        providers: [new_service_1.NewsService]
+        providers: [new_service_1.NewsService, club_service_1.ClubService]
     }),
     __metadata("design:paramtypes", [user_service_1.UserService,
-        new_service_1.NewsService])
+        new_service_1.NewsService,
+        club_service_1.ClubService])
 ], PageHomeComponent);
 exports.PageHomeComponent = PageHomeComponent;
 //# sourceMappingURL=page-home.component.js.map

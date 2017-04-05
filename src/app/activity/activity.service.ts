@@ -6,13 +6,14 @@ import {Http, RequestMethod, RequestOptions, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
 import { Location }               from '@angular/common';
 
+import {Activity} from "./activity";
+import {UserService} from "../user/user.service";
+import {User} from "../user/user";
+
 import 'rxjs/add/operator/toPromise';
 
 import "zepto";
 import "sm";
-import {Activity} from "./activity";
-import {UserService} from "../user.service";
-import {User} from "../user";
 
 declare let $: any;
 

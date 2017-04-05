@@ -1,0 +1,18 @@
+<div class="buttons-tab">
+	<a class="tab-link button active">参与的</a>
+	<a class="tab-link button" (click)="changeToSponsored()">发起的</a>
+</div>
+
+<div *ngFor="let activity of activities" class="card" [routerLink]="['/activity', activity.id, 'detail']">
+	<div class="card-header change-text">{{activity.name}}</div>
+	<div class="card-content">
+		<div class="card-content-inner">
+			<div class="item-subtitle">开始时间：{{activity.start_time | date: 'short'}}</div>
+			<div class="item-subtitle">地点：{{activity.location}}</div>
+		</div>
+	</div>
+	<div class="card-footer">
+		<span>{{activity.participant_number}} 人参加</span>
+		<span>{{activity.status}}</span>
+	</div>
+</div>
