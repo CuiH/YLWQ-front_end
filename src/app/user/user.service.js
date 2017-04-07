@@ -164,17 +164,31 @@ var UserService = (function () {
         })
             .catch(this.handleError);
     };
-    UserService.prototype.getAllUserNotifications = function () {
+    UserService.prototype.getAllUserNotifications = function (page) {
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
             headers: new http_1.Headers({
                 'x-access-token': this.currentUserToken
             }),
         });
-        return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications', options)
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications?page=' + page, options)
             .toPromise()
             .then(function (res) {
             return res.json().data.notifications;
+        })
+            .catch(this.handleError);
+    };
+    UserService.prototype.getAllUserPayments = function () {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.currentUserToken
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/get_all_user_payments', options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.userPayments;
         })
             .catch(this.handleError);
     };

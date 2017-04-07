@@ -12,6 +12,6 @@ export class ActivityBill {
 	publisher_user_id: number;
 	publisher_username: string;
 
-	activityBillItems: ActivityBillItem[];
-	activityBillParticipantPayments: ActivityBillParticipantPayment[];
+	activityBillItems: ActivityBillItem[] = [];
+	activityBillParticipantPayments: ActivityBillParticipantPayment[] = [];
 }

@@ -83,8 +83,11 @@
 								<div *ngIf="message.type == 'A'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 发起了新活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a></div>
 								<div *ngIf="message.type == 'AU'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 更新了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a></div>
 								<div *ngIf="message.type == 'C'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 创建了群组</div>
-								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 加入了群组</div>
+								<div *ngIf="message.type == 'E'" class="item-text"><a [routerLink]="['/user', message.target_id, 'detail']">{{message.target_name}}</a> 加入了群组</div>
+								<div *ngIf="message.type == 'Q'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 退出了群组</div>
 								<div *ngIf="message.type == 'AB'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 公布了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a> 的账单</div>
+								<div *ngIf="message.type == 'ABU'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 更新了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a> 的账单</div>
+								<div *ngIf="message.type == 'ABF'" class="item-text"><a [routerLink]="['/user', message.operator_user_id, 'detail']">{{message.operator_username}}</a> 结算了活动 <a [routerLink]="['/activity', message.target_id, 'detail']">{{message.target_name}}</a> 的账单</div>
 								<div class="pull-right item-subtitle">{{message.create_time | date: 'short'}}</div>
 							</div>
 						</div>
@@ -112,7 +115,11 @@
 		<button *ngIf="!isMember" [ngClass]="isApplied" (click)="showForm()" disabled="{{isApplied}}" class="set-width button button-big button-fill button-success">申请加入该群组</button>
 	</div>
 
-	<div *ngIf="isClicked" class="list-block">
+	<div *ngIf="loggedIn && isMember" class="content-block">
+		<button (click)="quitClub()" class="set-width button button-big button-fill button-danger">{{quitButtonText}}</button>
+	</div>
+
+	<div *ngIf="isClicked && !isApplied" class="list-block">
 		<ul>
 			<li>
 				<div class="item-content">

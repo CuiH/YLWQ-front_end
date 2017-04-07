@@ -9,4 +9,5 @@ export class ActivityBillItem {
 	description = "";
 	cost: number;
 	note = "";
+	flag = 0;  // 0 - +, 1 - -, 2 - remove
 }

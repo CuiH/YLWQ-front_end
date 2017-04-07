@@ -81,10 +81,15 @@
 		</ul>
 	</div>
 
-	<div *ngIf="activity.status != '已结束'" class="list-block">
-		<ul class="add-margin">
-			<li><a *ngIf="isSponsor" class="item-link list-button" [routerLink]="['/activity', activity.id, 'update']">编辑该活动</a></li>
-			<li><a *ngIf="!isParticipant" (click)="attendActivity()" class="item-link list-button">{{attendActivityButtonText}}</a></li>
-		</ul>
+	<div *ngIf="activity.status != '已结束'">
+		<div class="list-block">
+			<ul class="add-margin">
+				<li><a *ngIf="isSponsor" class="item-link list-button" [routerLink]="['/activity', activity.id, 'update']">编辑该活动</a></li>
+			</ul>
+		</div>
+		<div class="content-block">
+			<button *ngIf="!isParticipant" (click)="attendActivity()" class="button button-big button-fill button-success">{{attendActivityButtonText}}</button>
+			<button *ngIf="isParticipant" (click)="quitActivity()" class="button button-big button-fill button-danger">{{quitActivityButtonText}}</button>
+		</div>
 	</div>
 </div>

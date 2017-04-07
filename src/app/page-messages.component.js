@@ -15,12 +15,16 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_service_1 = require("./user/user.service");
 var notification_service_1 = require("./notification/notification.service");
+require("zepto");
+require("sm");
 var PageMessagesComponent = (function () {
     function PageMessagesComponent(userService, router, notificationService) {
         this.userService = userService;
         this.router = router;
         this.notificationService = notificationService;
         this.notifications = [];
+        this.loading = false;
+        this.page = 1;
     }
     PageMessagesComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -28,9 +32,30 @@ var PageMessagesComponent = (function () {
             this.router.navigate(['/log_in']);
             return;
         }
-        this.userService.getAllUserNotifications()
+        $.init();
+        this.getItems();
+        $(document).on('infinite', '.infinite-scroll-bottom', function () {
+            if (_this.loading)
+                return;
+            _this.loading = true;
+            _this.getItems();
+        });
+    };
+    PageMessagesComponent.prototype.getItems = function () {
+        var _this = this;
+        var originalLength = this.notifications.length;
+        this.userService.getAllUserNotifications(this.page)
             .then(function (notifications) {
-            _this.notifications = notifications;
+            _this.loading = false;
+            _this.notifications = _this.notifications.concat(notifications);
+            if ((_this.page == 1 && _this.notifications.length < 10) || _this.notifications.length == originalLength) {
+                // 加载完毕，则注销无限加载事件，以防不必要的加载
+                $.detachInfiniteScroll($('.infinite-scroll'));
+                // 删除加载提示符
+                $('.infinite-scroll-preloader').remove();
+            }
+            _this.page += 1;
+            $.refreshScroller();
         });
     };
     PageMessagesComponent.prototype.onClickNotification = function (notification) {

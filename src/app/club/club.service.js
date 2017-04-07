@@ -58,6 +58,22 @@ var ClubService = (function () {
         })
             .catch(this.handleError);
     };
+    ClubService.prototype.quitClub = function (id) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken()
+            }),
+            body: 'club_id=' + id
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/quit', options)
+            .toPromise()
+            .then(function (res) {
+            return true;
+        })
+            .catch(this.handleError);
+    };
     ClubService.prototype.getClubById = function (id) {
         $.showPreloader();
         var options = new http_1.RequestOptions({
@@ -68,6 +84,17 @@ var ClubService = (function () {
             .then(function (res) {
             $.hidePreloader();
             return res.json().data.club;
+        })
+            .catch(this.handleError);
+    };
+    ClubService.prototype.getAllClubsByPartName = function (partName) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/club/search?part_name=' + partName, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.clubs;
         })
             .catch(this.handleError);
     };

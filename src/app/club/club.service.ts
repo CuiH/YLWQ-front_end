@@ -70,6 +70,24 @@ export class ClubService {
 			.catch(this.handleError);
 	}
 
+	quitClub(id: number): Promise<any> {
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded",
+				'x-access-token': this.userService.getCurrentUserToken()
+			}),
+			body: 'club_id=' + id
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/quit', options)
+			.toPromise()
+			.then((res) => {
+				return true;
+			})
+			.catch(this.handleError);
+	}
+
 	getClubById(id: number): Promise<Club> {
 		$.showPreloader();
 
@@ -83,6 +101,19 @@ export class ClubService {
 				$.hidePreloader();
 
 				return res.json().data.club as Club;
+			})
+			.catch(this.handleError);
+	}
+
+	getAllClubsByPartName(partName: string): Promise<Club[]> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/club/search?part_name=' + partName, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.clubs as Club[];
 			})
 			.catch(this.handleError);
 	}

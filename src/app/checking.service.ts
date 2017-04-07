@@ -81,6 +81,45 @@ export class CheckingService {
 			.catch(this.handleError);
 	}
 
+	checkActivityBillCreator(userId: number, activityBillId: number): Promise<boolean> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/checking/activity_bill_creator?user_id=' + userId + "&activity_bill_id=" + activityBillId, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.result;
+			})
+			.catch(this.handleError);
+	}
+
+	checkActivityBillUnfinished(activityBillId: number): Promise<boolean> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/checking/activity_bill_unfinished?activity_bill_id=' + activityBillId, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.result;
+			})
+			.catch(this.handleError);
+	}
+
+	checkChallenge(userId: number, activityBillId: number): Promise<boolean> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/checking/challenge?user_id=' + userId + '&activity_bill_id=' + activityBillId, options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.result;
+			})
+			.catch(this.handleError);
+	}
+
 	private handleError(err: any): any {
 		return Promise.reject(err);
 	}

@@ -20,6 +20,7 @@ import {ClubBulletinModule} from "./club-bulletin/club-bulletin.module";
 import {UserModule} from "./user/user.module";
 import {ActivityBillModule} from "./activity-bill/activity-bill.module";
 import {NewsModule} from "./news/news.module";
+import {ClubListComponent} from "./club-list.component";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {NewsModule} from "./news/news.module";
 		PageMyComponent,
 		PageHomeComponent,
 		PageMessagesComponent,
+		ClubListComponent
 	],
 
 	providers: [

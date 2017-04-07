@@ -6,6 +6,36 @@
 
 <!-- 页面内容 -->
 <div class="content">
+	<div class="list-block">
+		<ul>
+			<li class="item-content item-link" [routerLink]="['/user', activityBill.publisher_user_id, 'detail']">
+				<div class="item-inner">
+					<div class="item-title">发布人</div>
+					<div class="item-after">{{activityBill.publisher_username}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">创建时间</div>
+					<div class="item-after">{{activityBill.publish_time | date: 'short'}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">最后修改</div>
+					<div class="item-after">{{activityBill.last_modify_time | date: 'short'}}</div>
+				</div>
+			</li>
+			<li class="item-content">
+				<div class="item-inner">
+					<div class="item-title">账单状态</div>
+					<div *ngIf="activityBill.status == 'P'" class="item-after">公示中</div>
+					<div *ngIf="activityBill.status == 'F'" class="item-after">已完成</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
 	<div class="content-block-title">付款项</div>
 	<div class="list-block media-list">
 		<ul>
@@ -39,5 +69,46 @@
 				</div>
 			</li>
 		</ul>
+	</div>
+
+	<div *ngIf="challenges.length > 0">
+		<div class="content-block-title">质疑情况</div>
+		<div class="content-block">
+			<p *ngFor="let challenge of challenges; let i = index" class="item-content">
+				{{challenge.challenger_username}}: {{challenge.message}}
+				<a *ngIf="challenge.challenger_user_id == userId" (click)="onDelete(challenge.id, index)">撤销</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="content-block">
+		<button *ngIf="isCreator && isUnfinished" class="button button-big button-fill button-success" [routerLink]="['/activity_bill', activityBill.id, 'update']">编辑该账单</button>
+		<button *ngIf="isUnfinished && isParticipant && !isCreator && !isClicked && !isChallenged" (click)="isClicked = true" class="button button-big button-fill button-danger" >提出质疑</button>
+	</div>
+
+	<div class="content-block">
+		<button *ngIf="isCreator && isUnfinished && canFinish" class="button button-big button-fill" (click)="onFinish()">结算该账单</button>
+	</div>
+
+	<div *ngIf="isClicked" class="list-block">
+		<ul>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-comment"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">质疑说明</div>
+						<div class="item-input">
+							<textarea [(ngModel)]="challengeMessage" maxlength="50" placeholder="必填，最多50字"></textarea>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="set-margin content-block">
+			<div class="row">
+				<div class="col-50"><button (click)="isClicked = !isClicked" class="button button-big button-fill button-danger">取消</button></div>
+				<div class="col-50"><button (click)="onChallenge()" class="button button-big button-fill button-success">{{challengeButtonText}}</button></div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -8,6 +8,7 @@ import {NgModule} from "@angular/core";
 import {ActivityBillComponent} from "./activity-bill.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
 import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
+import {UpdateActivityBillComponent} from "./update-activity-bill.component";
 
 
 const activityBillRoutes: Routes = [
@@ -17,6 +18,7 @@ const activityBillRoutes: Routes = [
 		children: [
 			{path: ':id/detail', component: ActivityBillDetailComponent},
 			{path: 'create/:activity_id', component: CreateActivityBillComponent},
+			{path: ':id/update', component: UpdateActivityBillComponent},
 		]
 	}
 ];

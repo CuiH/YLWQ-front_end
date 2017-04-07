@@ -20,6 +20,7 @@ var update_user_detail_component_1 = require("./update-user-detail.component");
 var user_service_1 = require("./user.service");
 var user_activities_participated_component_1 = require("./user-activities-participated.component");
 var user_activities_sponsored_component_1 = require("./user-activities-sponsored.component");
+var user_payments_component_1 = require("./user-payments.component");
 var UserModule = (function () {
     function UserModule() {
     }
@@ -40,7 +41,8 @@ UserModule = __decorate([
             user_clubs_component_1.UserClubsComponent,
             update_user_detail_component_1.UpdateUserDetailComponent,
             user_activities_participated_component_1.UserActivitiesParticipatedComponent,
-            user_activities_sponsored_component_1.UserActivitiesSponsoredComponent
+            user_activities_sponsored_component_1.UserActivitiesSponsoredComponent,
+            user_payments_component_1.UserPaymentsComponent
         ],
         providers: [
             user_service_1.UserService

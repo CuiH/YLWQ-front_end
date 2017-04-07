@@ -43,6 +43,7 @@ var ClubDetailComponent = (function () {
         this.clubMessages = [];
         this.applicationMessage = "";
         this.applyButtonText = "发送申请";
+        this.quitButtonText = "退出该群组";
     }
     ClubDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -78,6 +79,17 @@ var ClubDetailComponent = (function () {
             }
         });
     };
+    ClubDetailComponent.prototype.quitClub = function () {
+        var _this = this;
+        this.quitButtonText = "处理中...";
+        this.activatedRoute.params
+            .switchMap(function (params) { return _this.clubService.quitClub(+params['id']); })
+            .subscribe(function () {
+            $.alert("退出成功！");
+            _this.isMember = false;
+        });
+        this.quitButtonText = "退出该群组";
+    };
     ClubDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
@@ -91,6 +103,11 @@ var ClubDetailComponent = (function () {
     };
     ClubDetailComponent.prototype.onApply = function () {
         var _this = this;
+        if (this.applicationMessage.length > 50) {
+            $.alert("申请信息过长！");
+            this.applyButtonText = "发送申请";
+            return;
+        }
         this.activatedRoute.params
             .switchMap(function (params) { return _this.applicationService.createApplication(+params['id'], _this.applicationMessage); })
             .subscribe(function () {

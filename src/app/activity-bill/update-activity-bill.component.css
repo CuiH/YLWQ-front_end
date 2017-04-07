@@ -1,0 +1,21 @@
+button {
+    width: 100%;
+}
+
+.change-style {
+    height: auto!important;
+    width: 5rem!important;
+    text-align: right;
+    margin-right: 1rem!important;
+}
+
+.add-margin {
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    text-align: right;
+}
+
+.add-margin-2 {
+    margin-top: 0.5rem;
+    margin-left: 0.3rem;
+}

@@ -15,6 +15,7 @@ import {CookieService} from 'angular2-cookie/core';
 import { CookieOptionsArgs } from 'angular2-cookie/services/cookie-options-args.model';
 
 import 'rxjs/add/operator/toPromise';
+import {UserPayment} from "./user-payment";
 
 
 @Injectable()
@@ -204,7 +205,7 @@ export class UserService {
 			.catch(this.handleError);
 	}
 
-	getAllUserNotifications(): Promise<Notification[]> {
+	getAllUserNotifications(page: number): Promise<Notification[]> {
 		let options = new RequestOptions({
 			method: RequestMethod.Get,
 			headers: new Headers({
@@ -212,10 +213,26 @@ export class UserService {
 			}),
 		});
 
-		return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications', options)
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_notifications?page=' + page, options)
 			.toPromise()
 			.then((res) => {
 				return res.json().data.notifications as Notification[];
+			})
+			.catch(this.handleError);
+	}
+
+	getAllUserPayments(): Promise<UserPayment[]> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.currentUserToken
+			}),
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/get_all_user_payments', options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.userPayments as UserPayment[];
 			})
 			.catch(this.handleError);
 	}

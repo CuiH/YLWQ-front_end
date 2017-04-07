@@ -40,6 +40,37 @@ var ActivityBillService = (function () {
         })
             .catch(this.handleError);
     };
+    ActivityBillService.prototype.updateActivityBill = function (activityBill) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': 'application/json',
+                'x-access-token': this.userService.getCurrentUserToken(),
+            }),
+            body: JSON.stringify(activityBill),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity_bill/update', options)
+            .toPromise()
+            .then(function () {
+            return;
+        })
+            .catch(this.handleError);
+    };
+    ActivityBillService.prototype.finishActivityBill = function (activityBillId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken(),
+                'Content-Type': "application/x-www-form-urlencoded"
+            }),
+            body: 'activity_bill_id=' + activityBillId,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity_bill/finish', options)
+            .toPromise()
+            .then(function (res) {
+        })
+            .catch(this.handleError);
+    };
     ActivityBillService.prototype.getActivityBillById = function (id) {
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
@@ -50,6 +81,18 @@ var ActivityBillService = (function () {
         return this.http.request('http://172.18.43.152:3000/api/activity_bill/' + id, options)
             .toPromise()
             .then(function (res) { return res.json().data.activityBill; })
+            .catch(this.handleError);
+    };
+    ActivityBillService.prototype.getAllChallengesById = function (id) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.userService.getCurrentUserToken(),
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity_bill/get_all_challenges?activity_bill_id=' + id, options)
+            .toPromise()
+            .then(function (res) { return res.json().data.challenges; })
             .catch(this.handleError);
     };
     ActivityBillService.prototype.handleError = function (err) {

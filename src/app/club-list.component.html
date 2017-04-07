@@ -1,0 +1,30 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">搜索群组</h1>
+</header>
+
+<div class="bar bar-header-secondary">
+	<div class="searchbar">
+		<a class="searchbar-cancel" (click)="onSearch()">搜索</a>
+		<div class="search-input">
+			<input type="search" [(ngModel)]="searchName" placeholder='输入关键字...'/>
+		</div>
+	</div>
+</div>
+
+<div class="content native-scroll">
+	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id, 'detail']">
+		<div class="card-header change-text">{{club.name}}</div>
+		<div class="card-content">
+			<div class="card-content-inner">
+				<p>简介：{{club.brief_intro}}</p>
+				<p>群主：{{club.founder_username}}</p>
+			</div>
+		</div>
+		<div class="card-footer">
+			<span>{{club.create_time | date}} 创建</span>
+			<span>{{club.member_number}} 名成员</span>
+		</div>
+	</div>
+</div>

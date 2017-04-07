@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var activity_bill_component_1 = require("./activity-bill.component");
 var create_activity_bill_component_1 = require("./create-activity-bill.component");
 var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
+var update_activity_bill_component_1 = require("./update-activity-bill.component");
 var activityBillRoutes = [
     {
         path: 'activity_bill',
@@ -20,6 +21,7 @@ var activityBillRoutes = [
         children: [
             { path: ':id/detail', component: activity_bill_detail_component_1.ActivityBillDetailComponent },
             { path: 'create/:activity_id', component: create_activity_bill_component_1.CreateActivityBillComponent },
+            { path: ':id/update', component: update_activity_bill_component_1.UpdateActivityBillComponent },
         ]
     }
 ];

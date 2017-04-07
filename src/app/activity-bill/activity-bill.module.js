@@ -16,6 +16,7 @@ var activity_bill_component_1 = require("./activity-bill.component");
 var activity_bill_detail_component_1 = require("./activity-bill-detail.component");
 var create_activity_bill_component_1 = require("./create-activity-bill.component");
 var activity_bill_routing_module_1 = require("./activity-bill-routing.module");
+var update_activity_bill_component_1 = require("./update-activity-bill.component");
 var ActivityBillModule = (function () {
     function ActivityBillModule() {
     }
@@ -32,7 +33,8 @@ ActivityBillModule = __decorate([
         declarations: [
             activity_bill_component_1.ActivityBillComponent,
             activity_bill_detail_component_1.ActivityBillDetailComponent,
-            create_activity_bill_component_1.CreateActivityBillComponent
+            create_activity_bill_component_1.CreateActivityBillComponent,
+            update_activity_bill_component_1.UpdateActivityBillComponent
         ],
         providers: [
             activity_bill_service_1.ActivityBillService

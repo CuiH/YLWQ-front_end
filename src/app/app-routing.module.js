@@ -14,12 +14,14 @@ var log_in_component_1 = require("./log-in.component");
 var page_my_component_1 = require("./page-my.component");
 var page_home_component_1 = require("./page-home.component");
 var page_messages_component_1 = require("./page-messages.component");
+var club_list_component_1 = require("./club-list.component");
 var routes = [
     { path: '', redirectTo: '/page_home', pathMatch: 'full' },
     { path: 'log_in', component: log_in_component_1.LogInComponent },
     { path: 'page_my', component: page_my_component_1.PageMyComponent },
     { path: 'page_home', component: page_home_component_1.PageHomeComponent },
     { path: 'page_messages', component: page_messages_component_1.PageMessagesComponent },
+    { path: 'club_list', component: club_list_component_1.ClubListComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

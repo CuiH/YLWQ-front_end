@@ -9,3 +9,11 @@
     height: auto;
     text-overflow: clip;
 }
+
+button {
+    width: 100%;
+}
+
+.set-margin {
+    margin-top: 0.8rem;
+}

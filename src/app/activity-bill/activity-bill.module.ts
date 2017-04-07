@@ -11,6 +11,7 @@ import {ActivityBillComponent} from "./activity-bill.component";
 import {ActivityBillDetailComponent} from "./activity-bill-detail.component";
 import {CreateActivityBillComponent} from "./create-activity-bill.component";
 import {ActivityBillRoutingModule} from "./activity-bill-routing.module";
+import {UpdateActivityBillComponent} from "./update-activity-bill.component";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {ActivityBillRoutingModule} from "./activity-bill-routing.module";
 	declarations: [
 		ActivityBillComponent,
 		ActivityBillDetailComponent,
-		CreateActivityBillComponent
+		CreateActivityBillComponent,
+		UpdateActivityBillComponent
 	],
 	providers: [
 		ActivityBillService

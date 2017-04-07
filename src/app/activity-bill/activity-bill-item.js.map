@@ -1,1 +1,1 @@
-{"version":3,"file":"activity-bill-item.js","sourceRoot":"","sources":["activity-bill-item.ts"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IAAA;QAIC,gBAAW,GAAG,EAAE,CAAC;QAEjB,SAAI,GAAG,EAAE,CAAC;IACX,CAAC;IAAD,uBAAC;AAAD,CAAC,AAPD,IAOC;AAPY,4CAAgB"}
+{"version":3,"file":"activity-bill-item.js","sourceRoot":"","sources":["activity-bill-item.ts"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IAAA;QAIC,gBAAW,GAAG,EAAE,CAAC;QAEjB,SAAI,GAAG,EAAE,CAAC;QACV,SAAI,GAAG,CAAC,CAAC,CAAE,2BAA2B;IACvC,CAAC;IAAD,uBAAC;AAAD,CAAC,AARD,IAQC;AARY,4CAAgB"}

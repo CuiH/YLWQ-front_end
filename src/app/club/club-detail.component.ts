@@ -49,6 +49,7 @@ export class ClubDetailComponent implements OnInit {
 	private applicationMessage = "";
 
 	private applyButtonText = "发送申请";
+	private quitButtonText = "退出该群组";
 
 	constructor(
 		private location: Location,
@@ -100,6 +101,20 @@ export class ClubDetailComponent implements OnInit {
 			});
 	}
 
+	private quitClub(): void {
+		this.quitButtonText = "处理中...";
+
+		this.activatedRoute.params
+			.switchMap((params: Params) => this.clubService.quitClub(+params['id']))
+			.subscribe(() => {
+				$.alert("退出成功！");
+
+				this.isMember = false;
+			});
+
+		this.quitButtonText = "退出该群组";
+	}
+
 	private goBack(): void {
 		this.location.back();
 	}
@@ -115,6 +130,13 @@ export class ClubDetailComponent implements OnInit {
 	}
 
 	private onApply(): void {
+		if (this.applicationMessage.length > 50) {
+			$.alert("申请信息过长！");
+			this.applyButtonText = "发送申请";
+
+			return;
+		}
+
 		this.activatedRoute.params
 			.switchMap((params: Params) => this.applicationService.createApplication(+params['id'], this.applicationMessage))
 			.subscribe(() => {

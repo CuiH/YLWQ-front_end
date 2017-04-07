@@ -6,6 +6,7 @@ var ActivityBillItem = (function () {
     function ActivityBillItem() {
         this.description = "";
         this.note = "";
+        this.flag = 0; // 0 - +, 1 - -, 2 - remove
     }
     return ActivityBillItem;
 }());

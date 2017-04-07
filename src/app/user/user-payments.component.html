@@ -1,0 +1,26 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">账单详情</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="list-block media-list">
+		<ul>
+			<li *ngFor="let item of userPayments">
+				<div class="item-content">
+					<div class="item-inner">
+						<div class="item-title-row">
+							<div *ngIf="item.type == 'AG' || item.type == 'AP'" class="item-title"><a [routerLink]="['/activity', item.target_id, 'detail']">活动</a> 结算</div>
+							<div *ngIf="item.type == 'S'" class="item-title">{{item.description}}</div>
+							<div *ngIf="item.type == 'AG'" class="item-after">+ ￥{{item.amount}}</div>
+							<div *ngIf="item.type == 'AP'" class="item-after">- ￥{{item.amount}}</div>
+						</div>
+						<div class="item-text change-style">{{item.create_time | date: 'short'}}</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -151,7 +151,7 @@ export class CreateActivityBillComponent implements OnInit {
 				currentItem.payer_user_id = +currentItem.payer_user_id;
 			}
 
-			itemsTotal += currentItem.cost;
+			itemsTotal += +currentItem.cost;
 		}
 
 		let paymentsTotal = 0;
@@ -168,7 +168,7 @@ export class CreateActivityBillComponent implements OnInit {
 				return false;
 			}
 
-			paymentsTotal += currentPayment.amount;
+			paymentsTotal += +currentPayment.amount;
 		}
 
 		if (itemsTotal != paymentsTotal) {

@@ -1,0 +1,86 @@
+<!-- 标题栏 -->
+<header class="bar bar-nav">
+	<a class="icon icon-left pull-left" (click)="goBack()"></a>
+	<h1 class="title">编辑活动账单</h1>
+</header>
+
+<!-- 页面内容 -->
+<div class="content">
+	<div class="content-block-title">付款项</div>
+	<div class="list-block">
+		<div  *ngFor="let activityBillItem of activityBill.activityBillItems; let i = index">
+			<div *ngIf="activityBillItem.flag != 2">
+				<div class="add-margin-2">
+					# {{i+1}}
+					<a (click)="onDeleteItem(activityBillItem, i)">删除该项</a>
+				</div>
+				<ul>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">描述</div>
+								<div class="item-input">
+									<textarea maxlength="30" [value]="activityBillItem.description" (change)="onChangeItem(activityBillItem, 'description', $event.target.value)" placeholder="必填，最多30字"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">价格</div>
+								<div class="item-input">
+									<input type="number" [value]="activityBillItem.cost" (change)="onChangeItem(activityBillItem, 'cost', $event.target.value)" placeholder="必填">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">支付人</div>
+								<div class="item-input">
+									<select [value]="+activityBillItem.payer_user_id" (change)="onChangeItem(activityBillItem, 'payer_user_id', $event.target.value)">
+										<option *ngFor="let member of members" [value]="member.id">{{member.username}}</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">备注</div>
+								<div class="item-input">
+									<textarea [value]="activityBillItem.note" placeholder="最多30字" (change)="onChangeItem(activityBillItem, 'note', $event.target.value)"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="add-margin">
+			<a (click)="addItem()">增加一项</a>
+		</div>
+
+	</div>
+
+	<div class="content-block-title">付款人</div>
+	<div class="list-block">
+		<ul>
+			<li *ngFor="let activityBillParticipantPayment of activityBill.activityBillParticipantPayments" class="item-content">
+				<div class="item-inner">
+					<div class="item-title">{{activityBillParticipantPayment.participant_username}}</div>
+					<div class="item-after">
+						<input type="number" class="change-style" [value]="activityBillParticipantPayment.amount" (change)="onChangePayment(activityBillParticipantPayment, $event.target.value)" placeholder="必填">元
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-block">
+		<button (click)="onSubmit()" class="button button-big button-fill button-success">{{updateActivityBillButtonText}}</button>
+	</div>
+</div>

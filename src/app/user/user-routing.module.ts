@@ -12,6 +12,7 @@ import {UserClubsComponent} from "./user-clubs.component";
 import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {UserActivitiesSponsoredComponent} from "./user-activities-sponsored.component";
 import {UserActivitiesParticipatedComponent} from "./user-activities-participated.component";
+import {UserPaymentsComponent} from "./user-payments.component";
 
 
 const userRoutes: Routes = [
@@ -30,6 +31,7 @@ const userRoutes: Routes = [
 			},
 			{path: 'clubs', component: UserClubsComponent},
 			{path: 'update', component: UpdateUserDetailComponent},
+			{path: 'user_payments', component: UserPaymentsComponent},
 		]
 	}
 ];

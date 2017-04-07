@@ -7,4 +7,5 @@ export class ActivityBillParticipantPayment {
 	participant_user_id: number;
 	participant_username: string;
 	amount: number;
+	flag: number;
 }

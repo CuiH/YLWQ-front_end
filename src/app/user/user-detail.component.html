@@ -2,7 +2,7 @@
 <header class="bar bar-nav">
 	<a class="icon icon-left pull-left" (click)="goBack()"></a>
 	<h1 class="title">{{user.username}}</h1>
-	<button *ngIf="isSelf" [routerLink]="['/update_user_detail']" class="button button-link button-nav pull-right add-padding">
+	<button *ngIf="isSelf" [routerLink]="['/user/update']" class="button button-link button-nav pull-right add-padding">
 		编辑
 	</button>
 </header>

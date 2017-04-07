@@ -15,6 +15,7 @@ import {UpdateUserDetailComponent} from "./update-user-detail.component";
 import {UserService} from "./user.service";
 import {UserActivitiesParticipatedComponent} from "./user-activities-participated.component";
 import {UserActivitiesSponsoredComponent} from "./user-activities-sponsored.component";
+import {UserPaymentsComponent} from "./user-payments.component";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {UserActivitiesSponsoredComponent} from "./user-activities-sponsored.comp
 		UserClubsComponent,
 		UpdateUserDetailComponent,
 		UserActivitiesParticipatedComponent,
-		UserActivitiesSponsoredComponent
+		UserActivitiesSponsoredComponent,
+		UserPaymentsComponent
 	],
 	providers: [
 		UserService

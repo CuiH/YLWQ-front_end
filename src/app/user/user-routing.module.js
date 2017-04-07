@@ -17,6 +17,7 @@ var user_clubs_component_1 = require("./user-clubs.component");
 var update_user_detail_component_1 = require("./update-user-detail.component");
 var user_activities_sponsored_component_1 = require("./user-activities-sponsored.component");
 var user_activities_participated_component_1 = require("./user-activities-participated.component");
+var user_payments_component_1 = require("./user-payments.component");
 var userRoutes = [
     {
         path: 'user',
@@ -33,6 +34,7 @@ var userRoutes = [
             },
             { path: 'clubs', component: user_clubs_component_1.UserClubsComponent },
             { path: 'update', component: update_user_detail_component_1.UpdateUserDetailComponent },
+            { path: 'user_payments', component: user_payments_component_1.UserPaymentsComponent },
         ]
     }
 ];

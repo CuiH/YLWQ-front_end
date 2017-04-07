@@ -30,6 +30,7 @@ export class ActivityDetailComponent implements OnInit {
 	private activity: Activity = new Activity();
 
 	private attendActivityButtonText = "参与该活动";
+	private quitActivityButtonText = "退出该活动";
 
 	private isParticipant = false;
 	private isSponsor = false;
@@ -115,4 +116,17 @@ export class ActivityDetailComponent implements OnInit {
 				this.activity.participant_number += 1;
 			}, () => this.attendActivityButtonText = "参与该活动");
 	}
+
+	private quitActivity(): void {
+		this.quitActivityButtonText = "处理中...";
+		this.activatedRoute.params
+			.switchMap((params: Params) => this.activityService.quitActivity(+params['id']))
+			.subscribe((activity) => {
+				$.alert("退出成功！");
+
+				this.isParticipant = false;
+				this.activity.participant_number -= 1;
+			}, () => this.quitActivityButtonText = "退出该活动");
+	}
+
 }

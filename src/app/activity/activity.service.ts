@@ -136,6 +136,24 @@ export class ActivityService {
 			.catch(this.handleError);
 	}
 
+	quitActivity(activityId: number): Promise<any> {
+		let options = new RequestOptions({
+			method: RequestMethod.Post,
+			headers: new Headers({
+				'Content-Type': "application/x-www-form-urlencoded",
+				'x-access-token': this.userService.getCurrentUserToken(),
+			}),
+			body: 'activity_id=' + activityId,
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/activity/quit', options)
+			.toPromise()
+			.then((res) => {
+				return;
+			})
+			.catch(this.handleError);
+	}
+
 	private handleError(err: any): any {
 		$.hidePreloader();
 

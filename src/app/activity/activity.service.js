@@ -117,6 +117,22 @@ var ActivityService = (function () {
         })
             .catch(this.handleError);
     };
+    ActivityService.prototype.quitActivity = function (activityId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Post,
+            headers: new http_1.Headers({
+                'Content-Type': "application/x-www-form-urlencoded",
+                'x-access-token': this.userService.getCurrentUserToken(),
+            }),
+            body: 'activity_id=' + activityId,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/activity/quit', options)
+            .toPromise()
+            .then(function (res) {
+            return;
+        })
+            .catch(this.handleError);
+    };
     ActivityService.prototype.handleError = function (err) {
         $.hidePreloader();
         $.alert(err.json().message);

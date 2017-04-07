@@ -23,6 +23,8 @@
 	</a>
 </nav>
 
+
+
 <!-- 页面内容 -->
 <div class="content">
 	<div class="content-block-title change-margin">资讯</div>
@@ -43,6 +45,14 @@
 	</div>
 
 	<div class="content-block-title change-margin">热门群组</div>
+	<div  class="content-block change-margin-2">
+		<div class="searchbar row">
+			<div class="search-input col-80">
+				<input type="search" [(ngModel)]="searchName" placeholder='输入关键字...'/>
+			</div>
+			<a class="button button-fill button-primary col-20" [routerLink]="['/club_list', {part_name: searchName}]">搜索</a>
+		</div>
+	</div>
 	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id, 'detail']">
 		<div class="card-header change-text">{{club.name}}</div>
 		<div class="card-content">
@@ -52,5 +62,9 @@
 			<span></span>
 			<span class="pull-right">{{club.member_number}} 名成员</span>
 		</div>
+	</div>
+
+	<div  class="content-block">
+		<button class="set-width button button-big button-fill button-success" [routerLink]="['/club/create']">创建一个群组</button>
 	</div>
 </div>

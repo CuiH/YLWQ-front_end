@@ -32,6 +32,7 @@ var ActivityDetailComponent = (function () {
         this.checkingService = checkingService;
         this.activity = new activity_1.Activity();
         this.attendActivityButtonText = "参与该活动";
+        this.quitActivityButtonText = "退出该活动";
         this.isParticipant = false;
         this.isSponsor = false;
         this.isClubAdmin = false;
@@ -93,6 +94,17 @@ var ActivityDetailComponent = (function () {
             _this.isParticipant = true;
             _this.activity.participant_number += 1;
         }, function () { return _this.attendActivityButtonText = "参与该活动"; });
+    };
+    ActivityDetailComponent.prototype.quitActivity = function () {
+        var _this = this;
+        this.quitActivityButtonText = "处理中...";
+        this.activatedRoute.params
+            .switchMap(function (params) { return _this.activityService.quitActivity(+params['id']); })
+            .subscribe(function (activity) {
+            $.alert("退出成功！");
+            _this.isParticipant = false;
+            _this.activity.participant_number -= 1;
+        }, function () { return _this.quitActivityButtonText = "退出该活动"; });
     };
     return ActivityDetailComponent;
 }());

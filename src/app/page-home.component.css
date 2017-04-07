@@ -4,5 +4,13 @@ img {
 }
 
 .change-margin {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+.set-width {
+    width: 100%;
+}
+
+.change-margin-2 {
+    margin-bottom: 0.5rem;
 }

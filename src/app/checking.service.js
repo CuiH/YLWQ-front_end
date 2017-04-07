@@ -74,6 +74,39 @@ var CheckingService = (function () {
         })
             .catch(this.handleError);
     };
+    CheckingService.prototype.checkActivityBillCreator = function (userId, activityBillId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/checking/activity_bill_creator?user_id=' + userId + "&activity_bill_id=" + activityBillId, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
+    CheckingService.prototype.checkActivityBillUnfinished = function (activityBillId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/checking/activity_bill_unfinished?activity_bill_id=' + activityBillId, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
+    CheckingService.prototype.checkChallenge = function (userId, activityBillId) {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+        });
+        return this.http.request('http://172.18.43.152:3000/api/checking/challenge?user_id=' + userId + '&activity_bill_id=' + activityBillId, options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.result;
+        })
+            .catch(this.handleError);
+    };
     CheckingService.prototype.handleError = function (err) {
         return Promise.reject(err);
     };

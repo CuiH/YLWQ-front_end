@@ -4,6 +4,8 @@
  */
 var ActivityBill = (function () {
     function ActivityBill() {
+        this.activityBillItems = [];
+        this.activityBillParticipantPayments = [];
     }
     return ActivityBill;
 }());

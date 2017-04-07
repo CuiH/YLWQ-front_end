@@ -117,7 +117,7 @@ var CreateActivityBillComponent = (function () {
             else {
                 currentItem.payer_user_id = +currentItem.payer_user_id;
             }
-            itemsTotal += currentItem.cost;
+            itemsTotal += +currentItem.cost;
         }
         var paymentsTotal = 0;
         for (var i = 0; i < this.activityBillParticipantPayments.length; i++) {
@@ -130,7 +130,7 @@ var CreateActivityBillComponent = (function () {
                 $.alert("付款人 #" + currentPayment.participant_username + " 的应付数额应为数字");
                 return false;
             }
-            paymentsTotal += currentPayment.amount;
+            paymentsTotal += +currentPayment.amount;
         }
         if (itemsTotal != paymentsTotal) {
             $.alert("付款项总价与付款人总应付数额不相等！");

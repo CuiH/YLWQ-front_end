@@ -25,6 +25,7 @@ var club_bulletin_module_1 = require("./club-bulletin/club-bulletin.module");
 var user_module_1 = require("./user/user.module");
 var activity_bill_module_1 = require("./activity-bill/activity-bill.module");
 var news_module_1 = require("./news/news.module");
+var club_list_component_1 = require("./club-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -52,6 +53,7 @@ AppModule = __decorate([
             page_my_component_1.PageMyComponent,
             page_home_component_1.PageHomeComponent,
             page_messages_component_1.PageMessagesComponent,
+            club_list_component_1.ClubListComponent
         ],
         providers: [
             { provide: core_1.LOCALE_ID, useValue: "zh-CN" },
