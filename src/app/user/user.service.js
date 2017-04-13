@@ -178,6 +178,20 @@ var UserService = (function () {
         })
             .catch(this.handleError);
     };
+    UserService.prototype.getUserAccount = function () {
+        var options = new http_1.RequestOptions({
+            method: http_1.RequestMethod.Get,
+            headers: new http_1.Headers({
+                'x-access-token': this.currentUserToken
+            }),
+        });
+        return this.http.request('http://172.18.43.152:3000/api/user/get_user_account', options)
+            .toPromise()
+            .then(function (res) {
+            return res.json().data.userAccount;
+        })
+            .catch(this.handleError);
+    };
     UserService.prototype.getAllUserPayments = function () {
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,

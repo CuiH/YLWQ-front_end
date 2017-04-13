@@ -1,7 +1,7 @@
 /**
  * Created by CuiH on 2017/3/31.
  */
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {Router} from "@angular/router";
 
 import {UserService} from "./user/user.service";
@@ -20,7 +20,7 @@ declare let $: any;
 	styleUrls: ['./page-messages.component.css'],
 	providers: [NotificationService]
 })
-export class PageMessagesComponent implements OnInit {
+export class PageMessagesComponent implements OnInit, OnDestroy {
 
 	private notifications: Notification[] = [];
 
@@ -55,16 +55,16 @@ export class PageMessagesComponent implements OnInit {
 		});
 	}
 
+	ngOnDestroy(): void {
+		$(document).off('infinite', '.infinite-scroll-bottom')
+	}
+
 	private getItems(): void {
 		const originalLength = this.notifications.length;
 
 		this.userService.getAllUserNotifications(this.page)
 			.then((notifications) => {
-
-				this.loading = false;
-
 				this.notifications = this.notifications.concat(notifications);
-
 
 				if ((this.page == 1 && this.notifications.length < 10) || this.notifications.length == originalLength) {
 					// 加载完毕，则注销无限加载事件，以防不必要的加载
@@ -74,6 +74,8 @@ export class PageMessagesComponent implements OnInit {
 				}
 
 				this.page += 1;
+
+				this.loading = false;
 
 				$.refreshScroller();
 			});

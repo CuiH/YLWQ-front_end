@@ -186,7 +186,7 @@ export class ClubService {
 			.catch(this.handleError);
 	}
 
-	getAllClubMessagesById(id: number): Promise<ClubMessage[]> {
+	getAllClubMessagesById(id: number, page: number): Promise<ClubMessage[]> {
 		$.showPreloader();
 
 		let options = new RequestOptions({
@@ -196,7 +196,7 @@ export class ClubService {
 			}),
 		});
 
-		return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id, options)
+		return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id + '&page=' + page, options)
 			.toPromise()
 			.then((res) => {
 				$.hidePreloader();

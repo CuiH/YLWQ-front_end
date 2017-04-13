@@ -24,6 +24,8 @@ export class PageHomeComponent implements OnInit {
 	private news: News[] = [];
 	private clubs: Club[] = [];
 
+	private searchName = "";
+
 	constructor(
 		private userService: UserService,
 	    private newsService: NewsService,

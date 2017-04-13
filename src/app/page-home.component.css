@@ -4,7 +4,7 @@ img {
 }
 
 .change-margin {
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .set-width {
@@ -13,4 +13,14 @@ img {
 
 .change-margin-2 {
     margin-bottom: 0.5rem;
+}
+
+.change-style {
+    text-align: center;
+    margin: 0;
+}
+
+.change-height {
+    line-height: 1.8rem!important;
+    height: 1.8rem;
 }

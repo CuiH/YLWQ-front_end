@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 
 import {UserService} from "./user.service";
 import {UserPayment} from "./user-payment";
+import {UserAccount} from "./UserAccount";
 
 
 @Component({
@@ -18,6 +19,7 @@ import {UserPayment} from "./user-payment";
 export class UserPaymentsComponent implements OnInit {
 
 	private userPayments: UserPayment[];
+	private userAccount: UserAccount = new UserAccount();
 
 	constructor(
 		private userService: UserService,
@@ -38,6 +40,9 @@ export class UserPaymentsComponent implements OnInit {
 			.then((userPayments) => {
 				this.userPayments = userPayments;
 			});
+
+		this.userService.getUserAccount()
+			.then(userAccount => this.userAccount = userAccount);
 	}
 
 	goBack(): void {

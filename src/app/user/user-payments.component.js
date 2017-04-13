@@ -15,11 +15,13 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var user_service_1 = require("./user.service");
+var UserAccount_1 = require("./UserAccount");
 var UserPaymentsComponent = (function () {
     function UserPaymentsComponent(userService, location, router) {
         this.userService = userService;
         this.location = location;
         this.router = router;
+        this.userAccount = new UserAccount_1.UserAccount();
     }
     UserPaymentsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -31,6 +33,8 @@ var UserPaymentsComponent = (function () {
             .then(function (userPayments) {
             _this.userPayments = userPayments;
         });
+        this.userService.getUserAccount()
+            .then(function (userAccount) { return _this.userAccount = userAccount; });
     };
     UserPaymentsComponent.prototype.goBack = function () {
         this.location.back();

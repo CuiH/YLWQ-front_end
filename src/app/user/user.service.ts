@@ -16,6 +16,7 @@ import { CookieOptionsArgs } from 'angular2-cookie/services/cookie-options-args.
 
 import 'rxjs/add/operator/toPromise';
 import {UserPayment} from "./user-payment";
+import {UserAccount} from "./UserAccount";
 
 
 @Injectable()
@@ -217,6 +218,22 @@ export class UserService {
 			.toPromise()
 			.then((res) => {
 				return res.json().data.notifications as Notification[];
+			})
+			.catch(this.handleError);
+	}
+
+	getUserAccount(): Promise<UserAccount> {
+		let options = new RequestOptions({
+			method: RequestMethod.Get,
+			headers: new Headers({
+				'x-access-token': this.currentUserToken
+			}),
+		});
+
+		return this.http.request('http://172.18.43.152:3000/api/user/get_user_account', options)
+			.toPromise()
+			.then((res) => {
+				return res.json().data.userAccount as UserAccount;
 			})
 			.catch(this.handleError);
 	}

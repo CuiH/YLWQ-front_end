@@ -41,12 +41,14 @@ var PageMessagesComponent = (function () {
             _this.getItems();
         });
     };
+    PageMessagesComponent.prototype.ngOnDestroy = function () {
+        $(document).off('infinite', '.infinite-scroll-bottom');
+    };
     PageMessagesComponent.prototype.getItems = function () {
         var _this = this;
         var originalLength = this.notifications.length;
         this.userService.getAllUserNotifications(this.page)
             .then(function (notifications) {
-            _this.loading = false;
             _this.notifications = _this.notifications.concat(notifications);
             if ((_this.page == 1 && _this.notifications.length < 10) || _this.notifications.length == originalLength) {
                 // 加载完毕，则注销无限加载事件，以防不必要的加载
@@ -55,6 +57,7 @@ var PageMessagesComponent = (function () {
                 $('.infinite-scroll-preloader').remove();
             }
             _this.page += 1;
+            _this.loading = false;
             $.refreshScroller();
         });
     };

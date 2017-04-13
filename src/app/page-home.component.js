@@ -22,6 +22,7 @@ var PageHomeComponent = (function () {
         this.clubService = clubService;
         this.news = [];
         this.clubs = [];
+        this.searchName = "";
     }
     PageHomeComponent.prototype.ngOnInit = function () {
         var _this = this;

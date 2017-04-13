@@ -45,14 +45,6 @@
 	</div>
 
 	<div class="content-block-title change-margin">热门群组</div>
-	<div  class="content-block change-margin-2">
-		<div class="searchbar row">
-			<div class="search-input col-80">
-				<input type="search" [(ngModel)]="searchName" placeholder='输入关键字...'/>
-			</div>
-			<a class="button button-fill button-primary col-20" [routerLink]="['/club_list', {part_name: searchName}]">搜索</a>
-		</div>
-	</div>
 	<div *ngFor="let club of clubs" class="card" [routerLink]="['/club', club.id, 'detail']">
 		<div class="card-header change-text">{{club.name}}</div>
 		<div class="card-content">
@@ -64,7 +56,17 @@
 		</div>
 	</div>
 
-	<div  class="content-block">
-		<button class="set-width button button-big button-fill button-success" [routerLink]="['/club/create']">创建一个群组</button>
+	<div class="content-block-title">你还可以</div>
+	<div  class="content-block change-margin-2">
+		<div class="searchbar row">
+			<div class="search-input col-80">
+				<input type="search" [(ngModel)]="searchName" placeholder='输入关键字...'/>
+			</div>
+			<a class="button button-fill button-primary col-20" [routerLink]="['/club_list', {part_name: searchName}]">搜索</a>
+		</div>
+	</div>
+	<p class="change-style">或者</p>
+	<div class="content-block change-margin">
+		<button class="set-width button button-big button-fill button-success change-height" [routerLink]="['/club/create']">创建一个群组</button>
 	</div>
 </div>

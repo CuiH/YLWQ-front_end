@@ -156,7 +156,7 @@ var ClubService = (function () {
         })
             .catch(this.handleError);
     };
-    ClubService.prototype.getAllClubMessagesById = function (id) {
+    ClubService.prototype.getAllClubMessagesById = function (id, page) {
         $.showPreloader();
         var options = new http_1.RequestOptions({
             method: http_1.RequestMethod.Get,
@@ -164,7 +164,7 @@ var ClubService = (function () {
                 'x-access-token': this.userService.getCurrentUserToken()
             }),
         });
-        return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id, options)
+        return this.http.request('http://172.18.43.152:3000/api/club/get_all_club_messages?club_id=' + id + '&page=' + page, options)
             .toPromise()
             .then(function (res) {
             $.hidePreloader();
